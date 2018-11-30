@@ -5,26 +5,47 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
       .speech-bubble {
-        border: solid 1px black;
-        padding: 8px;
-        width: 300px;
-        height: 220px;
-
+        background-image: url(img/TextBoxRight.png);
+        /* border: solid 1px black; */
+        width: 288px;
+        height: 231px;
         position: relative;
       }
 
+      .speech-bubble div {
+        overflow-y: scroll;
+        top: 20px;
+        bottom: 66px;
+        left: 22px;
+        right: 22px;
+        position: absolute;
+      }     
+     
       #avatar {
         position: fixed;
         width: 196px;
         height: 362px;
         top: 450px;
-        left: 700px;
         /*border: solid 3px red;
         font-size: 50px;*/
         }
 
+      @media only screen and (min-width: 600px) {
+        #avatar {
+          left: 1000px;
+        }
+      }   
+      
+      @media only screen and (max-width: 600px) {
+        #avatar {
+          left: 700px;
+        }
+      }   
+      
       #avatar-frame {
         background-image: url(img/avatar-sprites.png);
         background-size: 532px 217px; /* sprite sheet width and height scaled down */
@@ -40,12 +61,19 @@
       }
 
       #middle {
-        top: 1500px;
-        left: 75px;
+        top: 1470px;
+        left: 900px;
       }
 
       #bottom {
         top: 9000px;
+      }
+
+      [data-aos] div{
+        visibility: hidden;
+      }
+      [data-aos].aos-animate div{
+        visibility: visible;
       }
     </style>
     <script>
@@ -60,7 +88,11 @@
       }
 
     	window.onload = function () {
-    	  AOS.init();
+    	  AOS.init({
+          useClassNames: true,
+          initClassName: false,
+          animatedClassName: 'animated',
+        });
 
         avatarElement = document.getElementById('avatar');
 
@@ -78,8 +110,8 @@
       <div id="avatar-frame">
       </div>
     </div>
-    <div id="middle" class="speech-bubble" data-aos="fade-left">something in the middle of this page</div>
-    <div id="bottom" class="speech-bubble" data-aos="fade-right">something at the bottom of this page</div>
+    <div id="middle" class="speech-bubble" data-aos="flip-up" data-aos-offset="450"><div>something in the middle of this page something in the middle of this page something in the middle of this page something in the middle of this pages omething in the middle of this pagsomething in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this page</div></div>
+    <div id="bottom" class="speech-bubble" data-aos="fade-right"><div>something at the bottom of this page</div></div>
   </body>
 </html>
 
