@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Design Ho - Kevin Ho</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+    <style>
+      .speech-bubble {
+        border: solid 1px black;
+        padding: 8px;
+        width: 300px;
+        height: 220px;
+
+        position: relative;
+      }
+
+      #avatar {
+        position: fixed;
+        width: 196px;
+        height: 362px;
+        top: 350px;
+        left: 300px;
+        /*border: solid 3px red;
+        font-size: 50px;*/
+        }
+
+      #avatar-frame {
+        background-image: url(img/avatar-sprites.png);
+        background-size: 1065px 434px; /* sprite sheet width and height scaled down */
+        width: 266px;
+        height: 434px;
+        animation: animateAvatar 1s steps(4);
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes animateAvatar {
+        from { background-position-x: 0px; }
+        to { background-position-x: -1065px; }
+      }
+
+      #middle {
+        top: 1500px;
+        left: 75px;
+      }
+
+      #bottom {
+        top: 9000px;
+      }
+    </style>
+    <script>
+      var avatarElement;
+      var scaleFactor = 30;
+      var stepModes = 3;
+
+      function handleScroll(e) {
+        var step = Math.floor((window.scrollY / scaleFactor) % stepModes);
+
+        // avatarElement.innerHTML = step;
+      }
+
+    	window.onload = function () {
+    	  AOS.init();
+
+        avatarElement = document.getElementById('avatar');
+
+        // drop avatar animation here
+
+        window.addEventListener(
+          'scroll',
+          handleScroll
+        );
+      }
+  	</script>
+  </head>
+  <body>
+    <div id="avatar">
+      <div id="avatar-frame">
+      </div>
+    </div>
+    <div id="middle" class="speech-bubble" data-aos="fade-left">something in the middle of this page</div>
+    <div id="bottom" class="speech-bubble" data-aos="fade-right">something at the bottom of this page</div>
+  </body>
+</html>
