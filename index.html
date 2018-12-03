@@ -5,6 +5,7 @@
   <title>Kevin Ho - UX Designer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/ScrollMagic.min.js"></script>
+  <script src="assets/plugins/debug.addIndicators.min.js"></script>
   
   <style>
     .speech-bubble {
@@ -85,6 +86,11 @@
       top: 1470px;
       left: 900px;
     }
+    
+    #trigger3 {
+      position: relative;
+      top: 1600px;
+    }
 
     #bottom {
       top: 9000px;
@@ -125,8 +131,14 @@
   </style>
   <script>
     
-    //init controller
-    var controller = new ScrollMagic.controller();
+    window.onload=function () {
+      //init controller
+      var controller = new ScrollMagic.Controller();
+      var scene = new ScrollMagic.Scene({ triggerElement: "#trigger3", duration: 400 })
+      .setPin("#three")
+      .addIndicators({ name: "1 (duration:400)" })
+      .addTo(controller);
+    }
 
   </script>
 </head>
@@ -166,8 +178,8 @@
     </div>
   </div>
 
-  <div class="spacer s2"></div>
-  <div id="trigger1" class="spacer s0"></div>
+  <!-- <div class="spacer s2"></div> -->
+  <div id="trigger3" class="spacer s0"></div>
   <div id="three" class="speech-bubble" >
     <div><b>Discovery</b>
       <p>
@@ -176,7 +188,8 @@
           icons if you want to read more.</p>
     </div>
   </div>
-  <div class="spacer s2"></div>
+
+  <!-- <div class="spacer s2"></div> -->
   <div class="artifact"><img src="img/rombuilding.png">
   </div>
   <section class="reslinks">
@@ -216,11 +229,3 @@
 </body>
 
 </html>
-<script>
-  $(function ({
-    var scene = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 300 })
-      .setPin("#three")
-      .addIndicators({ name: "1 (duration:300)" })
-      .addTo(controller);
-    });
-</script>
