@@ -1,40 +1,39 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Design Ho - Kevin Ho</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-      .speech-bubble {
-        background-image: url(img/TextBoxRight.png);
-        /* border: solid 1px black; */
-        width: 288px;
-        height: 231px;
-        position: relative;
-      }
+<head>
+  <title>Kevin Ho - UX Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      .speech-bubble div {
-        overflow-y: scroll;
-        top: 20px;
-        bottom: 66px;
-        left: 22px;
-        right: 22px;
-        position: absolute;
-      }     
-     
-      #avatar {
-        position: fixed;
-        width: 196px;
-        height: 362px;
-        top: 450px;
-        /*border: solid 3px red;
+  <style>
+    .speech-bubble {
+      background-image: url(img/TextBoxRight.png);
+      /* border: solid 1px black; */
+      width: 288px;
+      height: 231px;
+      position: relative;
+    }
+
+    .speech-bubble div {
+      overflow-y: scroll;
+      top: 20px;
+      bottom: 66px;
+      left: 22px;
+      right: 22px;
+      position: absolute;
+    }
+
+    #avatar {
+      position: fixed;
+      width: 196px;
+      height: 362px;
+      top: 450px;
+      /*border: solid 3px red;
         font-size: 50px;*/
-        }
+    }
 
-      @media only screen and (min-width: 600px) {
+    /*responsive, currently not working
+      /* @media only screen and (min-width: 600px) {
         #avatar {
           left: 1000px;
         }
@@ -44,74 +43,189 @@
         #avatar {
           left: 700px;
         }
-      }   
-      
-      #avatar-frame {
-        background-image: url(img/avatar-sprites.png);
-        background-size: 532px 217px; /* sprite sheet width and height scaled down */
-        width: 133px;
-        height: 217px;
-        animation: animateAvatar 1s steps(4);
-        animation-iteration-count: infinite;
+      }    */
+
+    #avatar-frame {
+      background-image: url(img/avatar-sprites.png);
+      background-size: 532px 217px;
+      /* sprite sheet width and height scaled down */
+      width: 133px;
+      height: 217px;
+      animation: animateAvatar 1s steps(4);
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes animateAvatar {
+      from {
+        background-position-x: 0px;
       }
 
-      @keyframes animateAvatar {
-        from { background-position-x: 0px; }
-        to { background-position-x: -532px; }
+      to {
+        background-position-x: -532px;
       }
+    }
 
-      #middle {
-        top: 1470px;
-        left: 900px;
-      }
+    body {
+      font-family: "Avenir Next Condensed";
+    }
 
-      #bottom {
-        top: 9000px;
-      }
+    #one {
+      top: 400px;
+      left: 900px;
+    }
 
-      [data-aos] div{
+    #two {
+      top: 1000px;
+      left: 900px;
+    }
+
+    #three {
+      top: 1470px;
+      left: 900px;
+    }
+
+    #bottom {
+      top: 9000px;
+      left: 900px;
+    }
+
+    /* [data-aos] div{
         visibility: hidden;
       }
       [data-aos].aos-animate div{
         visibility: visible;
-      }
-    </style>
-    <script>
-      var avatarElement;
-      var scaleFactor = 30;
-      var stepModes = 3;
+      } */
 
-      function handleScroll(e) {
-        var step = Math.floor((window.scrollY / scaleFactor) % stepModes);
+    .reslinks {
+      text-align: center;
+      color: none;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 2200px;
+      left: 50px;
+      padding: auto;
+    }
 
-        // avatarElement.innerHTML = step;
-      }
 
-    	window.onload = function () {
-    	  AOS.init({
-          useClassNames: true,
-          initClassName: false,
-          animatedClassName: 'animated',
-        });
+    .reslink-grid {
+      display: grid;
+      grid-template-columns: 4fr 4r 4fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "reslink reslink1 reslink2";
+      align-items: center;
+    }
 
-        avatarElement = document.getElementById('avatar');
+    .reslink {
+      grid-area: reslink;
+    }
 
-        // drop avatar animation here
+    .reslink1 {
+      grid-area: reslink1;
+    }
 
-        window.addEventListener(
-          'scroll',
-          handleScroll
-        );
-      }
-  	</script>
-  </head>
-  <body>
-    <div id="avatar">
-      <div id="avatar-frame">
+    .reslink2 {
+      grid-area: reslink2;
+    }
+  </style>
+  <script>
+    
+    //init controller
+    var controller = new ScrollMagic.controller();
+
+  </script>
+</head>
+
+<body>
+  <div id="avatar">
+    <div id="avatar-frame">
+    </div>
+  </div>
+  <div id="one" class="speech-bubble" data-aos="flip-up" data-aos-offset="450">
+    <div><b>The Problem</b>
+      <p></p>While the Royal Ontario Museum's (ROM) annual attendance has increased over the last 10 years, numbers of
+      kids who go each year has declined by half during that time.
+      <p>
+        When talking to parents, distance and time were definitely factors for parents but for many of which they
+        relied on their kids to let them know if going to the ROM it would be something they the kids wanted to do and
+        would be excited for.
+      </p>
+      This was especially problematic in cases where the kids weren’t even aware of what they would expect if they went
+      to the ROM or how that experience would look like in comparison to things like the zoo which generally kids have
+      a greater understanding and expectation of.
+    </div>
+  </div>
+
+  <div id="two" class="speech-bubble" data-aos="flip-up" data-aos-offset="450">
+    <div><b>The Scope</b>
+      <p>
+        For my final project with Bitmaker I wanted to to bridge that experience so that kids didn’t have to be at the
+        ROM physically to be able to engage with ROM programming. ROM Kids was envisioned to provide kids with digital
+        access to the ROM in a age-appropriate format through mobile app.
+        <p>
+          ROM Kids is not a new idea, the ROM already runs programming under this name but the programming that they
+          provide are limited to onsite activities and content.
+          <p>
+            In deciding my audience, I selected and interviewed kids from age 6 - 8 and their parents. My audience
+            primarily all lived in the GTA but not in within the city.
+    </div>
+  </div>
+
+  <div class="spacer s2"></div>
+  <div id="trigger1" class="spacer s0"></div>
+  <div id="three" class="speech-bubble" data-aos="flip-up" data-aos-offset="450">
+    <div><b>Discovery</b>
+      <p>
+        Before conducting my one-on-one interviews, a lot of time was spent researching the nuances and understanding
+        the landscape of designing for kids. Thankfully there’s no shortage of literature on the topic.<p> Click the
+          icons if you want to read more.</p>
+    </div>
+  </div>
+  <div class="spacer s2"></div>
+  <div class="artifact"><img src="img/rombuilding.png">
+  </div>
+  <section class="reslinks">
+    <div class="content">
+      <div class="reslink-grid">
+        <div class="reslink">
+          <a href="https://uxdesign.cc/designing-apps-for-young-kids-part-1-ff54c46c773b"> <img src="img/uxcollective.png"
+              height=150></a>
+          <h3>UX Collective</h3>
+        </div>
+        <div class="reslink1">
+          <a href="https://www.invisionapp.com/inside-design/building-apps-for-children/"><img src="img/invision.png"
+              height=150></a>
+          <h3>inVision</h3>
+        </div>
+        <div class="reslink2">
+          <a href="http://www.sesameworkshop.org/wp_install/wp-content/uploads/2013/04/Best-Practices-Document-11-26-12.pdf"><img
+              src="img/sesamestreet.png" height=150></a>
+          <h3>Sesame Street</h3>
+        </div>
       </div>
     </div>
-    <div id="middle" class="speech-bubble" data-aos="flip-up" data-aos-offset="450"><div>something in the middle of this page something in the middle of this page something in the middle of this page something in the middle of this pages omething in the middle of this pagsomething in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this in the middle of this page</div></div>
-    <div id="bottom" class="speech-bubble" data-aos="fade-right"><div>something at the bottom of this page</div></div>
-  </body>
-</html>
+  </section>
+  <div class="artifact"><img src="img/artifact-box.png">
+  </div>
+  <div class="artifact"><img src="img/bli1.gif">
+  </div>
+  <div class="artifact"><img src="img/nav-icon.png">
+  </div>
+  <div class="artifact"><img src="img/activitysheet.png">
+  </div>
+  <div class="artifact"><img src="img/ar.png">
+  </div>
+  <div id="bottom" class="speech-bubble" data-aos="flip-up" data-aos-offset="450">
+    <div>something at the bottom of this page</div>
+  </div>
+</body>
 
+</html>
+<script>
+  $(function ({
+    var scene = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 300 })
+      .setPin("#three")
+      .addIndicators({ name: "1 (duration:300)" })
+      .addTo(controller);
+    });
+</script>
