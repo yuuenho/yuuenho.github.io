@@ -10,7 +10,7 @@
   <script src="assets/plugins/jquery.ScrollMagic.min.js"></script>
   <script src="assets/plugins/animation.gsap.min.js"></script>
   <script src="assets/plugins/animation.velocity.min.js"></script>
-  
+
   <style>
     .speech-bubble {
       background-image: url(img/TextBoxRight.png);
@@ -55,6 +55,7 @@
       max-height: 360px;
       max-width: 650px;
     }
+
     /* responsive, currently not working
        @media only screen and (min-width: 600px) {
         #avatar {
@@ -97,53 +98,8 @@
       left: 900px;
     } */
 
-    // triggers for speech bubbles
-    #trigger1 {
-      position: relative;
-      top: 150px;
-    }
-
-    /* #two {
-      top: 1000px;
-      left: 900px;
-    } */
-
-    #trigger2 {
-      position: relative;
-      top: 150px;
-    }
-
-    /* #three {
-      top: 1470px;
-      left: 900px;
-    } */
-    
-    #trigger3 {
-      position: relative;
-      top: 150px;
-    }
-
-     #trigger4 {
-      position: relative;
-      top: 150px;
-    }
-
-     #trigger5 {
-      position: relative;
-      top: 150px;
-    }
-
-      #trigger6 {
-      position: relative;
-      top: 150px;
-    }
-
-    #trigger7 {
-      position: relative;
-      top: 150px;
-    }
-
-      #bottom {
+    /* triggers for speech bubbles */
+    .trigger {
       position: relative;
       top: 150px;
     }
@@ -184,46 +140,47 @@
     }
   </style>
   <script>
-    
- 
-    window.onload=function () {
-    //init controller
+
+
+    window.onload = function () {
+      //init controller
       var controller = new ScrollMagic.Controller();
       var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: 15000 })
-      .on('progress', (e) => {
-        const frame = Math.floor(e.progress * 100) % 4;
-        const offset = frame * -133;
-        $("#avatar-frame").css("background-position-x", `${offset}px`);
-      })
-      .addTo(controller);
+        .on('progress', (e) => {
+          const frame = Math.floor(e.progress * 100) % 4;
+          const offset = frame * -133;
+          $("#avatar-frame").css("background-position-x", `${offset}px`);
+        })
+        .addTo(controller);
       var scene1 = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 400 })
-      .setPin("#one")
-      // .addIndicators({ name: "1 (duration:400)" })
-      .addTo(controller);
+        .setPin("#one")
+        // .addIndicators({ name: "1 (duration:400)" })
+        .addTo(controller);
       var scene2 = new ScrollMagic.Scene({ triggerElement: "#trigger2", duration: 400 })
-      .setPin("#two")
-      // .addIndicators({ name: "2 (duration:400)" })
-      .addTo(controller);
+        .setPin("#two")
+        // .addIndicators({ name: "2 (duration:400)" })
+        .addTo(controller);
       var scene3 = new ScrollMagic.Scene({ triggerElement: "#trigger3", duration: 400 })
-      .setPin("#three")
-      // .addIndicators({ name: "3 (duration:400)" })
-      .addTo(controller);
+        .setPin("#three")
+        .addTo(controller);
       var scene4 = new ScrollMagic.Scene({ triggerElement: "#trigger4", duration: 400 })
-      .setPin("#four")
-      // .addIndicators({ name: "3 (duration:400)" })
-      .addTo(controller);
+        .setPin("#four")
+        .addTo(controller);
       var scene5 = new ScrollMagic.Scene({ triggerElement: "#trigger5", duration: 400 })
-      .setPin("#five")
-      // .addIndicators({ name: "3 (duration:400)" })
-      .addTo(controller);
+        .setPin("#five")
+        .addTo(controller);
       var scene6 = new ScrollMagic.Scene({ triggerElement: "#trigger6", duration: 400 })
-      .setPin("#six")
-      // .addIndicators({ name: "3 (duration:400)" })
-      .addTo(controller);
+        .setPin("#six")
+        .addTo(controller);
       var scene7 = new ScrollMagic.Scene({ triggerElement: "#trigger7", duration: 400 })
-      .setPin("#seven")
-      // .addIndicators({ name: "3 (duration:400)" })
-      .addTo(controller);
+        .setPin("#seven")
+        .addTo(controller);
+      var scene8 = new ScrollMagic.Scene({ triggerElement: "#trigger8", duration: 400 })
+        .setPin("#eight")
+        .addTo(controller);
+      var scene9 = new ScrollMagic.Scene({ triggerElement: "#trigger9", duration: 400 })
+        .setPin("#nine")
+        .addTo(controller);
     }
 
   </script>
@@ -238,53 +195,59 @@
 
 
   <!-- <div class="spacer s2"></div> -->
-  
+
 
   <!-- <div class="spacer s2"></div> -->
   <section class="slide">
-  //loading screen
+    //loading screen
 
   </section>
 
   <section class="slide">
-      <div id="trigger1" class="spacer s0"></div>
-      <div id="one" class="speech-bubble" >
-        <div><b>The Problem</b>
-          <p>While the Royal Ontario Museum's (ROM) annual attendance has increased over the last 10 years, numbers of
+    <div id="trigger1" class="trigger"></div>
+    <div id="one" class="speech-bubble">
+      <div><b>The Problem</b>
+        <p>While the Royal Ontario Museum's (ROM) annual attendance has increased over the last 10 years, numbers of
           kids who go each year has declined by half during that time.</p>
-          <p>
-            When talking to parents, distance and time were definitely factors for parents but for many of which they
-            relied on their kids to let them know if going to the ROM it would be something they the kids wanted to do and
-            would be excited for.
-          </p><p>
-          This was especially problematic in cases where the kids weren’t even aware of what they would expect if they went
-          to the ROM or how that experience would look like in comparison to things like the zoo which generally kids have
+        <p>
+          When talking to parents, distance and time were definitely factors for parents but for many of which they
+          relied on their kids to let them know if going to the ROM it would be something they the kids wanted to do
+          and
+          would be excited for.
+        </p>
+        <p>
+          This was especially problematic in cases where the kids weren’t even aware of what they would expect if they
+          went
+          to the ROM or how that experience would look like in comparison to things like the zoo which generally kids
+          have
           a greater understanding and expectation of.</p>
-        </div>
       </div>
+    </div>
     <div class="artifact"><img src="img/rombuilding.png">
     </div>
   </section>
 
   <section class="slide">
-    <div id="trigger2" class="spacer s0"></div>
-    <div id="two" class="speech-bubble" >
+    <div id="trigger2" class="trigger"></div>
+    <div id="two" class="speech-bubble">
       <div><b>The Scope</b>
         <p>
-          For my final project with Bitmaker I wanted to to bridge that experience so that kids didn’t have to be at the
-          ROM physically to be able to engage with ROM programming. ROM Kids was envisioned to provide kids with digital
+          For my final project with Bitmaker I wanted to to bridge that experience so that kids didn’t have to be at
+          the
+          ROM physically to be able to engage with ROM programming. ROM Kids was envisioned to provide kids with
+          digital
           access to the ROM in a age-appropriate format through mobile app.</p>
-          <p>
-            ROM Kids is not a new idea, the ROM already runs programming under this name but the programming that they
-            provide are limited to onsite activities and content.</p>
-            <p>
-              In deciding my audience, I selected and interviewed kids from age 6 - 8 and their parents. My audience
-              primarily all lived in the GTA but not in within the city.</p>
+        <p>
+          ROM Kids is not a new idea, the ROM already runs programming under this name but the programming that they
+          provide are limited to onsite activities and content.</p>
+        <p>
+          In deciding my audience, I selected and interviewed kids from age 6 - 8 and their parents. My audience
+          primarily all lived in the GTA but not in within the city.</p>
       </div>
     </div>
   </section>
 
-  <section class="slide"> 
+  <section class="slide">
     <div class="artifact">
       <div class="reslinks">
         <div class="reslink-grid">
@@ -305,85 +268,122 @@
           </div>
         </div>
       </div>
-    </div> 
-    <div id="trigger3" class="spacer s0"></div>
-    <div id="three" class="speech-bubble" >
+    </div>
+    <div id="trigger3" class="trigger"></div>
+    <div id="three" class="speech-bubble">
       <div><b>Discovery</b>
         <p>
           Before conducting my one-on-one interviews, a lot of time was spent researching the nuances and understanding
           the landscape of designing for kids. Thankfully there’s no shortage of literature on the topic.<p> Click the
             icons if you want to read more.</p>
       </div>
-    </div>  
+    </div>
   </section>
 
   <section class="slide">
-      <div id="trigger4" class="spacer s0"></div>
-      <div id="four" class="speech-bubble" >
-        <div>
-              When taking in all that information, 
-              it was important to note things like when designing for adults we often skip over reading comprehension and dexterity in our considerations, 
-              for kids, however, different ages will attribute greatly to the development of a child’s ability. As such the industry generally will design 
-              for distinct ages groups ranging 2 - 3 years per grouping between the ages of 0 - 12. 
-        </div>
+    <div id="trigger4" class="trigger"></div>
+    <div id="four" class="speech-bubble">
+      <div>
+        When taking in all that information,
+        it was important to note things like when designing for adults we often skip over reading comprehension and
+        dexterity in our considerations,
+        for kids, however, different ages will attribute greatly to the development of a child’s ability. As such the
+        industry generally will design
+        for distinct ages groups ranging 2 - 3 years per grouping between the ages of 0 - 12.
       </div>
+    </div>
   </section>
 
   <section class="slide">
     <div class="artifact"><img src="img/ar.png">
     </div>
-      <div id="trigger5" class="spacer s0"></div>
-      <div id="five" class="speech-bubble" >
-        <div>
-            Though kids are becoming more and more technology savvy at an earlier age, their preference tends to be with tablets while as age increases the preference shifts to laptops or desktops.  
-        </div>
-      </div>
-  </section>
-
-  <section class="slide">
-    <div id="trigger6" class="spacer s0"></div>
-    <div id="six" class="speech-bubble">
+    <div id="trigger5" class="trigger"></div>
+    <div id="five" class="speech-bubble">
       <div>
-      Given the time frame I had with only 3 weeks, I opted not to build a platform that tried to hit every age group but focus in on a particular range. As my challenge was to create the experience of the ROM in a digital space, I wanted my target audience to be younger so that they would have limited prior experiences with other museums or the ROM specifically. I chose kids between 6 - 8 since they had more of an ability to orally communicate their likes and dislikes in a richer context. Sadly. this didn’t mean interviewing them was easier. Keeping kids focused while asking them questions like what they thought a museum was like was definitely a challenge. Many of which I lost, which meant lots of breaks. <p>
-      With a lot of patience, what I found was:
-      <br>Young kids had very little knowledge about what museum were about, Most could articulate dinosaurs but not much else.
-      <br>Those that had been to the museum had a hard time remember what was there or what they saw.
-      <br>The range of apps kids were interested in varied greatly in the app type and topic, but all centered around being “fun”.  </p>
+        Though kids are becoming more and more technology savvy at an earlier age, their preference tends to be with
+        tablets while as age increases the preference shifts to laptops or desktops.
       </div>
     </div>
   </section>
- 
+
   <section class="slide">
-      <div id="trigger7" class="spacer s0"></div>
-      <div id="seven" class="speech-bubble">
-        <div>
-    When we design, we look at ideas of utility, functionality and enjoyment to gauge the success of our designs. Functionality is fairly simple, it has to work. While adults prioritize how useful a design can be, kids prioritize their enjoyment of their experience. A design has no merit for a kid if it is boring or unengaging where as an adult may suffer a unpleasant experience if it get the task that they need done accomplished.  
-  </div>
-  </div>
+    <div id="trigger6" class="trigger"></div>
+    <div id="six" class="speech-bubble">
+      <div>
+        Given the time frame I had with only 3 weeks, I opted not to build a platform that tried to hit every age group
+        but focus in on a particular range. As my challenge was to create the experience of the ROM in a digital space,
+        I wanted my target audience to be younger so that they would have limited prior experiences with other museums
+        or the ROM specifically. I chose kids between 6 - 8 since they had more of an ability to orally communicate
+        their likes and dislikes in a richer context. Sadly. this didn’t mean interviewing them was easier. Keeping
+        kids focused while asking them questions like what they thought a museum was like was definitely a challenge.
+        Many of which I lost, which meant lots of breaks. <p>
+          With a lot of patience, what I found was:
+          <br>Young kids had very little knowledge about what museum were about, Most could articulate dinosaurs but
+          not much else.
+          <br>Those that had been to the museum had a hard time remember what was there or what they saw.
+          <br>The range of apps kids were interested in varied greatly in the app type and topic, but all centered
+          around being “fun”. </p>
+      </div>
+    </div>
   </section>
 
-<section class="slide">  
+  <section class="slide">
+    <div id="trigger7" class="trigger"></div>
+    <div id="seven" class="speech-bubble">
+      <div>
+        When we design, we look at ideas of utility, functionality and enjoyment to gauge the success of our designs.
+        Functionality is fairly simple, it has to work. While adults prioritize how useful a design can be, kids
+        prioritize their enjoyment of their experience. A design has no merit for a kid if it is boring or unengaging
+        where as an adult may suffer a unpleasant experience if it get the task that they need done accomplished.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div id="trigger8" class="trigger"></div>
+    <div id="eight" class="speech-bubble">
+      <div>
+        Parents said that they often didn’t have enough time to do everything that they wanted to do with their kids.
+        As much as parents typically thought the ROM was a worthwhile outting for their family, it was not one many had
+        done or prioritized relative to other city attractions. Often opting for other attractions that their kids
+        asked to go to such as the zoo or aquarium.
+        <p>Some parents with multiple children struggled with finding attractions that were engaging to all their kids
+          as age differed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+      <div id="trigger9" class="trigger"></div>
+      <div id="nine" class="speech-bubble">
+        <div>
+        In terms of their kids and technology, most parents were concerned with the degree in digital consumption their kids was participating in. However, they felt apps for educational purposes were significantly less of a concern for them when it came to how their kids spent their time.
+        </div>
+      </div>
+</section>
+
+  <section class="slide">
     <div class="artifact"><img src="img/artifact-box.png" height=450>
     </div>
   </section>
   <section class="slide">
-    <div class="artifact"><img src="img/bli1.gif"height=450>
+    <div class="artifact"><img src="img/bli1.gif" height=450>
     </div>
   </section>
   <section class="slide">
-        <div class="artifact"><img src="img/nav-icon.png"height=150>
+    <div class="artifact"><img src="img/nav-icon.png" height=150>
     </div>
   </section>
   <section class="slide">
-        <div class="artifact"><img src="img/activitysheet.png"height=450>
+    <div class="artifact"><img src="img/activitysheet.png" height=450>
     </div>
   </section>
   <section class="slide">
-   <div id="bottom" class="speech-bubble" >
-    <div>something at the bottom of this page</div>
-  </div>
+    <div id="bottom" class="speech-bubble">
+      <div>something at the bottom of this page</div>
+    </div>
   </section>
-  
+
 </body>
 
 </html>
