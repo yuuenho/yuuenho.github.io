@@ -10,6 +10,8 @@
   <script src="assets/plugins/jquery.ScrollMagic.min.js"></script>
   <script src="assets/plugins/animation.gsap.min.js"></script>
   <script src="assets/plugins/animation.velocity.min.js"></script>
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 
   <style>
     .speech-bubble {
@@ -39,13 +41,6 @@
       left: 1000px;
       /*border: solid 3px red;
         font-size: 50px;*/
-    }
-
-    .slide {
-      width: 1200px;
-      height: 1000px;
-      border: solid 3px rgba(207, 206, 206, 0.144);
-      position: relative;
     }
 
     .artifact {
@@ -128,6 +123,15 @@
       grid-area: reslink2;
       padding: 10px;
     }
+
+    .slide {
+      /* background-image: url(img/stage.png); */
+      width: 1200px;
+      height: 1000px;
+      opacity: 20;
+      border: solid 3px rgba(207, 206, 206, 0.144);
+      position: relative;
+    }
   </style>
   <script>
 
@@ -142,13 +146,17 @@
           $("#avatar-frame").css("background-position-x", `${offset}px`);
         })
         .addTo(controller);
-      $(".trigger").each(function(index,element){
-        var scene1 = new ScrollMagic.Scene({ triggerElement: "#" +element.id, duration: 400 })
-        .setPin("#" +$(element).data("sb"))
-        .addTo(controller);
+      $(".trigger").each(function (index, element) {
+        var scene1 = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 400 })
+          .setPin("#" + $(element).data("sb"))
+          .addTo(controller);
       })
     }
 
+
+    AOS.init({
+      duration: 0,
+    })
   </script>
 </head>
 
@@ -171,7 +179,7 @@
 
   <section class="slide">
     <div id="trigger1" class="trigger" data-sb="one"></div>
-    <div id="one" class="speech-bubble">
+    <div id="one" class="speech-bubble" data-aos="flip-up" data-aos-offset="10">
       <div><b>The Problem</b>
         <p>While the Royal Ontario Museum's (ROM) annual attendance has increased over the last 10 years, numbers of
           kids who go each year has declined by half during that time.</p>
@@ -194,7 +202,7 @@
   </section>
 
   <section class="slide">
-    <div id="trigger2" class="trigger"  data-sb="two"></div>
+    <div id="trigger2" class="trigger" data-sb="two"></div>
     <div id="two" class="speech-bubble">
       <div><b>The Scope</b>
         <p>
@@ -211,6 +219,10 @@
           primarily all lived in the GTA but not in within the city.</p>
       </div>
     </div>
+  </section>
+
+  <section class="slide">
+    the research
   </section>
 
   <section class="slide">
@@ -235,7 +247,7 @@
         </div>
       </div>
     </div>
-    <div id="trigger3" class="trigger"  data-sb="three"></div>
+    <div id="trigger3" class="trigger" data-sb="three"></div>
     <div id="three" class="speech-bubble">
       <div><b>Discovery</b>
         <p>
@@ -247,7 +259,7 @@
   </section>
 
   <section class="slide">
-    <div id="trigger4" class="trigger"  data-sb="four"></div>
+    <div id="trigger4" class="trigger" data-sb="four"></div>
     <div id="four" class="speech-bubble">
       <div>
         When taking in all that information,
@@ -263,7 +275,7 @@
   <section class="slide">
     <div class="artifact"><img src="img/ar.png">
     </div>
-    <div id="trigger5" class="trigger"  data-sb="five"></div>
+    <div id="trigger5" class="trigger" data-sb="five"></div>
     <div id="five" class="speech-bubble">
       <div>
         Though kids are becoming more and more technology savvy at an earlier age, their preference tends to be with
@@ -273,7 +285,7 @@
   </section>
 
   <section class="slide">
-    <div id="trigger6" class="trigger"  data-sb="six"></div>
+    <div id="trigger6" class="trigger" data-sb="six"></div>
     <div id="six" class="speech-bubble">
       <div>
         Given the time frame I had with only 3 weeks, I opted not to build a platform that tried to hit every age group
@@ -294,7 +306,7 @@
   </section>
 
   <section class="slide">
-    <div id="trigger7" class="trigger"  data-sb="seven"></div>
+    <div id="trigger7" class="trigger" data-sb="seven"></div>
     <div id="seven" class="speech-bubble">
       <div>
         When we design, we look at ideas of utility, functionality and enjoyment to gauge the success of our designs.
@@ -306,7 +318,7 @@
   </section>
 
   <section class="slide">
-    <div id="trigger8" class="trigger"  data-sb="eight"></div>
+    <div id="trigger8" class="trigger" data-sb="eight"></div>
     <div id="eight" class="speech-bubble">
       <div>
         Parents said that they often didn’t have enough time to do everything that they wanted to do with their kids.
@@ -320,12 +332,197 @@
   </section>
 
   <section class="slide">
-      <div id="trigger9" class="trigger"  data-sb="nine"></div>
-      <div id="nine" class="speech-bubble">
-        <div>
-        In terms of their kids and technology, most parents were concerned with the degree in digital consumption their kids was participating in. However, they felt apps for educational purposes were significantly less of a concern for them when it came to how their kids spent their time.
-        </div>
+    <div id="trigger9" class="trigger" data-sb="nine"></div>
+    <div id="nine" class="speech-bubble">
+      <div>
+        In terms of their kids and technology, most parents were concerned with the degree in digital consumption their
+        kids was participating in. However, they felt apps for educational purposes were significantly less of a
+        concern for them when it came to how their kids spent their time.
       </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div id="trigger10" class="trigger" data-sb="ten"></div>
+    <div id="ten" class="speech-bubble">
+      <div>
+        In terms of the museum itself, I looked into what the ROM had done in the past, again the ROM currently has a
+        program on-site where kids can participate in activities and ROM content. Additionally the ROM had actually
+        launched an app in 2012 called ScopifyROM which showed additional content while you explored the ROM. The
+        challenge with both is that they rely on users to already be at the ROM and do not market to those who haven’t
+        decided if they are interested in going.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    Design!
+  </section>
+
+  <section class="slide">
+    <div id="trigger11" class="trigger" data-sb="eleven"></div>
+    <div id="eleven" class="speech-bubble">
+      <div>
+        Understanding that for rich feedback from user testing among children, much of the visual content needed to be
+        available early on. Blockframes and description of content were things that even from hallway testing with kids
+        were not effective. All the design artifacts were rapidly produced but users were not part of the early
+        processes. Much of the design choices for the interface were modelled off various games and apps that were
+        currently popular for kids, this was something I chose not to focus too much time on in order to prioritize a
+        working prototype.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div id="trigger12" class="trigger" data-sb="twelve"></div>
+    <div id="twelve" class="speech-bubble">
+      <div>
+        In the past I’ve worked with inVision and while it’s terrific for quick prototypes, the limitations of the
+        transitions made it less appealing for this particular project. Flinto was a tool that had been brought to my
+        attention a few times in the weeks leading up to this project, so I decided to take the bullet and dive into
+        it. Flinto while still glitchy and temperamental combined prototyping with animation.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div id="trigger13" class="trigger" data-sb="thirteen"></div>
+    <div id="thirteen" class="speech-bubble">
+      <div>
+        In addition to the transitions, Flinto allowed for easier mapping of wireflows and error states for kids that
+        didn’t feel disruptive. If kids tried accessing something they couldn’t instead of being taken to a screen that
+        was not what they were expecting, they would simply be informed to select something else on the screen. This
+        was done through looped wireflows where the transition triggers an audio prompt by a character guide.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      Game Mechanics
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="artifact"><img src="img/bli1.gif" height=450>
+    </div>
+    <div id="trigger15" class="trigger" data-sb="fifteen"></div>
+    <div id="fifteen" class="speech-bubble">
+      <div>
+        A character guide joins users to help them navigate through the different activities. They act as a familiar
+        face and allows for non-intrusive prompts or reminders. They also allow for any of the onboarding portions as a
+        conversation between the character and the user rather than filling in forms.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div id="trigger16" class="trigger" data-sb="sixteen"></div>
+    <div id="sixteen" class="speech-bubble">
+      <div>
+        The app is narrated (often by the character guide) this allows for kids to have enjoyable experience even if
+        their reading comprehension is at a lower level. The narration also also for kids who struggle with dyslexia to
+        have an alternative medium for the content and the prompts and reminders help for kids who struggle with
+        focusing.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="artifact">
+      <video width="512" height="384" controls>
+        <source src="img/meteoritevideo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div id="trigger17" class="trigger" data-sb="seventeen"></div>
+    <div id="seventeen" class="speech-bubble">
+      <div>
+        All the content is laid out in video lessons with the options of narration and captioning, kids are able to
+        absorb in a visual manner. The hope is increase reading comprehension as well for kids to pair what they hear
+        with what they can read along to. Videos are done in short infographic style and can be accessed and rewatched
+        at later times.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="artifact"><img src="img/activitysheet.png" height=450>
+    </div>
+    <div id="trigger18" class="trigger" data-sb="eighteen"></div>
+    <div id="eighteen" class="speech-bubble">
+      <div>
+        Activities are connected to the video lessons for users to complete. They are interactive and apply the content
+        learned for the activity in the prototype users are shown different items from the video and users gain a
+        better understanding of the content relative to those items.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="artifact"><img src="img/activitysheet.png" height=450>
+    </div>
+    <div id="trigger19" class="trigger" data-sb="nineteen"></div>
+    <div id="nineteen" class="speech-bubble">
+      <div>
+        After each module, users take the content viewed and Test their Knowledge. The is set up in short quiz format,
+        to encourage users, users are prompted with positive reinforcement and have the ability to make several
+        attempts at the correct answer. Both correct and incorrect answers provide users with added information about
+        the correct answer.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="artifact"><img src="img/activitysheet.png" height=450>
+    </div>
+    <div id="trigger20" class="trigger" data-sb="twenty"></div>
+    <div id="twenty" class="speech-bubble">
+      <div>
+        The game is designed to allow free exploration, kids have the ability to revisit activities and jump and skip
+        content. While this is to embody the experience of the ROM, it also allow kids who are young to pick and choose
+        the areas that they want to spend time in. This is a common design philosophy that game developers like Toca
+        Boca and Sago Mini take when designing their kids apps.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="artifact"><img src="img/activitysheet.png" height=450>
+    </div>
+    <div id="trigger21" class="trigger" data-sb="twentyone"></div>
+    <div id="twentyone" class="speech-bubble">
+      <div>
+        The game is designed to allow free exploration, kids have the ability to revisit activities and jump and skip
+        content. While this is to embody the experience of the ROM, it also allow kids who are young to pick and choose
+        the areas that they want to spend time in. This is a common design philosophy that game developers like Toca
+        Boca and Sago Mini take when designing their kids apps.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="artifact"><img src="img/lightdesert.gif" height=450>
+    </div>
+    <div id="trigger22" class="trigger" data-sb="twentytwo"></div>
+    <div id="twentytwo" class="speech-bubble">
+      <div>
+        Gamification elements are applied for users to collect artifacts. Completion of activities and quiz reward
+        users with items from the ROM, each item also provide added details from the ROM. While kids generally like
+        collecting badges or stickers even on a virtual platform, the content was specifically selected from the ROM so
+        that kids can pair that experience when they do go to the ROM.
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+      <div class="artifact"><img src="img/ltdesert.gif" height=450>
+      </div>
+      <div id="trigger23" class="trigger" data-sb="twentythree"></div>
+      <div id="twentythree" class="speech-bubble">
+        <div>
+  The types of interactions were kept minimal. Recognizing that the younger the user is the less dexterous they will be generally. The primary interaction used was one finger tap, I think in future iterations swipe and drag would be also suitable.
+</div>
+</div>
 </section>
 
   <section class="slide">
@@ -333,16 +530,14 @@
     </div>
   </section>
   <section class="slide">
-    <div class="artifact"><img src="img/bli1.gif" height=450>
-    </div>
+
   </section>
   <section class="slide">
     <div class="artifact"><img src="img/nav-icon.png" height=150>
     </div>
   </section>
   <section class="slide">
-    <div class="artifact"><img src="img/activitysheet.png" height=450>
-    </div>
+
   </section>
   <section class="slide">
     <div id="bottom" class="speech-bubble">
