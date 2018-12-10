@@ -10,8 +10,10 @@
   <script src="assets/plugins/jquery.ScrollMagic.min.js"></script>
   <script src="assets/plugins/animation.gsap.min.js"></script>
   <script src="assets/plugins/animation.velocity.min.js"></script>
-  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <!-- <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet"> -->
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
   <style>
     .speech-bubble {
@@ -139,7 +141,7 @@
     window.onload = function () {
       //init controller
       var controller = new ScrollMagic.Controller();
-      var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: 15000 })
+      var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: $("body").height() })
         .on('progress', (e) => {
           const frame = Math.floor(e.progress * 100) % 4;
           const offset = frame * -133;
@@ -151,12 +153,15 @@
           .setPin("#" + $(element).data("sb"))
           .addTo(controller);
       })
+      // AOS.init({
+      //     useClassNames: true,
+      //     initClassName: false,
+      //     animatedClassName: 'animated',
+      // })
     }
 
 
-    AOS.init({
-      duration: 0,
-    })
+    
   </script>
 </head>
 
@@ -179,7 +184,7 @@
 
   <section class="slide">
     <div id="trigger1" class="trigger" data-sb="one"></div>
-    <div id="one" class="speech-bubble" data-aos="flip-up" data-aos-offset="10">
+    <div id="one" class="speech-bubble">
       <div><b>The Problem</b>
         <p>While the Royal Ontario Museum's (ROM) annual attendance has increased over the last 10 years, numbers of
           kids who go each year has declined by half during that time.</p>
