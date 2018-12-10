@@ -10,15 +10,62 @@
   <script src="assets/plugins/jquery.ScrollMagic.min.js"></script>
   <script src="assets/plugins/animation.gsap.min.js"></script>
   <script src="assets/plugins/animation.velocity.min.js"></script>
-  <!-- <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet"> -->
-  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+  <script src="/Users/yuen/Documents/portfolio/yuuenho.github.io/assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
+
 
   <style>
+    .introslide {
+      background-image: url(img/slidestart.png);
+      width: 1200px;
+      height: 700px;
+      position: relative;
+    }
+
+    .slidebridge {
+      background-image: url(img/slidebridge.png);
+      position: relative;
+    }
+
+    #title {
+      display: block;
+      width: 572px;
+      height: 257px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .loader {
+      /* position: absolute; */
+      z-index: 1;
+      border: 16px solid #f3f3f348;
+      border-top: 16px solid #3498db;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .animate-bottom {
+      position: relative;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+
+    @keyframes animatebottom { 
+      from{ bottom:-100px; opacity:0 } 
+      to{ bottom:0; opacity:1 }
+    }
+
     .speech-bubble {
       background-image: url(img/TextBoxRight.png);
-      /* border: solid 1px black; */
       width: 288px;
       height: 231px;
       top: 10px;
@@ -40,9 +87,9 @@
       width: 196px;
       height: 362px;
       top: 450px;
-      left: 1000px;
-      /*border: solid 3px red;
-        font-size: 50px;*/
+      left: 980px;
+      z-index: 2;
+
     }
 
     .artifact {
@@ -78,12 +125,8 @@
 
     body {
       font-family: "Avenir Next Condensed";
+      background-color: #80AADB;
     }
-
-    /* #one {
-      top: 400px;
-      left: 900px;
-    } */
 
     /* triggers for speech bubbles */
     .trigger {
@@ -97,7 +140,6 @@
       width: 150px;
       height: 150px;
       position: absolute;
-      /* top: 3000px; */
       left: 50px;
       padding: auto;
     }
@@ -127,11 +169,9 @@
     }
 
     .slide {
-      /* background-image: url(img/stage.png); */
+      background-image: url(img/stage.png);
       width: 1200px;
       height: 1000px;
-      opacity: 20;
-      border: solid 3px rgba(207, 206, 206, 0.144);
       position: relative;
     }
   </style>
@@ -141,45 +181,54 @@
     window.onload = function () {
       //init controller
       var controller = new ScrollMagic.Controller();
-      var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: $("body").height() })
+      var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: $("#myDiv").height() })
         .on('progress', (e) => {
-          const frame = Math.floor(e.progress * 100) % 4;
+          const frame = Math.floor(e.progress * 200) % 4;
           const offset = frame * -133;
           $("#avatar-frame").css("background-position-x", `${offset}px`);
         })
         .addTo(controller);
       $(".trigger").each(function (index, element) {
-        var scene1 = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 400 })
-          .setPin("#" + $(element).data("sb"))
+        var speechID = "#" + $(element).data("sb")
+        var speechflip = TweenMax.fromTo(speechID, 0.5, { rotationX: '90' }, { rotationX: '0' });
+        var speechfollowslide = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 400 })
+          .setPin(speechID)
+          .addTo(controller);
+        var flipSpeechBubble = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 200 })
+          .setTween(speechflip)
           .addTo(controller);
       })
-      // AOS.init({
-      //     useClassNames: true,
-      //     initClassName: false,
-      //     animatedClassName: 'animated',
-      // })
     }
+ 
+      function showPage() {
+        document.getElementById("title").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
 
+      var myVar;
+        myVar= setTimeout(showPage,2000);
 
-    
   </script>
 </head>
 
 <body>
+  
+
+
+  <section class="introslide">
+    <div id="title"> 
+      <img src="img/ROMKIDS.png">
+      <div class="loader"></div>
+    </div>
+  </section>
+
+<div style="display:none;" id="myDiv" class="animate-bottom"> 
   <div id="avatar">
     <div id="avatar-frame">
     </div>
   </div>
 
-
-
-  <!-- <div class="spacer s2"></div> -->
-
-
-  <!-- <div class="spacer s2"></div> -->
-  <section class="slide">
-    //loading screen
-
+  <section class="slidebridge">
   </section>
 
   <section class="slide">
@@ -520,15 +569,17 @@
   </section>
 
   <section class="slide">
-      <div class="artifact"><img src="img/ltdesert.gif" height=450>
+    <div class="artifact"><img src="img/ltdesert.gif" height=450>
+    </div>
+    <div id="trigger23" class="trigger" data-sb="twentythree"></div>
+    <div id="twentythree" class="speech-bubble">
+      <div>
+        The types of interactions were kept minimal. Recognizing that the younger the user is the less dexterous they
+        will be generally. The primary interaction used was one finger tap, I think in future iterations swipe and drag
+        would be also suitable.
       </div>
-      <div id="trigger23" class="trigger" data-sb="twentythree"></div>
-      <div id="twentythree" class="speech-bubble">
-        <div>
-  The types of interactions were kept minimal. Recognizing that the younger the user is the less dexterous they will be generally. The primary interaction used was one finger tap, I think in future iterations swipe and drag would be also suitable.
-</div>
-</div>
-</section>
+    </div>
+  </section>
 
   <section class="slide">
     <div class="artifact"><img src="img/artifact-box.png" height=450>
@@ -549,7 +600,7 @@
       <div>something at the bottom of this page</div>
     </div>
   </section>
-
+</div>
 </body>
 
 </html>
