@@ -30,6 +30,13 @@
       position: relative;
     }
 
+    .slidebottom {
+      display:none;
+      width: 1200px;
+      height:700px;
+      position: relative;
+    }
+
     #title {
       width: 572px;
       height: 257px;
@@ -72,7 +79,7 @@
       width: 288px;
       height: 231px;
       top: 10px;
-      right: 40px;
+      right: -250px;
       position: absolute;
     }
 
@@ -96,13 +103,12 @@
     }
 
     .artifact {
-      position: absolute;
-      top: 30%;
-      margin-left: center;
-      margin-right: center;
-      max-height: 360px;
-      max-width: 650px;
+      display: block;
+      position: relative;
+      top: 30%;      
+      text-align: center;
     }
+
 
     /* responsive, currently not working
        @media only screen and (min-width: 600px) {
@@ -134,9 +140,11 @@
     }
 
     .chapter {
-      position: absolute;
       top: 50%;
       font-size: 100px;
+      display: block;
+      position: relative;    
+      text-align: center;
     }
     .topnav {
       position: fixed;
@@ -165,16 +173,19 @@
       color: white;
     }
 
-    /* .pagelogo{
-      position:absolute;
+    .pagelogo{
+      display:none;
+      position:fixed;
       z-index: 15;
+      padding: 10px;
       overflow: hidden;
-      right: 10;
-    } */
+      right: 10px;
+      margin-left: auto;
+    }
 
     /* triggers for speech bubbles */
     .trigger {
-      position: relative;
+      position: absolute;
       top: 150px;
     }
 
@@ -213,11 +224,30 @@
     }
 
     .slide {
-      background-image: url(img/stage.png);
-      width: 1200px;
+      width: 908px;
       height: 1000px;
       position: relative;
+      /* use to see the parameters of your container
+      border: solid 1px #000000; 
+      */
     }
+    
+    #walkway {
+      background-color: #a5c9f0;
+      position: absolute;
+      width: 234px;
+      height: 100%;
+      left:908px;
+    }
+
+    #walkwayEnd {
+      background-color: #a5c9f0;
+      position: absolute;
+      width: 234px;
+      height: 95%;
+      left:908px;
+    }
+
   </style>
   <script>
 
@@ -225,9 +255,9 @@
     window.onload = function () {
       //init controller
       var controller = new ScrollMagic.Controller();
-      var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: $("#myDiv").height() })
+      var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: $("#myDiv").height()*2 })
         .on('progress', (e) => {
-          const frame = Math.floor(e.progress * 200) % 4;
+          const frame = Math.floor(e.progress * 500) % 4;
           const offset = frame * -133;
           $("#avatar-frame").css("background-position-x", `${offset}px`);
         })
@@ -247,6 +277,8 @@
     function showPage() {
       document.getElementById("title").style.display = "none";
       document.getElementById("myDiv").style.display = "block";
+      document.querySelector(".pagelogo").style.display = "block";
+      document.querySelector(".slidebottom").style.display = "block";
     }
 
     var myVar;
@@ -261,6 +293,9 @@
     <a class="active" href="#home">Home</a>
     <a href="#About">About</a>
     <a href="#contact">Contact</a>
+    <div class="pagelogo">
+      <img src="img/ROMKIDS.png" width="100">
+    </div>
   </div>
 
   <section class="introslide">
@@ -273,19 +308,21 @@
   </section>
 
   <div style="display:none;" id="myDiv" class="animate-bottom">
-    <div class="pagelogo">
-      <img src="img/ROMKIDS.png" width="100">
-    </div>
+    
         <div id="avatar">
           <div id="avatar-frame">
           </div>
         </div>
+
+        <div id="walkway"></div>
 
         <section class="slidebridge">
           <div class="chapter">
             <img src="img/ScrolltoPlay.svg" width="500">
           </div>
         </section>
+
+        
 
         <section class="slide">
           <div id="trigger1" class="trigger" data-sb="one"></div>
@@ -396,7 +433,7 @@
         </section>
 
         <section class="slide">
-          <div class="artifact"><img src="img/ar.svg" width=650>
+          <div class="artifact"><img src="img/ar.svg" width=500>
           </div>
           <div id="trigger5" class="trigger" data-sb="five"></div>
           <div id="five" class="speech-bubble">
@@ -708,13 +745,13 @@
           <div class="artifact"><img src="img/nav-icon.png" height=150>
           </div>
         </section>
-        <section class="slide">
+    
 
           <section class="slide">
             <!-- <div class="artifact"><img src="img/lightdesert.gif" height=450> -->
             <!-- </div> -->
             <div id="trigger24" class="trigger" data-sb="twentyfour"></div>
-            <div id="twentytfour" class="speech-bubble">
+            <div id="twentyfour" class="speech-bubble">
               <div>
                 It was important for this project not to focus too much on the content but instead the way in which
                 content was presented and interacts with users through the platform. 
@@ -860,10 +897,10 @@
           </section>
 
           <section class="slide">
-            <div class="artifact"><img src="img/ar.svg" height=450>
+            <div class="artifact"><img src="img/ar.svg" width=500>
             </div>
-            <div id="trigger33" class="trigger" data-sb="thirtythree"></div>
-            <div id="thirtythree" class="speech-bubble">
+            <div id="trigger34" class="trigger" data-sb="thirtyfour"></div>
+            <div id="thirtyfour" class="speech-bubble">
               <div>
                 Other things that took a back seat because of time was the development for access between iPad and
                 iPhone devices. It was initially designed for iPad but important to note that it’s easier for kids to
@@ -871,8 +908,12 @@
               </div>
             </div>
           </section>
-
+          
       </div>
+
+      <section class="slidebottom">
+        <div id="walkwayEnd"></div>
+       </section>
 </body>
 
 </html>
