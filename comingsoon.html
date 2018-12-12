@@ -23,9 +23,12 @@
       display: flex;
       /* background-image: url(img/slidestart.png); */
       background-color: #ffffff;
-      width: 1200px;
+      width: 100vw;
       height: 100%;
       position: fixed;
+      left:50vw;
+      /* flex-direction: column;
+      justify-content: center; */
       align-items: center;
     }
 
@@ -58,10 +61,10 @@
       border-radius: 50%;
       width: 100px;
       height: 100px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: -60px;
+      /* margin-right: auto; */
       padding: 10px;
-      animation: spin 2s linear infinite;
+      animation: spin 1.5s linear infinite;
     }
 
     @keyframes spin {
@@ -111,7 +114,7 @@
     }
 
     #avatar {
-      position: fixed;
+      position: absolute;
       width: 196px;
       height: 362px;
       top: 220px;
@@ -127,19 +130,6 @@
       text-align: center;
     }
 
-
-    /* responsive, currently not working
-       @media only screen and (min-width: 600px) {
-        #avatar {
-          left: 1000px;
-        }
-      }   
-      
-      @media only screen and (max-width: 600px) {
-        #avatar {
-          left: 700px;
-        }
-      }    */
 
     #avatar-frame {
       background-image: url(img/splashavatar.png);
@@ -174,7 +164,7 @@
     }
 
     .topnav a {
-      float: left;
+      float: right;
       color: #f2f2f2;
       text-align: center;
       padding: 14px 16px;
@@ -198,7 +188,7 @@
       z-index: 15;
       padding: 10px;
       overflow: hidden;
-      right: 10px;
+      left: 10px;
       margin-left: auto;
     }
 
@@ -254,17 +244,21 @@
     }
 
     .container {
-      display: block;
-      width: 908px;
+      display: flex;
+      flex-direction: column;
+      justify-content:space-between;
+      align-items: center;
+      /* display: block; */
+      width: 100vw;
       height: 100px;
       position: relative;
-      text-align: center;
+        /* text-align: center; */
       top: 30%;
     }
 
     select {
       display: block;
-      width: 908px;
+      width:100vw;
       height: 100px;
       position: relative;
       text-align: center;
@@ -272,9 +266,11 @@
     }
 
     .heading {
-      font-size: 80pt;
+      /* width:100vw; */
+      font-size:15vw;
+      /* font-size: 80pt; */
       font-family: "sketch";
-      padding: 20px;
+      padding: 20px 0;
     }
 
     .case {
@@ -290,8 +286,11 @@
     }
 
     .button {
-      position: relative;
-      left: 200px;
+      display:flex;
+      justify-content: center;
+      align-content: center;
+      /* position: relative; */
+      /* left: 200px; */
       /* text-align: center; */
       width: 500px;
       height: 50px;
@@ -313,6 +312,53 @@
       height: 90%;
       left:908px;
     } */
+
+      @media only screen and (min-width:600px) {
+        .heading{
+          font-size: 80pt;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+
+        #avatar {
+          position:relative;
+          left: 50vw;
+          /* value is half of the avatar width */
+          margin-left:-63px;
+          background-size: 492px 241px;
+          width: 123px;
+          height: 241px;
+          top:85px; 
+        }
+
+        #avatar-frame{
+          background-size: 492px 241px;
+          width: 123px;
+          height: 241px; 
+        }
+
+        .slide{
+          height: 300px;
+          width:100vw;
+        }
+
+        .button{
+          width:85vw;
+          /* the alignment is off */
+        }
+
+        .select{
+          text-align: center;
+          width:90vw;
+        }
+
+        .topnav a{
+          font-size: 14px;
+          padding: 14px 3vw;
+        }
+
+      }   
   </style>
   <script>
 
@@ -347,7 +393,7 @@
     }
 
     var myVar;
-    myVar = setTimeout(showPage, 2000);
+    myVar = setTimeout(showPage, 1000);
 
   </script>
 </head>
@@ -355,9 +401,11 @@
 <body>
 
   <div class="topnav">
-    <a href="index.html">Home</a>
+    <a class="active"href="comingsoon.html">Contact</a>
     <a href="about.html">About</a>
-    <a class="active" href="#contact">Contact</a>
+    <a href="#home">Home</a>
+    
+    
     <div class="pagelogo">
       <!-- <img src="img/ROMKIDS.png" width="100"> -->
     </div>
@@ -392,17 +440,38 @@
     <div class="slide">
       <div class="container">
         <div class="select">
-          <div class="heading">Coming Soon</div>
+          <div class="heading">Contact Me</div>
         </div>
 <!-- 
         <br>
         <br>
         <p> -->
           <div class="select">
-            Coming to a GameStop Near you January 2019!
+            Under Construction
           </div>
         </p>
+<!-- 
+       
+          <div class="select">
+            <a href="case1.html">
+              <div class="button">
+                <img src="img/ROMKIDS.png" height=30>
+              </div>
+            </a>
+          </div>
+        
 
+        <br>
+
+        
+          <div class="select">
+            <a href="comingsoon.html">
+            <div class="button">
+              <img src="img/barky.png" height=30><img src="img/Barkbuds.png" height=30> - coming soon
+            </div>
+             -->
+          
+        </div>
 
       </div>
     </div>
