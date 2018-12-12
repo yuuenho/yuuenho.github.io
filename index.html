@@ -23,9 +23,12 @@
       display: flex;
       /* background-image: url(img/slidestart.png); */
       background-color: #ffffff;
-      width: 1200px;
+      width: 100vw;
       height: 100%;
       position: fixed;
+      left:50vw;
+      /* flex-direction: column;
+      justify-content: center; */
       align-items: center;
     }
 
@@ -58,10 +61,10 @@
       border-radius: 50%;
       width: 100px;
       height: 100px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: -60px;
+      /* margin-right: auto; */
       padding: 10px;
-      animation: spin 2s linear infinite;
+      animation: spin 1.5s linear infinite;
     }
 
     @keyframes spin {
@@ -185,7 +188,7 @@
       z-index: 15;
       padding: 10px;
       overflow: hidden;
-      right: 10px;
+      left: 10px;
       margin-left: auto;
     }
 
@@ -246,7 +249,7 @@
       justify-content:space-between;
       align-items: center;
       /* display: block; */
-      width: 90vw;
+      width: 100vw;
       height: 100px;
       position: relative;
         /* text-align: center; */
@@ -317,10 +320,39 @@
       }
 
       @media only screen and (max-width: 600px) {
+
         #avatar {
+          position:relative;
           left: 50vw;
           /* value is half of the avatar width */
-          margin-left:-123px; 
+          margin-left:-63px;
+          background-size: 492px 241px;
+          width: 123px;
+          height: 241px;
+          top:85px; 
+        }
+
+        #avatar-frame{
+          background-size: 492px 241px;
+          width: 123px;
+          height: 241px; 
+        }
+
+        .slide{
+          height: 300px;
+        }
+
+        .button{
+          width:85vw;
+        }
+
+        .select{
+          text-align: center;
+        }
+
+        .topnav a{
+          font-size: 14px;
+          padding: 14px 3vw;
         }
 
       }   
@@ -358,7 +390,7 @@
     }
 
     var myVar;
-    myVar = setTimeout(showPage, 2000);
+    myVar = setTimeout(showPage, 1000);
 
   </script>
 </head>
