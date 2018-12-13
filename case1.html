@@ -11,7 +11,7 @@
   <script src="assets/plugins/animation.gsap.min.js"></script>
   <script src="assets/plugins/animation.velocity.min.js"></script>
   <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
-
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
   <style>
     .introslide {
@@ -92,6 +92,12 @@
       position: absolute;
     }
 
+    /* .speech-bubble p{
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space:nowrap;
+    } */
+
     #avatar {
       position: fixed;
       width: 196px;
@@ -110,18 +116,7 @@
     }
 
 
-    /* responsive, currently not working
-       @media only screen and (min-width: 600px) {
-        #avatar {
-          left: 1000px;
-        }
-      }   
-      
-      @media only screen and (max-width: 600px) {
-        #avatar {
-          left: 700px;
-        }
-      }    */
+ 
 
     #avatar-frame {
       background-image: url(img/avatar-sprites.png);
@@ -134,7 +129,7 @@
     }
 
     body {
-      font-family: "Avenir Next Condensed";
+      font-family: 'Source Sans Pro', sans-serif;
       background-color: #80AADB;
       margin: 0;
     }
@@ -150,6 +145,7 @@
       position: fixed;
       z-index: 10;
       width:100%;
+      /* height: 100px; */
       overflow: hidden;
       background-color: rgb(63, 20, 80);
     }
@@ -179,7 +175,7 @@
       z-index: 15;
       padding: 10px;
       overflow: hidden;
-      left: 10px;
+      left: 80px;
       margin-left: auto;
     }
 
@@ -249,6 +245,85 @@
       left:908px;
     }
 
+    .progress-indicator{
+      visibility:hidden;
+      display:flex;
+      position:relative;
+      counter-reset: step;
+      width:40vw;
+      color: #f2f2f2;
+    }
+    .progress-indicator li{
+      position: relative;
+      z-index:2;
+      width:10%;
+      list-style-type: none;
+      float:left;
+      text-align: center;
+    }
+
+    .progress-indicator li:before{
+      content:''; 
+      /* counter-increment: step; */
+      width:20px;
+      height:20px;
+      /* border:1px solid #fafafa; */
+      display: block;
+      text-align: center;
+      margin: 0 auto 10px auto;
+      border-radius: 50%;
+      background-color:#fafafa;
+    }
+    .progress-indicator li:after{
+    content:'';
+    position:absolute;
+    width: 100%;
+    height:1px;
+    background-color: #fafafa;
+    top: 10px;
+    left: -50%;
+    z-index:-1;
+    }
+
+    .progress-indicator li:first-child:after{
+      content:none;
+    }
+
+    .progress-indicator li:active{
+      color:rgb(189, 39, 131);
+    }
+
+    .progress-indicator li.active:before{
+      color:rgb(189, 39, 131);
+      background-color: rgb(189, 39, 131);
+    }
+    .progress-indicator li.active + li:after{
+      background-color: rgb(189, 39, 131);
+    }
+
+    .bubble{
+      visibility: hidden;
+      /* overflow-x:visible; */
+      white-space: nowrap;
+      /* text-align:center;  */
+    }
+
+    .progress-indicator li:hover .bubble{
+    visibility: visible;
+    }
+    
+   /* responsive, currently not working */
+       /* @media only screen and (min-width: 600px) {
+        #avatar {
+          left: 1000px;
+        }
+      }    */
+      
+      @media only screen and (max-width: 600px) {
+        .progress-indicator li {
+          visibility: hidden;
+        }
+      }   
   </style>
   <script>
 
@@ -279,6 +354,7 @@
       document.getElementById("title").style.display = "none";
       document.getElementById("myDiv").style.display = "block";
       document.querySelector(".pagelogo").style.display = "block";
+      document.querySelector(".progress-indicator").style.visibility = "visible";
       document.querySelector(".slidebottom").style.display = "block";
     }
 
@@ -296,7 +372,17 @@
     <a href="index.html">Home</a>
     <div class="pagelogo">
       <img src="img/ROMKIDS.png" width="100">
-    </div>
+    </div> 
+    <br>
+    <br>
+    <ul class="progress-indicator">
+        <li class="active"> <div class="bubble"> Intro</div></li>
+        <li> <div class="bubble">Research</div></li>
+        <li> <div class="bubble">Design</div></li>
+        <li> <div class="bubble">Game Mechanics</div></li>
+        <li> <div class="bubble"> Visual Design</div></li>
+        <li> <div class="bubble">The Future</div></li>
+    </ul> 
   </div>
 
   <section class="introslide">
@@ -309,7 +395,7 @@
   </section>
 
   <div style="display:none;" id="myDiv" class="animate-bottom">
-    
+ 
         <div id="avatar">
           <div id="avatar-frame">
           </div>
@@ -331,16 +417,15 @@
             <div><b>The Problem</b>
               <p>While the Royal Ontario Museum's (ROM) annual attendance has increased over the last 10 years, numbers
                 of
-                kids who go each year has declined by half during that time.</p>
-              <p>
+                kids who go each year has declined by half during that time.
+              <br>
                 When talking to parents, distance and time were definitely factors for parents but for many of which
                 they
                 relied on their kids to let them know if going to the ROM it would be something they the kids wanted to
                 do
                 and
                 would be excited for.
-              </p>
-              <p>
+              <br>
                 This was especially problematic in cases where the kids weren’t even aware of what they would expect if
                 they
                 went
@@ -364,12 +449,11 @@
                 the
                 ROM physically to be able to engage with ROM programming. ROM Kids was envisioned to provide kids with
                 digital
-                access to the ROM in a age-appropriate format through mobile app.</p>
-              <p>
+                access to the ROM in a age-appropriate format through mobile app.
+                
                 ROM Kids is not a new idea, the ROM already runs programming under this name but the programming that
-                they
-                provide are limited to onsite activities and content.</p>
-              <p>
+                they provide are limited to onsite activities and content.
+                
                 In deciding my audience, I selected and interviewed kids from age 6 - 8 and their parents. My audience
                 primarily all lived in the GTA but not in within the city.</p>
             </div>
@@ -378,6 +462,7 @@
 
         <section class="slide">
           <div class="chapter">
+            <a name="research"></a>
             the research
           </div>
         </section>

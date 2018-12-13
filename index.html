@@ -11,6 +11,7 @@
   <script src="assets/plugins/animation.gsap.min.js"></script>
   <script src="assets/plugins/animation.velocity.min.js"></script>
   <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
 
   <style>
@@ -114,11 +115,13 @@
     }
 
     #avatar {
-      position: absolute;
-      width: 196px;
+      position: static;
+      /* width: 196px; */
       height: 362px;
-      top: 220px;
-      left: 800px;
+      /* top: 220px;
+      left: 800px; */
+      flex-grow:1;
+      order:2;
       z-index: 2;
 
     }
@@ -142,7 +145,7 @@
     }
 
     body {
-      font-family: "Avenir Next Condensed";
+      font-family: 'Source Sans Pro', sans-serif;
       background-color: #ffffff;
       margin: 0;
     }
@@ -234,10 +237,12 @@
     }
 
     .slide {
-      width: 908px;
+      /* width: 908px; */
       height: 700px;
-      position: relative;
+      position: static;
       top: 30%;
+      flex-grow: 2;
+      order:1;  
       /* use to see the parameters of your container
       border: solid 1px #000000; 
       */
@@ -249,7 +254,7 @@
       justify-content:space-between;
       align-items: center;
       /* display: block; */
-      width: 100vw;
+      /* width: 100vw; */
       height: 100px;
       position: relative;
         /* text-align: center; */
@@ -295,8 +300,13 @@
       width: 500px;
       height: 50px;
       background-color: rgb(63, 20, 80);
+      border-radius: 10px;
     }
 
+    #myDiv{
+      display:flex;
+      align-items:center;
+    }
     /* #walkway {
       background-color: #a5c9f0;
       position: absolute;
@@ -313,23 +323,27 @@
       left:908px;
     } */
 
-      @media only screen and (min-width:600px) {
+      /* @media only screen and (min-width:850px) {
         .heading{
           font-size: 80pt;
-        }
-      }
+        } */
+   
 
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 850px) {
 
+        /* #myDiv{
+          flex-direction: column-reverse;
+        } */
         #avatar {
-          position:relative;
-          left: 50vw;
+          /* position:static; */
+          /* left: 50vw; */
           /* value is half of the avatar width */
-          margin-left:-63px;
-          background-size: 492px 241px;
-          width: 123px;
-          height: 241px;
-          top:85px; 
+          /* margin-left:-63px;
+          background-size: 492px 241px; */
+          /* width: 30vw; */
+          /* height: 241px; */
+          /* top:85px;  */
+        
         }
 
         #avatar-frame{
@@ -342,8 +356,24 @@
           height: 300px;
           width:100vw;
         }
+        
+        .heading{
+          font-size:18vw;
+        }
+        .topnav a{
+          font-size: 14px;
+          padding: 14px 3vw;
+        }
 
-        .button{
+      }   
+
+       @media only screen and (max-width: 600px) {
+
+        #myDiv{
+          flex-direction: column-reverse;
+        }
+
+                .button{
           width:85vw;
           /* the alignment is off */
         }
@@ -352,13 +382,7 @@
           text-align: center;
           width:90vw;
         }
-
-        .topnav a{
-          font-size: 14px;
-          padding: 14px 3vw;
-        }
-
-      }   
+       }
   </style>
   <script>
 
@@ -387,7 +411,7 @@
 
     function showPage() {
       document.getElementById("title").style.display = "none";
-      document.getElementById("myDiv").style.display = "block";
+      document.getElementById("myDiv").style.display = "flex";
       document.querySelector(".pagelogo").style.display = "block";
       // document.querySelector(".slidebottom").style.display = "block";
     }
@@ -427,15 +451,6 @@
       </div>
     </div>
 
-
-
-    <!-- <div id="walkway"></div> -->
-
-    <section class="slidebridge">
-      <div class="chapter">
-        <!-- <img src="img/ScrolltoPlay.svg" width="500"> -->
-      </div>
-    </section>
 
     <div class="slide">
       <div class="container">

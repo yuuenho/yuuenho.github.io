@@ -11,6 +11,7 @@
   <script src="assets/plugins/animation.gsap.min.js"></script>
   <script src="assets/plugins/animation.velocity.min.js"></script>
   <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
 
   <style>
@@ -142,7 +143,7 @@
     }
 
     body {
-      font-family: "Avenir Next Condensed";
+      font-family: 'Source Sans Pro', sans-serif;
       background-color: #ffffff;
       margin: 0;
     }
@@ -319,6 +320,44 @@
         }
       }
 
+      @media only screen and (max-width: 850px) {
+
+        #avatar {
+          position:relative;
+          left: 50vw;
+          /* value is half of the avatar width */
+          margin-left:-63px;
+          background-size: 492px 241px;
+          width: 123px;
+          height: 241px;
+          top:85px; 
+        }
+
+        #avatar-frame{
+          background-size: 492px 241px;
+          width: 123px;
+          height: 241px; 
+        }
+
+        .slide{
+          height: 300px;
+          width:100vw;
+        }
+
+        .button{
+          width:85vw;
+          /* the alignment is off */
+        }
+
+        .select{
+          text-align: center;
+          width:90vw;
+        }
+
+        .topnav a{
+          font-size: 14px;
+          padding: 14px 3vw;
+        }
       @media only screen and (max-width: 600px) {
 
         #avatar {
