@@ -22,11 +22,19 @@
       position: fixed;
       align-items: center;
     }
+    .chapter {
+      top: 50%;
+      font-size: 100px;
+      display: block;
+      position: relative;    
+      text-align: center;
+    }
 
     .slidebridge {
       background-image: url(img/slidebridge.png);
       width: 1200px;
       height: 700px;
+      font-size: 50px;
       position: relative;
     }
 
@@ -109,9 +117,13 @@
     }
 
     .artifact {
-      display: block;
+      display: flex;
+      flex-direction: column;
       position: relative;
-      top: 30%;      
+      align-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;  
       text-align: center;
     }
 
@@ -130,17 +142,12 @@
 
     body {
       font-family: 'Source Sans Pro', sans-serif;
+      font-size: 16px;
       background-color: #80AADB;
       margin: 0;
     }
 
-    .chapter {
-      top: 50%;
-      font-size: 100px;
-      display: block;
-      position: relative;    
-      text-align: center;
-    }
+
     .topnav {
       position: fixed;
       z-index: 10;
@@ -186,10 +193,10 @@
     }
 
     .reslinks {
-      position: relative;
+      position: static;
       /* text-align: center; */
-      width: 150px;
-      height: 150px;
+      /* width: 150px;
+      height: 150px; */
       left: 140px;
       /* margin-left: auto; */
       /* margin-right: auto; */
@@ -221,6 +228,7 @@
     }
 
     .slide {
+      display: flex;
       width: 908px;
       height: 700px;
       position: relative;
@@ -341,7 +349,7 @@
       $(".trigger").each(function (index, element) {
         var speechID = "#" + $(element).data("sb")
         var speechflip = TweenMax.fromTo(speechID, 0.5, { rotationX: '90' }, { rotationX: '0' });
-        var speechfollowslide = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 400 })
+        var speechfollowslide = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 300 })
           .setPin(speechID)
           .addTo(controller);
         var flipSpeechBubble = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 200 })
@@ -358,8 +366,9 @@
       document.querySelector(".slidebottom").style.display = "block";
     }
 
-    var myVar;
-    myVar = setTimeout(showPage, 2000);
+    // turn back on when ready
+    // var myVar;
+    // myVar = setTimeout(showPage, 2000);
 
   </script>
 </head>
@@ -387,10 +396,21 @@
 
   <section class="introslide">
     <div id="title">
-      <img src="img/ROMKIDS.png">
+      <!-- <img src="img/ROMKIDS.png"> -->
       <p></p>
       <p></p>
-      <div class="loader"></div>
+      <style> body{
+        text-align: center;
+        color:rgb(63, 20, 80);
+         background-color: #f2f2f2;
+      }
+      .introslide{
+        background-image:none;
+      }
+      </style>
+      Oops, this page is not ready yet. In the mean time, enjoy a dancing monster.
+      <img src="img/cousinitt.gif" width=300;>
+      <!-- <div class="loader"></div> -->
     </div>
   </section>
 
@@ -405,6 +425,7 @@
 
         <section class="slidebridge">
           <div class="chapter">
+            This project was built to bridge the experiences of public spaces for kids and make museums more accessible.
             <img src="img/ScrolltoPlay.svg" width="500">
           </div>
         </section>
@@ -714,15 +735,17 @@
             <video width="640" height="360" controls poster="img/videosample.png">
               <source src="img/Meteorite.mp4" type="video/mp4">
             </video>
+            <br>
+            All the content is laid out in video lessons with the options of narration and captioning, kids are able
+              to
+              absorb in a visual manner. The hope is increase reading comprehension as well for kids to pair what they
+              hear
+              with what they can read along to.
           </div>
           <div id="trigger17" class="trigger" data-sb="seventeen"></div>
           <div id="seventeen" class="speech-bubble">
             <div>
-              All the content is laid out in video lessons with the options of narration and captioning, kids are able
-              to
-              absorb in a visual manner. The hope is increase reading comprehension as well for kids to pair what they
-              hear
-              with what they can read along to. Videos are done in short infographic style and can be accessed and
+               Videos are done in short infographic style and can be accessed and
               rewatched
               at later times.
             </div>
