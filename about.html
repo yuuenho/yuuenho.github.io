@@ -23,25 +23,14 @@
   
       .introslide {
         display: flex;
-        /* background-image: url(img/slidestart.png); */
         background-color: #ffffff;
         width: 100vw;
         height: 100vh;
-        /* position: absolute; */
-        /* left: 50vw; */
-        /* flex-direction: column;*/
         justify-content: center;
         align-items: center;
         align-content: center;
       }
-  
-      /* .slidebridge {
-        background-image: url(img/slidebridge.png);
-        width: 1200px;
-        height: 700px;
-        position: relative;
-      } */
-  
+    
       .slidebottom {
         display: none;
         width: 908px;
@@ -50,24 +39,18 @@
       }
   
       #title {
-        /* width: 100vw; */
-        /* height: 100vh; */
         margin-left: auto;
         margin-right: auto;
       }
   
       .loader {
         align-content: center;
-  
         z-index: 1;
         border: 12px solid #f3f3f38a;
         border-top: 12px solid #3498db;
         border-radius: 50%;
         width: 100px;
         height: 100px;
-        /* margin-left: -60px; */
-        /* margin-right: auto; */
-        /* padding: 10px; */
         animation: spin 1.5s linear infinite;
       }
   
@@ -98,31 +81,9 @@
           opacity: 1
         }
       }
-  
-      /* .speech-bubble {
-        background-image: url(img/TextBoxRight.png);
-        width: 288px;
-        height: 231px;
-        top: 10px;
-        right: -250px;
-        position: absolute;
-      } */
-  
-      .speech-bubble div {
-        overflow-y: scroll;
-        top: 20px;
-        bottom: 66px;
-        left: 22px;
-        right: 22px;
-        position: absolute;
-      }
-  
+    
       #avatar {
         position: static;
-        /* width: 196px; */
-        /* height: 362px; */
-        /* top: 220px;
-        left: 800px; */
         flex-grow: 1;
         order: 2;
         z-index: 2;
@@ -140,7 +101,6 @@
       #avatar-frame {
         background-image: url(img/splashavatar.png);
         background-size: 984px 482px;
-        /* sprite sheet width and height scaled down */
         width: 246px;
         height: 482px;
         animation: animateAvatar 1s steps(4);
@@ -198,21 +158,12 @@
         margin-left: auto;
       }
   
-      /* triggers for speech bubbles */
-      .trigger {
-        position: absolute;
-        top: 150px;
-      }
   
       .reslinks {
         position: relative;
-        /* text-align: center; */
         width: 150px;
         height: 150px;
         left: 140px;
-        /* margin-left: auto; */
-        /* margin-right: auto; */
-        /* padding: auto; */
       }
   
   
@@ -249,40 +200,25 @@
         flex-grow: 2;
         order: 1;
         align-items: center;
-        /* display: block; */
-        /* width: 100vw; */
-        /* height: 100px; */
         position: relative;
-        /* text-align: center; */
         top: 30%;
         align-content:center;
       }
   
       .copy {
-        /* display: block; */
-        /* width: 100vw; */
-        /* height: 100px; */
         position: relative;
         text-align: center;
         max-width: 700px;
       }
   
       .heading {
-        /* width:100vw; */
-        font-size: 11vw;
-        /* font-size: 80pt; */
+        font-size: 10vw;
         font-family: "sketch";
       }
   
       .case {
-        /* position: relative; */
         color: #f2f2f2;
-        /* display:block;
-        text-align: center;
-        top:50%; */
         z-index: 2;
-        /* width: 400px; */
-        /* font-size: 28pt; */
         text-decoration: none;
       }
       
@@ -295,14 +231,10 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        /* position: relative; */
-        /* left: 200px; */
-        /* text-align: center; */
         width: 60vw;
         height: 50px;
         max-width: 500px;
         background-color: rgb(63, 20, 80);
-        /* align-content: stretch; */
         border-radius: 10px;
       }
   
@@ -312,78 +244,13 @@
         align-items: center;
         top:20vh;
       }
-  
-      /* #walkway {
-        background-color: #a5c9f0;
-        position: absolute;
-        width: 234px;
-        height: 100%;
-        left:908px;
-      } */
-  
-      /* #walkwayEnd {
-        background-color: #a5c9f0;
-        position: absolute;
-        width: 234px;
-        height: 90%;
-        left:908px;
-      } */
-  
+    
       @media only screen and (min-width:850px) {
         .heading {
           font-size: 102px;
         }
   
       }
-  
-        /* @media only screen and (max-width: 850px) { */
-  
-          /* #myDiv{
-            flex-direction: column-reverse;
-          } */
-          /* #avatar { */
-            /* position:; */
-            /* left: 50vw; */
-            /* value is half of the avatar width */
-            /* margin-left:-63px;
-            background-size: 492px 241px; */
-            /* width: 30vw;
-            height: 241px; */
-            /* top:85px;  */
-            /* background-size: calc(100% - 492px) calc(100% - 241px);
-            width: calc(100% - 123px);
-            height: calc(100% - 241px); */
-          /* } */
-  
-          /* #avatar-frame { */
-            /* background-size: calc(100% - 492px) calc(100% - 241px);
-            width: calc(100% - 123px);
-            height: calc(100% - 241px); */
-          /* } */
-  
-          /* .slide { */
-            /* height: 300px; */
-            /* width: 100vw; */
-          /* }
-  
-          .heading {
-            font-size: 12vw;
-          } */
-  
-          
-          
-           /* .button {
-            width: 100%; */
-            /* the alignment is off */
-          /* }
-  
-          .copy {
-            text-align: center;
-            align-content:center;
-            width: 90vw;
-          }
-  
-        } */
   
   
         @media only screen and (max-width: 650px) {
@@ -419,43 +286,14 @@
          
         }
   
-        /* @media only screen and (min-width:600px) {
-          .heading {
-            font-size: 72px;
-          }
-        } */
   
     </style>
     <script>
-  
-  
-      // window.onload = function () {
-      //   //init controller
-      //   var controller = new ScrollMagic.Controller();
-      //   // var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: $("#myDiv").height()*2 })
-      //   //   .on('progress', (e) => {
-      //   //     const frame = Math.floor(e.progress * 500) % 4;
-      //   //     const offset = frame * -133;
-      //   //     $("#avatar-frame").css("background-position-x", `${offset}px`);
-      //   //   })
-      //   //   .addTo(controller);
-      //   $(".trigger").each(function (index, element) {
-      //     var speechID = "#" + $(element).data("sb")
-      //     var speechflip = TweenMax.fromTo(speechID, 0.5, { rotationX: '90' }, { rotationX: '0' });
-      //     var speechfollowslide = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 400 })
-      //       .setPin(speechID)
-      //       .addTo(controller);
-      //     var flipSpeechBubble = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 200 })
-      //       .setTween(speechflip)
-      //       .addTo(controller);
-      //   })
-      // }
-  
+    
       function showPage() {
         document.querySelector(".introslide").style.display = "none";
         document.getElementById("myDiv").style.display = "flex";
         document.querySelector(".pagelogo").style.display = "block";
-        // document.querySelector(".slidebottom").style.display = "block";
       }
   
       var myVar;
@@ -472,7 +310,6 @@
     <a href="index.html">Home</a>
     
     <div class="pagelogo">
-      <!-- <img src="img/ROMKIDS.png" width="100"> -->
     </div>
   </div>
 

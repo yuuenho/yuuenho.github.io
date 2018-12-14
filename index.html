@@ -1,466 +1,305 @@
 <!doctype html>
 <html>
 
-<head>
-  <title>Kevin Ho - UX Designer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="assets/ScrollMagic.min.js"></script>
-  <script src="assets/plugins/debug.addIndicators.min.js"></script>
-  <script src="assets/plugins/jquery-3.3.1.min.js"></script>
-  <script src="assets/plugins/jquery.ScrollMagic.min.js"></script>
-  <script src="assets/plugins/animation.gsap.min.js"></script>
-  <script src="assets/plugins/animation.velocity.min.js"></script>
-  <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
-
-  <style>
-    @font-face {
-      font-family: sketch;
-      src: url(assets/Sketch-3D.otf);
-    }
-
-    .introslide {
-      display: flex;
-      /* background-image: url(img/slidestart.png); */
-      background-color: #ffffff;
-      width: 100vw;
-      height: 100vh;
-      /* position: absolute; */
-      /* left: 50vw; */
-      /* flex-direction: column;*/
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
-
-    /* .slidebridge {
-      background-image: url(img/slidebridge.png);
-      width: 1200px;
-      height: 700px;
-      position: relative;
-    } */
-
-    .slidebottom {
-      display: none;
-      width: 908px;
-      height: 700px;
-      position: relative;
-    }
-
-    #title {
-      /* width: 100vw; */
-      /* height: 100vh; */
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .loader {
-      align-content: center;
-
-      z-index: 1;
-      border: 12px solid #f3f3f38a;
-      border-top: 12px solid #3498db;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      /* margin-left: -60px; */
-      /* margin-right: auto; */
-      /* padding: 10px; */
-      animation: spin 1.5s linear infinite;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
+  <head>
+    <title>Kevin Ho - UX Designer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/ScrollMagic.min.js"></script>
+    <script src="assets/plugins/debug.addIndicators.min.js"></script>
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/jquery.ScrollMagic.min.js"></script>
+    <script src="assets/plugins/animation.gsap.min.js"></script>
+    <script src="assets/plugins/animation.velocity.min.js"></script>
+    <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  
+  
+    <style>
+      @font-face {
+        font-family: sketch;
+        src: url(assets/Sketch-3D.otf);
       }
-
-      100% {
-        transform: rotate(360deg);
+  
+      .introslide {
+        display: flex;
+        background-color: #ffffff;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
       }
-    }
-
-    .animate-bottom {
-      position: relative;
-      animation-name: animatebottom;
-      animation-duration: 1s
-    }
-
-    @keyframes animatebottom {
-      from {
-        bottom: -100px;
-        opacity: 0
-      }
-
-      to {
-        bottom: 0;
-        opacity: 1
-      }
-    }
-
-    /* .speech-bubble {
-      background-image: url(img/TextBoxRight.png);
-      width: 288px;
-      height: 231px;
-      top: 10px;
-      right: -250px;
-      position: absolute;
-    } */
-
-    .speech-bubble div {
-      overflow-y: scroll;
-      top: 20px;
-      bottom: 66px;
-      left: 22px;
-      right: 22px;
-      position: absolute;
-    }
-
-    #avatar {
-      position: static;
-      /* width: 196px; */
-      /* height: 362px; */
-      /* top: 220px;
-      left: 800px; */
-      flex-grow: 1;
-      order: 2;
-      z-index: 2;
-
-    }
-
-    .artifact {
-      display: block;
-      position: relative;
-      top: 30%;
-      text-align: center;
-    }
-
-
-    #avatar-frame {
-      background-image: url(img/splashavatar.png);
-      background-size: 984px 482px;
-      /* sprite sheet width and height scaled down */
-      width: 246px;
-      height: 482px;
-      animation: animateAvatar 1s steps(4);
-      animation-iteration-count: infinite;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      background-color: #ffffff;
-      margin: 0;
-    }
-
-    .chapter {
-      top: 50%;
-      font-size: 100px;
-      display: block;
-      position: relative;
-      text-align: center;
-    }
-
-    .topnav {
-      position: fixed;
-      z-index: 10;
-      width: 100%;
-      overflow: hidden;
-      background-color: rgb(63, 20, 80);
-    }
-
-    .topnav a {
-      float: right;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    .topnav a.active {
-      background-color: rgb(189, 39, 131);
-      color: white;
-    }
-
-    .pagelogo {
-      display: none;
-      position: fixed;
-      z-index: 15;
-      padding: 10px;
-      overflow: hidden;
-      left: 10px;
-      margin-left: auto;
-    }
-
-    /* triggers for speech bubbles */
-    .trigger {
-      position: absolute;
-      top: 150px;
-    }
-
-    .reslinks {
-      position: relative;
-      /* text-align: center; */
-      width: 150px;
-      height: 150px;
-      left: 140px;
-      /* margin-left: auto; */
-      /* margin-right: auto; */
-      /* padding: auto; */
-    }
-
-
-    .reslink-grid {
-      display: grid;
-      grid-template-columns: 4fr 4r 4fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "reslink reslink1 reslink2";
-      align-items: center;
-    }
-
-    .reslink {
-      grid-area: reslink;
-      padding: 30px;
-    }
-
-    .reslink1 {
-      grid-area: reslink1;
-      padding: 30px;
-    }
-
-    .reslink2 {
-      grid-area: reslink2;
-      padding: 30px;
-    }
     
-    .select{
-      padding:20px 20px 0 20px;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 2;
-      order: 1;
-      align-items: center;
-      /* display: block; */
-      /* width: 100vw; */
-      /* height: 100px; */
-      position: relative;
-      /* text-align: center; */
-      top: 30%;
-      align-content:center;
-    }
-
-    .copy {
-      /* display: block; */
-      /* width: 100vw; */
-      /* height: 100px; */
-      position: relative;
-      text-align: center;
-    }
-
-    .heading {
-      /* width:100vw; */
-      font-size: 12vw;
-      /* font-size: 80pt; */
-      font-family: "sketch";
-    }
-
-    .case {
-      /* position: relative; */
-      color: #f2f2f2;
-      /* display:block;
-      text-align: center;
-      top:50%; */
-      z-index: 2;
-      /* width: 400px; */
-      /* font-size: 28pt; */
-      text-decoration: none;
-    }
+      .slidebottom {
+        display: none;
+        width: 908px;
+        height: 700px;
+        position: relative;
+      }
+  
+      #title {
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      .loader {
+        align-content: center;
+        z-index: 1;
+        border: 12px solid #f3f3f38a;
+        border-top: 12px solid #3498db;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 1.5s linear infinite;
+      }
+  
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+  
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+  
+      .animate-bottom {
+        position: relative;
+        animation-name: animatebottom;
+        animation-duration: 1s
+      }
+  
+      @keyframes animatebottom {
+        from {
+          bottom: -100px;
+          opacity: 0
+        }
+  
+        to {
+          bottom: 0;
+          opacity: 1
+        }
+      }
     
-    .slide{
-      flex-grow: 2;
-      order: 1;
-    }
-
-    .button {
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      /* position: relative; */
-      /* left: 200px; */
-      /* text-align: center; */
-      width: 60vw;
-      height: 50px;
-      max-width: 500px;
-      background-color: rgb(63, 20, 80);
-      /* align-content: stretch; */
-      border-radius: 10px;
-    }
-
-    #myDiv {
-      display: flex;
-      align-content: center;
-      align-items: center;
-      top:20vh;
-    }
-
-    /* #walkway {
-      background-color: #a5c9f0;
-      position: absolute;
-      width: 234px;
-      height: 100%;
-      left:908px;
-    } */
-
-    /* #walkwayEnd {
-      background-color: #a5c9f0;
-      position: absolute;
-      width: 234px;
-      height: 90%;
-      left:908px;
-    } */
-
-    @media only screen and (min-width:850px) {
+      #avatar {
+        position: static;
+        flex-grow: 1;
+        order: 2;
+        z-index: 2;
+  
+      }
+  
+      .artifact {
+        display: block;
+        position: relative;
+        top: 30%;
+        text-align: center;
+      }
+  
+  
+      #avatar-frame {
+        background-image: url(img/splashavatar.png);
+        background-size: 984px 482px;
+        width: 246px;
+        height: 482px;
+        animation: animateAvatar 1s steps(4);
+        animation-iteration-count: infinite;
+      }
+  
+      body {
+        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #ffffff;
+        margin: 0;
+      }
+  
+      .chapter {
+        top: 50%;
+        font-size: 100px;
+        display: block;
+        position: relative;
+        text-align: center;
+      }
+  
+      .topnav {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgb(63, 20, 80);
+      }
+  
+      .topnav a {
+        float: right;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+  
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+  
+      .topnav a.active {
+        background-color: rgb(189, 39, 131);
+        color: white;
+      }
+  
+      .pagelogo {
+        display: none;
+        position: fixed;
+        z-index: 15;
+        padding: 10px;
+        overflow: hidden;
+        left: 10px;
+        margin-left: auto;
+      }
+  
+  
+      .reslinks {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        left: 140px;
+      }
+  
+  
+      .reslink-grid {
+        display: grid;
+        grid-template-columns: 4fr 4r 4fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "reslink reslink1 reslink2";
+        align-items: center;
+      }
+  
+      .reslink {
+        grid-area: reslink;
+        padding: 30px;
+      }
+  
+      .reslink1 {
+        grid-area: reslink1;
+        padding: 30px;
+      }
+  
+      .reslink2 {
+        grid-area: reslink2;
+        padding: 30px;
+      }
+  
+      .select{
+        padding:20px 20px 0 20px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 2;
+        order: 1;
+        align-items: center;
+        position: relative;
+        top: 30%;
+        align-content:center;
+      }
+  
+      .copy {
+        position: relative;
+        text-align: center;
+        max-width: 700px;
+      }
+  
       .heading {
-        font-size: 102px;
+        font-size: 11vw;
+        font-family: "sketch";
       }
-
-    }
-
-      /* @media only screen and (max-width: 850px) { */
-
-        /* #myDiv{
-          flex-direction: column-reverse;
-        } */
-        /* #avatar { */
-          /* position:; */
-          /* left: 50vw; */
-          /* value is half of the avatar width */
-          /* margin-left:-63px;
-          background-size: 492px 241px; */
-          /* width: 30vw;
-          height: 241px; */
-          /* top:85px;  */
-          /* background-size: calc(100% - 492px) calc(100% - 241px);
-          width: calc(100% - 123px);
-          height: calc(100% - 241px); */
-        /* } */
-
-        /* #avatar-frame { */
-          /* background-size: calc(100% - 492px) calc(100% - 241px);
-          width: calc(100% - 123px);
-          height: calc(100% - 241px); */
-        /* } */
-
-        /* .slide { */
-          /* height: 300px; */
-          /* width: 100vw; */
-        /* }
-
+  
+      .case {
+        color: #f2f2f2;
+        z-index: 2;
+        text-decoration: none;
+      }
+      
+      .slide{
+        flex-grow: 2;
+        order: 1;
+      }
+  
+      .button {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 60vw;
+        height: 50px;
+        max-width: 500px;
+        background-color: rgb(63, 20, 80);
+        border-radius: 10px;
+      }
+  
+      #myDiv {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        top:20vh;
+      }
+    
+      @media only screen and (min-width:850px) {
         .heading {
-          font-size: 12vw;
-        } */
-
-        
-        
-         /* .button {
-          width: 100%; */
-          /* the alignment is off */
-        /* }
-
-        .copy {
-          text-align: center;
-          align-content:center;
-          width: 90vw;
+          font-size: 102px;
         }
-
-      } */
-
-
-      @media only screen and (max-width: 650px) {
-        
-
-        #avatar{
-          top: 30%;
-        }
-
-        #avatar-frame{
-          background-size: 482px 241px;
-          height: 241px;
-          width: 123px;
-        }
-
-
-        #myDiv {
-          flex-direction: column-reverse;
-          top:75px;
-        }
+  
+      }
+  
+  
+        @media only screen and (max-width: 650px) {
           
-        .topnav a {
-          font-size: 14px;
-          padding: 14px 3vw;
+  
+          #avatar{
+            top: 30%;
+          }
+  
+          #avatar-frame{
+            background-size: 482px 241px;
+            height: 241px;
+            width: 123px;
+          }
+  
+  
+          #myDiv {
+            flex-direction: column-reverse;
+            top:75px;
+          }
+            
+          .topnav a {
+            font-size: 14px;
+            padding: 14px 3vw;
+          }
+          
+          .heading{
+            font-size: 65px;
+          }
+          .button{
+            min-width: 375px;
+          }
+         
         }
-        
-        .heading{
-          font-size: 65px;
-        }
-        .button{
-          min-width: 375px;
-        }
-       
+  
+  
+    </style>
+    <script>
+    
+      function showPage() {
+        document.querySelector(".introslide").style.display = "none";
+        document.getElementById("myDiv").style.display = "flex";
+        document.querySelector(".pagelogo").style.display = "block";
       }
-
-      /* @media only screen and (min-width:600px) {
-        .heading {
-          font-size: 72px;
-        }
-      } */
-
-  </style>
-  <script>
-
-
-    // window.onload = function () {
-    //   //init controller
-    //   var controller = new ScrollMagic.Controller();
-    //   // var avatarScene = new ScrollMagic.Scene({ triggerElement: "body", duration: $("#myDiv").height()*2 })
-    //   //   .on('progress', (e) => {
-    //   //     const frame = Math.floor(e.progress * 500) % 4;
-    //   //     const offset = frame * -133;
-    //   //     $("#avatar-frame").css("background-position-x", `${offset}px`);
-    //   //   })
-    //   //   .addTo(controller);
-    //   $(".trigger").each(function (index, element) {
-    //     var speechID = "#" + $(element).data("sb")
-    //     var speechflip = TweenMax.fromTo(speechID, 0.5, { rotationX: '90' }, { rotationX: '0' });
-    //     var speechfollowslide = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 400 })
-    //       .setPin(speechID)
-    //       .addTo(controller);
-    //     var flipSpeechBubble = new ScrollMagic.Scene({ triggerElement: "#" + element.id, duration: 200 })
-    //       .setTween(speechflip)
-    //       .addTo(controller);
-    //   })
-    // }
-
-    function showPage() {
-      document.querySelector(".introslide").style.display = "none";
-      document.getElementById("myDiv").style.display = "flex";
-      document.querySelector(".pagelogo").style.display = "block";
-      // document.querySelector(".slidebottom").style.display = "block";
-    }
-
-    var myVar;
-    myVar = setTimeout(showPage, 1000);
-
-  </script>
+  
+      var myVar;
+      myVar = setTimeout(showPage, 1000);
+  
+    </script>
 </head>
 
 <body>
@@ -468,11 +307,9 @@
   <div class="topnav">
     <a href="comingsoon.html">Contact</a>
     <a href="about.html">About</a>
-    <a class="active" href="#home">Home</a>
-
-
+    <a class="active" href="index.html">Home</a>
+    
     <div class="pagelogo">
-      <!-- <img src="img/ROMKIDS.png" width="100"> -->
     </div>
   </div>
 
@@ -491,7 +328,6 @@
       <div id="avatar-frame">
       </div>
     </div>
-
 
     <div class="slide">
       <div class="container">
