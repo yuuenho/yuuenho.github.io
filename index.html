@@ -117,7 +117,7 @@
     #avatar {
       position: static;
       /* width: 196px; */
-      height: 362px;
+      /* height: 362px; */
       /* top: 220px;
       left: 800px; */
       flex-grow: 1;
@@ -236,11 +236,11 @@
       padding: 30px;
     }
 
-    .slide {
+    .container {
       /* width: 908px; */
-      height: 700px;
+      /* height: 700px; */
       position: static;
-      top: 30%;
+      top: 50%;
       flex-grow: 2;
       order: 1;
       /* use to see the parameters of your container
@@ -252,22 +252,24 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      flex-grow: 2;
+      order: 1;
       align-items: center;
       /* display: block; */
       /* width: 100vw; */
-      height: 100px;
+      /* height: 100px; */
       position: relative;
       /* text-align: center; */
       top: 30%;
+      align-content:center;
     }
 
-    select {
-      display: block;
-      width: 100vw;
-      height: 100px;
+    .copy {
+      /* display: block; */
+      /* width: 100vw; */
+      /* height: 100px; */
       position: relative;
       text-align: center;
-      margin-bottom: 30px;
     }
 
     .heading {
@@ -289,6 +291,11 @@
       /* font-size: 28pt; */
       text-decoration: none;
     }
+    
+    .slide{
+      flex-grow: 2;
+      order: 1;
+    }
 
     .button {
       display: flex;
@@ -297,15 +304,19 @@
       /* position: relative; */
       /* left: 200px; */
       /* text-align: center; */
-      width: 500px;
+      width: 60vw;
       height: 50px;
+      max-width: 500px;
       background-color: rgb(63, 20, 80);
+      /* align-content: stretch; */
       border-radius: 10px;
     }
 
     #myDiv {
       display: flex;
+      align-content: center;
       align-items: center;
+      top:20vh;
     }
 
     /* #walkway {
@@ -328,14 +339,15 @@
       .heading {
         font-size: 102px;
       }
+
     }
 
-      @media only screen and (max-width: 850px) {
+      /* @media only screen and (max-width: 850px) { */
 
         /* #myDiv{
           flex-direction: column-reverse;
         } */
-        #avatar {
+        /* #avatar { */
           /* position:; */
           /* left: 50vw; */
           /* value is half of the avatar width */
@@ -344,55 +356,80 @@
           /* width: 30vw;
           height: 241px; */
           /* top:85px;  */
+          /* background-size: calc(100% - 492px) calc(100% - 241px);
+          width: calc(100% - 123px);
+          height: calc(100% - 241px); */
+        /* } */
 
-        }
+        /* #avatar-frame { */
+          /* background-size: calc(100% - 492px) calc(100% - 241px);
+          width: calc(100% - 123px);
+          height: calc(100% - 241px); */
+        /* } */
 
-        #avatar-frame {
-          background-size: calc(100%-492px) calc(100%-241px);
-          width: calc(100%-123px);
-          height: calc(100%-241px);
-        }
-
-        .slide {
-          height: 300px;
-          width: 100vw;
-        }
+        /* .slide { */
+          /* height: 300px; */
+          /* width: 100vw; */
+        /* }
 
         .heading {
           font-size: 12vw;
+        } */
+
+        
+        
+         /* .button {
+          width: 100%; */
+          /* the alignment is off */
+        /* }
+
+        .copy {
+          text-align: center;
+          align-content:center;
+          width: 90vw;
         }
 
+      } */
+
+
+      @media only screen and (max-width: 650px) {
+        
+
+        #avatar{
+          top: 30%;
+        }
+
+        #avatar-frame{
+          background-size: 482px 241px;
+          height: 241px;
+          width: 123px;
+        }
+
+
+        #myDiv {
+          flex-direction: column-reverse;
+          top:75px;
+        }
+          
         .topnav a {
           font-size: 14px;
           padding: 14px 3vw;
         }
-
+        
+        .heading{
+          font-size: 65px;
+        }
+        .button{
+          min-width: 375px;
+        }
+       
       }
 
-
-      @media only screen and (max-width: 600px) {
-
-        #myDiv {
-          flex-direction: column-reverse;
-        }
-
-
-        .button {
-          width: 85vw;
-          /* the alignment is off */
-        }
-
-        .select {
-          text-align: center;
-          width: 90vw;
-        }
-      }
-
-      @media only screen and (min-width:600px) {
+      /* @media only screen and (min-width:600px) {
         .heading {
           font-size: 72px;
         }
-      }
+      } */
 
   </style>
   <script>
@@ -472,7 +509,7 @@
         <br>
         <br>
         <p> -->
-        <div class="select">
+        <div class="select copy">
           Hi my name is Kevin, I'm a UX Designer who really loves cartoons and costumes.
         </div>
         </p>
