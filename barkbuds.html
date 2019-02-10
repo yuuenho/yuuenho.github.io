@@ -37,12 +37,42 @@
                 height: 10000px;
             }
 
+            section {
+                height: 500px;
+            }
+
+            #breadcrumbs a {
+                background-color: white;
+                color: #d8d8d8;
+            }
+
+            #breadcrumbs a.active {
+                background-color: #d8d8d8;
+                color: white;
+            }
+
             .pup_head {
                 background-image: url(img/barky.png);
                 width: 133px;
                 height: 112px;
             }
         </style>
+        <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+        <script src="assets/ScrollMagic.min.js"></script>
+        <script>
+            $(() => {
+                const controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 0}});
+                const scenes = [];
+
+                $('section').each((index, elem) => {
+                    const id = elem.id;
+                    const scene = new ScrollMagic.Scene({ triggerElement: `#${id}` })
+                            .setClassToggle(`#breadcrumbs a[href="#${id}"]`, "active")
+                            .addTo(controller);
+                    scenes.push(scene);
+                });
+            });
+        </script>
     </head>
     <body>
         <header>
@@ -100,8 +130,23 @@
                 </div>
                 <div id="fish_swimming"></div>
             </section>
-            <section id="about">
-
+            <section id="ideate">
+                <h1>Ideate</h1>
+            </section>
+            <section id="artifacts">
+                <h1>Artifacts</h1>
+            </section>
+            <section id="iterations">
+                <h1>Iterations</h1>
+            </section>
+            <section id="feedback">
+                <h1>Feedback</h1>
+            </section>
+            <section id="prototype">
+                <h1>Prototype</h1>
+            </section>
+            <section id="whats_next">
+                <h1>What's Next</h1>
             </section>
 
 
