@@ -1,0 +1,12 @@
+<svg viewBox="0 0 439 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="el_sw2vXN_4k"><style>@-webkit-keyframes el_OmbQSJu9rb_Animation{16.67%{opacity: 1;}50%{opacity: 0;}83.33%{opacity: 1;}0%{opacity: 1;}100%{opacity: 1;}}@keyframes el_OmbQSJu9rb_Animation{16.67%{opacity: 1;}50%{opacity: 0;}83.33%{opacity: 1;}0%{opacity: 1;}100%{opacity: 1;}}#el_sw2vXN_4k *{-webkit-animation-duration: 3s;animation-duration: 3s;-webkit-animation-iteration-count: infinite;animation-iteration-count: infinite;-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);animation-timing-function: cubic-bezier(0, 0, 1, 1);}#el_7-PGS9NDIL{stroke: none;stroke-width: 1;fill: none;}#el_hi5PctvSAI{-webkit-transform: translate(-52px, -24px);transform: translate(-52px, -24px);fill: #434242;}#el_OmbQSJu9rb{-webkit-animation-name: el_OmbQSJu9rb_Animation;animation-name: el_OmbQSJu9rb_Animation;opacity: 1;-webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);}</style>
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Scroll to Play</title>
+    <desc>Created with Sketch.</desc>
+    <g id="el_7-PGS9NDIL" fill-rule="evenodd" font-family="AvenirNextCondensed-Regular, Avenir Next Condensed" font-size="100" font-style="condensed" font-weight="normal">
+        <g id="el_hi5PctvSAI">
+            <text id="el_cJdnaKJKpb">
+                <tspan x="49" y="100" id="el_OmbQSJu9rb">Scroll to Play</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
