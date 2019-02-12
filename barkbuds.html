@@ -3,6 +3,9 @@
     <head>
         <title>Bark Buds - Kevin Ho</title>
         <link rel="shortcut icon" href="flavicon.ico" type="image/ico">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <style>
             header {
                 position: fixed;
@@ -10,7 +13,7 @@
                 left: 0px;
                 height: 100px;
                 width: 100%;
-                background: linear-gradient(to bottom, white, white 85%, rgba(255, 255, 255, 0));
+                background: linear-gradient(to bottom, #faf8f8, #faf8f8 85%, rgba(251, 252, 249, 0));
                 z-index: 10;
             }
 
@@ -36,27 +39,19 @@
 
             main {
                 height: auto;
+                background-color:#faf8f8;
+                font-family: 'Source Sans Pro';
+                font-size: 16pt;
             }
 
             section {
                 position: relative;
-                padding: 100px 42px 0px;
+                padding-top: 75px;
                 min-height: 400px;
                 width: 100%;
                 height: auto;
-
                 display: flex;
                 flex-direction: column;
-            }
-
-            .horizontal {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-            }
-
-            #define_2 {
-                background-color: #6369D3;
             }
 
             #breadcrumbs{
@@ -64,10 +59,12 @@
                 top: 50px;
                 left: 42px;
                 transform: skew(-20deg);
+                font-family: 'Source Sans Pro';
+                font-size: 14pt;
             }
 
             #breadcrumbs a {
-                background-color: white;
+                background-color:#faf8f8;
                 color: #4A4A4A;
                 text-decoration: none;
                 padding: 2px 8px;
@@ -76,11 +73,22 @@
 
             #breadcrumbs a.active {
                 background-color: #4A4A4A;
-                color: white;
+                color:#faf8f8;
             }
 
             body{
                 margin: 0px;
+            }
+            #case_study_description{
+                font-size: 10pt;
+                padding-left:42px;
+            }
+
+            .logo {
+                display:flex;
+                justify-content: center;
+                padding: 35px 0px;
+                align-items: center;
             }
 
             .pup_head {
@@ -89,10 +97,20 @@
                 height: 112px;
             }
 
-            .word-logo {
+            .word_logo {
                 background-image: url(assets/img/barkbuds/Barkbuds.png);
-                height: 112px;
-                width: 300px;
+                background-size: contain;
+                background-repeat:no-repeat;
+                height: 55px;
+                width: 310px;
+            }
+
+            .horizontal {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
             }
 
             .phone {
@@ -104,13 +122,180 @@
             }
 
             .screenshot {
-                top: 100px;
-                left: 95px;
+                top: 88px;
+                left: 81px;
                 position: relative;
-                height: 300px;
-                width: 169px;
+                height: 361px;
+                width: 194px;
             }
 
+            .statement {
+                width: 60%;
+                padding-left:42px;
+            }
+
+            #sniffer{
+                display:flex;
+                justify-content: center;
+                padding: 40px 0px;
+            }
+
+            #pup_sniffing {
+                position: relative;
+                height: 200px;
+                width: 250px;
+                top:300px;
+                left: -40px;
+            }
+
+            #transition_container {
+                background-color: #6369D3;
+                color: #faf8f8;
+                height:auto;
+                padding-top:0;
+                padding-bottom: 200px;
+             }
+
+            .pup_scale{
+                background-image: url(assets/img/barkbuds/slider.gif);
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 369px;
+                width: 195px;
+            }
+
+            .pup_design{
+                background-image: url(assets/img/barkbuds/logo_design.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 195px;
+                width: 195px;
+            }
+
+            .reject_icon{
+                background-image: url(assets/img/barkbuds/dislike.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 100px;
+                width: 100px;
+            }
+
+            .like_icon{
+                background-image: url(assets/img/barkbuds/like.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 100px;
+                width: 100px; 
+            }
+
+            .nav_icon{
+                background-image: url(assets/img/barkbuds/nav_icon.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 100px;
+                width: 300px; 
+            }
+
+            .Typography{
+                color: #6369D3;
+            }
+            
+            .bold{
+                font-family: 'Raleway-semibold';
+            }
+            .light{
+                font-family: 'Raleway-light';
+            }
+            .upper{
+                font-size: 36pt;
+            }
+
+            .lower{
+                font-size: 18pt;
+            }
+
+            .colour_palette{
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px 150px;
+            }
+
+            .palette{
+                position: relative;
+                bottom:0;
+
+            }
+
+            .circle1{
+                background-color: #444991;
+                border-radius: 50%;
+                height: 150px;
+                width: 150px;
+            }
+
+            .circle2{
+                background-color: #6369D3;
+                border-radius: 50%;
+                height: 150px;
+                width: 150px;
+            }
+
+            .circle3{
+                background-color: #F34D4D;
+                border-radius: 50%;
+                height: 150px;
+                width: 150px;
+            }
+
+             .circle4{
+                background-color: #9F9B9B;
+                border-radius: 50%;
+                height: 150px;
+                width: 150px;
+            }
+
+            .sticky{
+                width: 50%;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 100px;
+                padding: 50px;
+                padding-left: 500px;
+            }
+            
+
+            .animated_screenshot{
+                top: 88px;
+                left: 81px;
+                position: relative;
+                height: 361px;
+                width: 194px;
+            }
+
+            .feedback-series .phone {
+                float: left;
+            }
+
+            #iterations {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .wireframes{
+                position: absolute;
+                left:-100px;
+                max-height: 600px;
+            }
+
+            .lofi {
+                object-fit: contain;
+                height: 800px;
+                float: left;
+                transform: rotate(-20deg);
+                padding: 20px;
+            }
             .button {
                 display: flex;
                 justify-content: center;
@@ -123,7 +308,6 @@
                 border-radius: 18px;
                 text-decoration: none;
             }
-
             @keyframes swim {
                 0% { margin-left: -235px }
                 70% { margin-left: 100% }
@@ -231,7 +415,7 @@
                     <div class="phone">
                         <img class="screenshot" src="assets/img/barkbuds/screen_3.jpg">
                     </div>
-                    <div class="pup_sitting"></div>
+                    <img id="pup_sitting" src="assets/img/barkbuds/pup_sitting.png" height="250">
                 </div>
                 <div class="statement">
                     Many dogs like playing with other dogs but sometimes their humans are a bit concerned with who they are playing with. Will the dogs get along? Will one of the dogs be aggressive? What if they have fleas? 
@@ -240,14 +424,13 @@
                     <br><br>
                     I created Barkbuds as a mobile app to allow users to narrow down others dogs they may see by building a profile and connecting with dogs that match the profile desired. 
                 </div>
-                <div>
+                <div id="sniffer">
                     <div class="phone">
-                        <div class="screenshot"></div>
-                    </div>
-                    <div class="pup_sniffing"></div>
+                        <img class="screenshot" src="assets/img/barkbuds/animation_1.gif"></div>
+                    <img id="pup_sniffing" src="assets/img/barkbuds/pup_sniffing.png">
                 </div>
             </section>
-            <section id="define_2">
+            <section id="transition_container">
                 <h1>Define 2</h1>
                 <div class="statement">
                     While there are a lot of apps and services out there for dog sitting or walkers such Rover or Bark n Borrow or apps tailored to dating while with a dog, there are very few options for users to casually introduce their dogs to other dogs in a controlled environment. Some shelters and community groups would organize larger meetups for dog owners but can often be overly stimulating for some dogs. 
@@ -282,6 +465,9 @@
                     </g>
                 </svg>
             </section>
+
+            <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
+            
             <section id="ideate">
                 <h1>Ideate</h1>
                 <div class="statement">
@@ -316,30 +502,75 @@
                     </div>
                 </div>
                 <div class="colour_palette">
-                    <li>9F9B9B
-                    <li>444991
-                    <li>6369D3
-                    <li>F34D4D
-                </div>
-                <div class="onboard_screen"></div>
-                <div class="parallax-statement">
-                    A large focus of this project was designing an appropriate and user friendly onboarding process that didn’t feel like too much work to get setup and start looking at profiles. 
-                    <br><br>
-                    With convention dating apps, users typically only need to two make a profile for themselves and highlight what their looking for in a match. 
-                    <br><br>
-                    Barkbuds builds three profiles: the user’s, their dog, and the prospective matching dog. The initial onboarding focuses on the user and their dog. Additional prompts are spaced out throughout use of the app to continue building the profile. 
-                    <br><br>
-                    Users are still able to skip and complete these parts later. 
-                </div>
-                <div class="statement">
-                Animations were designed through Principle to make every interaction dynamic and engaging.
-                </div>
-                <div class="animated-screens"></div>    
-
+                    <div class="circle1">
+                        <div class="palette"># 444991</div>
+                    </div>
+                    <div class="circle2">
+                        <div class="palette"># 6369D3</div>
+                    </div>
+                    <div class="circle3">
+                        <div class="palette"># F34D4D</div>
+                    </div>
+                    <div class="circle4">
+                        <div class="palette"># 9F9B9B</div>
+                    </div>
+                </div> 
             </section>
+
+            <section id="artifacts 2">
+                    <div class="vertical_carousel">
+                        <div class="sticky">
+                            A large focus of this project was designing an appropriate and user friendly onboarding process that didn’t feel like too much work to get setup and start looking at profiles. 
+                            <br><br>
+                            With conventional dating apps, users typically only need to two make a profile for themselves and highlight what their looking for in a match. 
+                            <br><br>
+                            Barkbuds builds three profiles: the user’s, their dog, and the prospective matching dog. The initial onboarding focuses on the user and their dog. Additional prompts are spaced out throughout use of the app to continue building the profile. 
+                            <br><br>
+                            Users are still able to skip and complete these parts later. 
+                        </div>
+                        <div class="onboard_screen">
+                            <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen1.png">
+                        </div>
+                        <div class="onboard_screen">
+                            <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen2.png">
+                        </div>
+                        <div class="onboard_screen">
+                            <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen3.png">
+                        </div>
+                        <div class="onboard_screen">
+                            <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen4.png">
+                        </div>
+                    </div>
+                    <div class="horizontal_carousel">
+                        <div class="statement">
+                        Animations were designed through Principle to make every interaction dynamic and engaging.
+                        </div>
+                        
+                        <div class="slider">
+                            <div class="animated-screens1">
+                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_2.gif">
+                            </div>
+                            <div class="animated-screens2">
+                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_3.gif">
+                            </div>
+                            <div class="animated-screens3">
+                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_4.gif">
+                            </div> 
+                        </div>
+                        
+                        <!-- add carousel dots -->
+                    </div>  
+            </section>
+
             <section id="iterations">
+            <section id="transition_container">
                 <h1>Iterations</h1>
                 <div class="wireframes">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe2.png">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe3.png">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe4.png">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe5.png">
                 </div>
                 <div class="statement">
                 My iteration process started with lo-fi wireframes, taking into consideration early user stories and flows. As the timeline for the project was short, once the lo-fi wireframes passed hallway testing, I moved into higher fidelity designs. 
@@ -347,20 +578,31 @@
                 This didn’t give me the opportunity to get richer feedback from users.
                 </div>
             </section>
+            </section>
+            
+             <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
+
             <section id="feedback">
                 <h1>Feedback</h1>
-                <div class="phone">
-                    <div class="screenshot" id="iteration1"></div>
-                </div>
-                <div class="phone">
-                    <div class="screenshot" id="iteration2"></div>
-                </div>
-                <div class="phone">
-                    <div class="screenshot" id="iteration3"></div>
-                </div>
-                <div class="phone">
-                    <div class="screenshot" id="iteration4"></div>
-                </div>
+                    <div class="feedback-series">
+                    <div class="phone">
+                        <div class="feedback_screen" id="iteration1">
+                            <img class="screenshot" src="assets/img/barkbuds/iteration1.png">
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <div class="feedback_screen" id="iteration2"></div>
+                        <img class="screenshot" src="assets/img/barkbuds/iteration2.png">
+                    </div>
+                    <div class="phone">
+                        <div class="feedback_screen" id="iteration3"></div>
+                        <img class="screenshot" src="assets/img/barkbuds/iteration3.png">
+                    </div>
+                    <div class="phone">
+                        <div class="feedback_screen" id="iteration4"></div>
+                        <img class="screenshot" src="assets/img/barkbuds/iteration4.png">
+                    </div>
+                    </div>
                 <div class="statement">
                   My higher fidelity iterations included varying designs and colours, which eventually were refined based off of AB testing, user feedback and accessibility tools such as contrast analyzer. 
                 </div>
