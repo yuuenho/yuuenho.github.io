@@ -87,21 +87,23 @@
             .logo {
                 display:flex;
                 justify-content: center;
-                padding: 35px 0px;
+                padding: 30px 0px;
                 align-items: center;
             }
 
             .pup_head {
                 background-image: url(assets/img/barkbuds/barky.png);
-                width: 133px;
-                height: 112px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 115px;
+                height: 90px;
             }
 
             .word_logo {
                 background-image: url(assets/img/barkbuds/Barkbuds.png);
                 background-size: contain;
                 background-repeat:no-repeat;
-                height: 55px;
+                height: 52px;
                 width: 310px;
             }
 
@@ -110,23 +112,38 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-evenly;
+                justify-content: center;
             }
+
+            /* .horizontal div {
+                flex-shrink: 0;
+            } */
 
             .phone {
                 background-image: url(assets/img/barkbuds/Device.png);
                 background-size: contain;
                 background-repeat: no-repeat;
-                height: 573px;
-                width: 333px;
+                /* position: relative; */
+                max-height: 250px;
+                max-width: 150px;
+
+                padding: 75px 47px 118px 60px;
             }
 
-            .screenshot {
-                top: 88px;
-                left: 81px;
-                position: relative;
-                height: 361px;
-                width: 194px;
+            .phone .screenshot {
+                /* top: 83px;
+                left: 69px;
+                position: relative; */
+                height: 274px;
+                width: 156px;
+                box-sizing: border-box;
+                /* width: 100%;
+                height: 100%; */
+            }
+            
+            .pup_sitting{
+                padding: 30px;
+                height:200;
             }
 
             .statement {
@@ -160,8 +177,12 @@
                 background-image: url(assets/img/barkbuds/slider.gif);
                 background-size: contain;
                 background-repeat: no-repeat;
-                height: 369px;
-                width: 195px;
+                height: 500px;
+                width: 300px;
+            }
+
+            #style_guide{
+                display: inline-block;
             }
 
             .pup_design{
@@ -215,8 +236,8 @@
             }
 
             .colour_palette{
-                display:flex;
-                flex-direction: row;
+                /* display:flex;
+                flex-direction: row; */
                 align-items: center;
                 justify-content: space-between;
                 padding: 5px 150px;
@@ -265,6 +286,17 @@
                 padding-left: 500px;
             }
             
+            #vertical_screen_image{
+                margin-top:-505px;
+                padding-left: 50px;
+            }
+
+            .onboard_screenshot{
+                height:500px;
+                width: auto;
+                object-fit: cover;
+                padding: 50px;
+            }
 
             .animated_screenshot{
                 top: 88px;
@@ -276,6 +308,7 @@
 
             .feedback-series .phone {
                 float: left;
+
             }
 
             #iterations {
@@ -286,7 +319,10 @@
             .wireframes{
                 position: absolute;
                 left:-100px;
-                max-height: 600px;
+                top:-50px;
+                width: 1000px;
+                overflow: hidden;
+                max-height: 650px;
             }
 
             .lofi {
@@ -308,6 +344,9 @@
                 border-radius: 18px;
                 text-decoration: none;
             }
+
+            
+
             @keyframes swim {
                 0% { margin-left: -235px }
                 70% { margin-left: 100% }
@@ -350,15 +389,31 @@
                 animation-delay: 0.1s;
             } */
 
+            .pup_footer{
+                overflow: hidden;
+                margin-bottom: -310px;
+                transform: rotate(-6deg);
+            }
+
+            .pup_footer_head{
+                height:568px;
+                width: 400px;
+            }
+
             footer{
+                position:relative;
                 color: white;
                 background-color: #4A4A4A;
                 padding: 10px;
+                z-index: 10;
             }
 
         </style>
         <script src="assets/plugins/jquery-3.3.1.min.js"></script>
         <script src="assets/ScrollMagic.min.js"></script>
+        <script src="assets/plugins/animation.gsap.min.js"></script>
+        <script src="assets/plugins/greensock-js/src/minified/TweenLite.min.js"></script>
+        <script src="assets/plugins/greensock-js/src/minified/TimelineMax.min.js"></script>
         <script>
             $(() => {
                 const controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 0}});
@@ -371,6 +426,18 @@
                             .addTo(controller);
                     scenes.push(scene);
                 });
+
+                const wipeAnimation = new TimelineMax()
+                    .fromTo('section#ideate', 1, { x: "100%" }, { x: "0%", ease: Linear.easeNone });
+                
+                // const wipeScene = new ScrollMagic.Scene({
+                //     triggerElement: "#transition_container",
+                //     triggerHook: "onLeave",
+                //     duration: "300%",
+                // })
+                // .setPin("#transition_container")
+                // .setTween(wipeAnimation)
+                // .addTo(controller);
             });
         </script>
     </head>
@@ -407,6 +474,7 @@
                 </div>
                 <div class="horizontal">
                     <div class="phone">
+                        <!-- <div class="screenshot" style="background-image: url(assets/img/barkbuds/screen_1.png)"></div> -->
                         <img class="screenshot" src="assets/img/barkbuds/screen_1.png">
                     </div>
                     <div class="phone">
@@ -415,7 +483,8 @@
                     <div class="phone">
                         <img class="screenshot" src="assets/img/barkbuds/screen_3.jpg">
                     </div>
-                    <img id="pup_sitting" src="assets/img/barkbuds/pup_sitting.png" height="250">
+                    <div class="pup_sitting">
+                    <img id="pup_sitting" src="assets/img/barkbuds/pup_sitting.png" height="250"></div>
                 </div>
                 <div class="statement">
                     Many dogs like playing with other dogs but sometimes their humans are a bit concerned with who they are playing with. Will the dogs get along? Will one of the dogs be aggressive? What if they have fleas? 
@@ -479,42 +548,44 @@
             </section>
             <section id="artifacts">
                 <h1>Artifacts</h1>
-                <div class="pup_design"></div>
-                <div class="reject_icon"></div>
-                <div class="like_icon"></div>
-                <div class= "nav_icon"></div>
-                <div class="Typography">
-                    <div class="bold">
-                        <div class="upper">
-                        Raleway Semi Bold
+                <div id="style_guide">
+                    <div class="pup_design"></div>
+                    <div class="reject_icon"></div>
+                    <div class="like_icon"></div>
+                    <div class= "nav_icon"></div>
+                    <div class="Typography">
+                        <div class="bold">
+                            <div class="upper">
+                            Raleway Semi Bold
+                            </div>
+                            <div class="lower">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                            </div>
                         </div>
-                        <div class="lower">
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                        <div class="light">
+                            <div class="upper">
+                            Raleway Light
+                            </div>
+                            <div class="lower">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                            </div>
                         </div>
                     </div>
-                    <div class="light">
-                        <div class="upper">
-                        Raleway Light
+                    <div class="colour_palette">
+                        <div class="circle1">
+                            <div class="palette"># 444991</div>
                         </div>
-                        <div class="lower">
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                        <div class="circle2">
+                            <div class="palette"># 6369D3</div>
+                        </div>
+                        <div class="circle3">
+                            <div class="palette"># F34D4D</div>
+                        </div>
+                        <div class="circle4">
+                            <div class="palette"># 9F9B9B</div>
                         </div>
                     </div>
                 </div>
-                <div class="colour_palette">
-                    <div class="circle1">
-                        <div class="palette"># 444991</div>
-                    </div>
-                    <div class="circle2">
-                        <div class="palette"># 6369D3</div>
-                    </div>
-                    <div class="circle3">
-                        <div class="palette"># F34D4D</div>
-                    </div>
-                    <div class="circle4">
-                        <div class="palette"># 9F9B9B</div>
-                    </div>
-                </div> 
             </section>
 
             <section id="artifacts 2">
@@ -528,17 +599,19 @@
                             <br><br>
                             Users are still able to skip and complete these parts later. 
                         </div>
-                        <div class="onboard_screen">
-                            <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen1.png">
-                        </div>
-                        <div class="onboard_screen">
-                            <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen2.png">
-                        </div>
-                        <div class="onboard_screen">
-                            <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen3.png">
-                        </div>
-                        <div class="onboard_screen">
-                            <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen4.png">
+                        <div id="vertical_screen_image">
+                            <div class="onboard_screen">
+                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen1.png">
+                            </div>
+                            <div class="onboard_screen">
+                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen2.png">
+                            </div>
+                            <div class="onboard_screen">
+                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen3.png">
+                            </div>
+                            <div class="onboard_screen">
+                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen4.png">
+                            </div>
                         </div>
                     </div>
                     <div class="horizontal_carousel">
@@ -632,7 +705,10 @@
                 <div class="button">
                     <a href="contact.html">
                     Let's Chat</div></a>
-                <div class="pup_head" style="height:300px"></div>
+                <div class="pup_footer">
+                    <img class="pup_footer_head" src="assets/img/barkbuds/pup_sitting.png"></div>
+                </div>
+                
             </section>
 
 
