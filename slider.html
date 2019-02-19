@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <style type="text/css">
+            body, html {
+                height: 100%;
+            }
+
+            #pinContainer {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .panel {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+
+            .blue{
+                background-color: blue;
+            }
+
+            .turquoise{
+                background-color: teal;
+            }
+
+            .green{
+                background-color: green;
+            }
+
+            .bordeaux{
+                background-color: red;
+            }
+
+        </style>
+        <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
+        <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+        <script src="assets/ScrollMagic.min.js"></script>
+        <script src="assets/plugins/debug.addIndicators.min.js"></script>
+        <script src="assets/plugins/animation.gsap.min.js"></script>
+
+
+        <script>
+            $(function () {
+                var controller = new ScrollMagic.Controller();
+
+                var wipeAnimation = new TimelineMax()
+                    .fromTo("section.panel.green", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone}) //from left
+                    .fromTo("section.panel.turquoise", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone}) //from right
+                    .fromTo("section.panel.bordeaux", 1, {y: "-100%"}, {y: "0%", ease: Linear.easeNone}); // from top
+
+                new ScrollMagic.Scene({
+                    triggerElement: "#pinContainer",
+                    triggerHook:"onLeave",
+                    duration: "300%"
+                })
+                .setPin("#pinContainer")
+                .setTween(wipeAnimation)
+                .addIndicators()
+                .addTo(controller);
+
+            });
+        </script>
+    </head>
+    <body>
+        <div id="pinContainer">
+            <section class="panel blue">
+                <b>ONE</b>
+            </section>
+            <section class="panel green">
+                <b>TWO</b>
+            </section>
+            <section class="panel turquoise">
+                <b>THREE</b>
+            </section>
+            <section class="panel bordeaux">
+                <b>FOUR</b>
+            </section>
+        </div>
+    </body>
+</html>
+
