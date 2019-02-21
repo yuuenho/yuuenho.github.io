@@ -5,6 +5,7 @@
         <title>Bark Buds - Kevin Ho</title>
         <link rel="shortcut icon" href="flavicon.ico" type="image/ico">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="assets/animate.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <style>
@@ -31,6 +32,11 @@
                 padding: 8px;
                 text-decoration: none;
                 color:#4A4A4A;
+            }
+
+            .font-size{
+                font-family: 'Avenir Next Condensed';
+                padding: 8px;
             }
 
             #page_title {
@@ -136,17 +142,14 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
+                -webkit-animation-duration: 1.5s;
             }
 
-            /* .horizontal div {
-                flex-shrink: 0;
-            } */
 
             .phone {
                 background-image: url(assets/img/barkbuds/Device.png);
                 background-size: contain;
                 background-repeat: no-repeat;
-                /* position: relative; */
                 max-height: 250px;
                 max-width: 150px;
                 padding: 75px 47px 118px 60px;
@@ -172,6 +175,7 @@
             .statement {
                 width: 60%;
                 padding-left:42px;
+                -webkit-animation-duration: 1.5s
             }
 
             #sniffer {
@@ -184,6 +188,7 @@
                 display: flex;
                 padding: 40px 0px;
                 justify-content: center;
+                align-items: center;
             }
 
             #define_2_statement_right {
@@ -514,20 +519,20 @@
                 animation-delay: 0.1s;
             } */
 
-            .pup_footer{
-                position: absolute;
+            #pup_footer{
+                background-image: url(assets/img/barkbuds/pup_sitting.png);
+                background-size:cover;
+                height:278px;
+                width: 400px;
+                position: relative;
                 overflow: hidden;
-                margin-bottom: -310px;
+                /* margin-bottom: -310px; */
                 transform: rotate(-6deg);
             }
 
-            .pup_footer_head{
-                height:568px;
-                width: 400px;
-            }
 
             footer{
-                position:sticky;
+                position:relative;
                 width: 100%;
                 color:#faf8f8;
                 background-color: #4A4A4A;
@@ -535,12 +540,20 @@
                 z-index: 10;
             }
 
+            .contactlogo img{
+                height:30px;
+            }
 
         </style>
         <script src="assets/plugins/jquery-3.3.1.min.js"></script>
         <script src="assets/ScrollMagic.min.js"></script>
         <script src="assets/plugins/animation.gsap.min.js"></script>
         <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
+        <script src="js/wow.min.js"></script>
+            <script>
+            new WOW().init();
+            </script>
+
         <!-- <script src="assets/plugins/greensock-js/src/minified/TimelineMax.min.js"></script> -->
         <script>
             $(() => {
@@ -577,7 +590,20 @@
                 //  .setPin("#transition_container_2")
                 // .setTween(wipeAnimation)
                 // .addTo(wipeController);
+
+                const footercontroller = new ScrollMagic.Controller()
+                const footerscene = new ScrollMagic.Scene({triggerElement: "#pup_footer", triggerHook:"onEnter", duration:0})
+                        .setPin ("footer")
+                        .addTo (footercontroller);
             });
+
+            function resizeText(multiplier) {
+                //needs to have less than 50 but more than 14
+            if (document.body.style.fontSize == "") {
+                document.body.style.fontSize = "1.0em";
+            }
+            document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.5) + "em";
+            }
         </script>
     </head>
     <body>
@@ -586,7 +612,12 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="process.html">Process</a>
-                <a href="">Contact</a>
+                <a href="contact.html">Contact</a>
+                <div class="font-size">
+                    Aa
+                    <button id="up" onclick="resizeText(1)">+</button>
+                    <button id="down" onclick="resizeText(-1)">-</button>
+                </div>
             </nav>
             <div id="page_title">Design Ho</div>
              <div id="breadcrumbs_background"></div>
@@ -612,7 +643,7 @@
                     <div class="pup_head"></div>
                     <div class="word_logo"></div>
                 </div>
-                <div class="horizontal">
+                <div class="horizontal wow fadeInUp">
                     <div class="phone">
                         <!-- <div class="screenshot" style="background-image: url(assets/img/barkbuds/screen_1.png)"></div> -->
                         <img class="screenshot" src="assets/img/barkbuds/screen_1.png">
@@ -626,7 +657,7 @@
                     <div class="pup_sitting">
                     <img id="pup_sitting" src="assets/img/barkbuds/pup_sitting.png" height="200"></div>
                 </div>
-                <div class="statement">
+                <div class="statement wow fadeInUp">
                     Many dogs like playing with other dogs but sometimes their humans are a bit concerned with who they are playing with. Will the dogs get along? Will one of the dogs be aggressive? What if they have fleas? 
                     <br><br>
                     I wanted to to give dog owners greater control over meeting and socializing their furbabies with other dogs nearby. 
@@ -860,7 +891,7 @@
                     </div>
                 </div>
             </section>
-            <section id="whats_next">
+            <section id="whats_next" style="min-height:400px">
                 <h1>What's Next</h1>
                 <div class="statement">
                     What’s Next…
@@ -875,20 +906,18 @@
                         <a class="button_link" href="contact.html">
                         Let's Chat</div></a>
                 </div>
-                <div class="footer_sticky">
-                    <div class="pup_footer">
-                        <img class="pup_footer_head" src="assets/img/barkbuds/pup_sitting.png"></div>
-                    </div>
-                </div>
+               
             </section>
 
-
-        
-            <footer>
-                <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
-                <a class="behance_logo" img src="assets/img/landing/behance.png" target="_blank" href=""></a>
-                <a class="linkedin_logo" img src="assets/img/landing/linkedin.png" target="_blank" href=""></a>
-            </footer>
+            
+                    <footer>
+                        <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
+                        <div class="contact">
+                            <a class="contactlogo behance_logo" target="_blank" href=""><img src="assets/img/landing/behance.png"></a>
+                            <a class="contactlogo linkedin_logo" target="_blank" href=""><img src="assets/img/landing/linkedin.png"></a>
+                        </div>
+                    </footer>
+                    <div id="pup_footer"></div>
         </main>
     </body>
 </html>
