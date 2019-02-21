@@ -225,11 +225,15 @@
                 /* left:750px; */
             }
 
-            #style_guide{
+            .style_guide_row, .circle_group {
                 display: flex;
                 justify-content: space-evenly;
                 flex-wrap: wrap;
                 align-items: center;
+            }
+
+            #colour_palette {
+                justify-content: center;
             }
 
             .pup_design{
@@ -242,7 +246,7 @@
                 margin:20px;
             }
 
-            .icons{
+            .icons {
                 margin: 20px;
                 display: flex;
                 flex-direction: row;
@@ -292,7 +296,7 @@
                 font-size: 18pt;
             }
 
-            .colour_palette{
+            .colour_palette {
                 display:flex;
                 flex-direction: row;
                 align-items: center;
@@ -679,7 +683,7 @@
             
             <section id="artifacts">
                 <h1>Artifacts</h1>
-                <div id="style_guide">
+                <div class="style_guide_row">
                     <div class="pup_design"></div>
                     
                     <div class="Typography">
@@ -700,19 +704,24 @@
                             </div>
                         </div>
                     </div>
-                    
+                </div>
+                <div class="style_guide_row">
                     <div class="icons">
                         <div class="reject_icon"></div>
                         <div class="like_icon"></div>
                         <div class= "nav_icon"></div>
                     </div>
-                    <div class="colour_palette">
+                </div>
+                <div class="style_guide_row" id="colour_palette">
+                    <div class="circle_group">
                         <div class="circle1">
                             <div class="palette"># 444991</div>
                         </div>
                         <div class="circle2">
                             <div class="palette"># 6369D3</div>
                         </div>
+                    </div>
+                    <div class="circle_group">
                         <div class="circle3">
                             <div class="palette"># F34D4D</div>
                         </div>
