@@ -386,8 +386,16 @@
                 width: 194px;
             } 
 
-            .feedback-series .phone {
-                float: left;
+            .feedbackgroup{
+                display:flex;
+                justify-content: center;
+                align-content: center;
+            }
+
+            .feedback-series {
+                display:flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             #iterations {
@@ -808,23 +816,27 @@
             <section id="feedback">
                 <h1>Feedback</h1>
                     <div class="feedback-series">
-                    <div class="phone">
-                        <div class="feedback_screen" id="iteration1">
-                            <img class="screenshot" src="assets/img/barkbuds/iteration1.png">
+                        <div class="feedbackgroup">
+                            <div class="phone">
+                                <div class="feedback_screen" id="iteration1">
+                                    <img class="screenshot" src="assets/img/barkbuds/iteration1.png">
+                                </div>
+                            </div>
+                            <div class="phone">
+                                <div class="feedback_screen" id="iteration2"></div>
+                                <img class="screenshot" src="assets/img/barkbuds/iteration2.png">
+                            </div>
                         </div>
-                    </div>
-                    <div class="phone">
-                        <div class="feedback_screen" id="iteration2"></div>
-                        <img class="screenshot" src="assets/img/barkbuds/iteration2.png">
-                    </div>
-                    <div class="phone">
-                        <div class="feedback_screen" id="iteration3"></div>
-                        <img class="screenshot" src="assets/img/barkbuds/iteration3.png">
-                    </div>
-                    <div class="phone">
-                        <div class="feedback_screen" id="iteration4"></div>
-                        <img class="screenshot" src="assets/img/barkbuds/iteration4.png">
-                    </div>
+                        <div class="feedbackgroup">
+                            <div class="phone">
+                                <div class="feedback_screen" id="iteration3"></div>
+                                <img class="screenshot" src="assets/img/barkbuds/iteration3.png">
+                            </div>
+                            <div class="phone">
+                                <div class="feedback_screen" id="iteration4"></div>
+                                <img class="screenshot" src="assets/img/barkbuds/iteration4.png">
+                            </div>
+                        </div>
                     </div>
                 <div class="statement">
                   My higher fidelity iterations included varying designs and colours, which eventually were refined based off of AB testing, user feedback and accessibility tools such as contrast analyzer. 
