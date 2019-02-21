@@ -368,23 +368,26 @@
                 padding: 50px;
             }
             .horizontal_carousel{
-                float:left;
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                /* float:left; */
                 margin-bottom: 100px;
             }
             
-            .animated_screenshot{
-                float: left;
-                padding: 0px 10px 100px;
-                top: 88px;
-                left: 81px;
-                position: relative;
+            .slider div {
+                float:left;
+                padding: 0px 10px;
+            }
+
+            .animated_screenshot {  
                 height: 361px;
                 width: 194px;
-            }
+            } 
 
             .feedback-series .phone {
                 float: left;
-
             }
 
             #iterations {
@@ -759,7 +762,7 @@
                         </div>
                     </div>
                     <div class="horizontal_carousel">
-                        <div class="statement" style="float:left; width: 30%; padding-top:20%">
+                        <div class="" style="width: 20rem;">
                         Animations were designed through Principle to make every interaction dynamic and engaging.
                         </div>
                         
