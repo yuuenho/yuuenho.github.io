@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <meta charset="utf-8"/>
         <title>Bark Buds - Kevin Ho</title>
         <link rel="shortcut icon" href="flavicon.ico" type="image/ico">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -173,10 +174,20 @@
                 padding-left:42px;
             }
 
-            #sniffer{
+            #sniffer {
                 display:flex;
                 justify-content: center;
                 padding: 40px 0px;
+            }
+
+            .sniffer2 {
+                display: flex;
+                padding: 40px 0px;
+                justify-content: center;
+            }
+
+            #define_2_statement_right {
+                width: 350px;
             }
 
             #pup_sniffing {
@@ -216,7 +227,7 @@
 
             #style_guide{
                 display: flex;
-                justify-content: center;
+                justify-content: space-evenly;
                 flex-wrap: wrap;
                 align-items: center;
             }
@@ -225,9 +236,17 @@
                 background-image: url(assets/img/barkbuds/logo_design.png);
                 background-size: contain;
                 background-repeat: no-repeat;
-                height: 195px;
-                min-width: 195px;
+                height: 300px;
+                min-width: 300px;
                 float:left;
+                margin:20px;
+            }
+
+            .icons{
+                margin: 20px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
             }
 
             .reject_icon{
@@ -243,7 +262,7 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 height: 100px;
-                min-width: 100px; 
+                min-width: 100px;
             }
 
             .nav_icon{
@@ -334,7 +353,7 @@
             }
             
             #vertical_screen_image{
-                margin-top:-505px;
+                margin-top:-470px;
                 padding-left: 50px;
             }
 
@@ -346,6 +365,7 @@
             }
             .horizontal_carousel{
                 float:left;
+                margin-bottom: 100px;
             }
             
             .animated_screenshot{
@@ -372,11 +392,11 @@
 
             .wireframes{
                 position: absolute;
-                left:-100px;
-                top:-27px;
+                left:-35px;
+                top:-10px;
                 width: 1000px;
                 overflow: hidden;
-                max-height: 692px;
+                max-height: 675px;
             }
 
             .statement_right{
@@ -392,7 +412,7 @@
                 height: 800px;
                 float: left;
                 transform: rotate(-20deg);
-                padding: 20px;
+                padding: 10px;
             }
 
             .left_box{
@@ -596,11 +616,11 @@
                     <br><br>
                     I created Barkbuds as a mobile app to allow users to narrow down others dogs they may see by building a profile and connecting with dogs that match the profile desired. 
                 </div>
-                <div id="sniffer">
+                <!-- <div id="sniffer">
                     <div class="phone">
                         <img class="screenshot" src="assets/img/barkbuds/animation_1.gif"></div>
                     <img id="pup_sniffing" src="assets/img/barkbuds/pup_sniffing.png">
-                </div>
+                </div> -->
             </section>
             <div id="trigger1" style="height:40px"></div>
             <section class="transition_container" id="transition_container_1">
@@ -609,10 +629,15 @@
                     <div class="statement">
                         While there are a lot of apps and services out there for dog sitting or walkers such Rover or Bark n Borrow or apps tailored to dating while with a dog, there are very few options for users to casually introduce their dogs to other dogs in a controlled environment. Some shelters and community groups would organize larger meetups for dog owners but can often be overly stimulating for some dogs. 
                     </div>
-                    <div class="statement">
-                        As the goal was to create a friendly and intuitive social networking platform, I turned to traditional dating apps to model our problem space. I selected to model our platform on PlentyOfFish, which had a comprehensive onboarding process to better define a suitable match.
+                    <div class="sniffer2">
+                        <div class="phone">
+                            <img class="screenshot" src="assets/img/barkbuds/animation_1.gif">
+                        </div>
+                        <div id="define_2_statement_right">
+                            As the goal was to create a friendly and intuitive social networking platform, using familiar iteractions like carding sorting and swiping in a profile based environment. I turned to traditional dating apps to model our problem space. I selected to model our platform on OkCupid, which had a comprehensive onboarding process to better define a suitable match.
+                        </div>
                     </div>
-                    <svg width="343px" height="144px" viewBox="0 0 343 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- <svg width="343px" height="144px" viewBox="0 0 343 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g id="fish" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                             <g id="Intro" transform="translate(-663.000000, -2208.000000)" fill="#FFFFFF">
                                 <g id="noun_Fish_2196836" transform="translate(662.000000, 2159.000000)">
@@ -637,7 +662,7 @@
                                 </g>
                             </g>
                         </g>
-                    </svg>
+                    </svg> -->
                 </section>
                 <section id="ideate">
                     <h1>Ideate</h1>
@@ -656,9 +681,7 @@
                 <h1>Artifacts</h1>
                 <div id="style_guide">
                     <div class="pup_design"></div>
-                    <div class="reject_icon"></div>
-                    <div class="like_icon"></div>
-                    <div class= "nav_icon"></div>
+                    
                     <div class="Typography">
                         <div class="bold">
                             <div class="upper">
@@ -676,6 +699,12 @@
                             ABCDEFGHIJKLMNOPQRSTUVWXYZ
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="icons">
+                        <div class="reject_icon"></div>
+                        <div class="like_icon"></div>
+                        <div class= "nav_icon"></div>
                     </div>
                     <div class="colour_palette">
                         <div class="circle1">
@@ -741,8 +770,8 @@
                     </div>  
             </section>
 
-            <div id="trigger2" style="height:40px"></div>
-            <section class="transition_container" id="transition_container_2">
+            <div id="trigger2"></div>
+            <!-- <section class="transition_container" id="transition_container_2"> -->
                 <section id="iterations">
                     <h1>Iterations</h1>
                     <div class="wireframes">
@@ -758,7 +787,7 @@
                     This didn’t give me the opportunity to get richer feedback from users.
                     </div>
                 </section>
-            </section>
+            <!-- </section> -->
             
              <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
 
@@ -827,11 +856,12 @@
             </section>
 
 
+        
+            <footer>
+                <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
+                <a class="behance_logo" img src="assets/img/landing/behance.png" target="_blank" href=""></a>
+                <a class="linkedin_logo" img src="assets/img/landing/linkedin.png" target="_blank" href=""></a>
+            </footer>
         </main>
-        <footer>
-            <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
-            <a class="behance_logo" img src="assets/img/landing/behance.png" target="_blank" href=""></a>
-            <a class="linkedin_logo" img src="assets/img/landing/linkedin.png" target="_blank" href=""></a>
-        </footer>
     </body>
 </html>
