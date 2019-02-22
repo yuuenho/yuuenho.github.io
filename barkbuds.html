@@ -177,6 +177,10 @@
                 height:200;
             }
 
+            .section-title{
+                padding: 20px 42px;
+                font-size: 1.5em;
+            }
             .statement {
                 width: 60%;
                 padding-left:42px;
@@ -244,6 +248,8 @@
 
             #colour_palette {
                 justify-content: center;
+                font-size:14pt;
+                padding-bottom: 50px;
             }
 
             .pup_design{
@@ -524,6 +530,10 @@
                 animation-delay: 0.1s;
             } */
 
+            .right{
+                margin: 0 42px;
+            }
+
             #pup_footer{
                 background-image: url(assets/img/barkbuds/pup_sitting.png);
                 background-size:cover;
@@ -538,6 +548,9 @@
 
             footer{
                 position:relative;
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
                 width: 100%;
                 color:#faf8f8;
                 background-color: #4A4A4A;
@@ -643,7 +656,13 @@
                 </div>
         </header>
         <main>
-            <section id="define">           
+            <section id="define"> 
+                <div id="case_study_description">
+                    <br>
+                    2018 - Self Initiated Project
+                    <br>
+                    UX - Visual Design - Prototype
+                </div>          
                 <div class="logo">
                     <div class="pup_head"></div>
                     <div class="word_logo"></div>
@@ -675,16 +694,17 @@
                     <img id="pup_sniffing" src="assets/img/barkbuds/pup_sniffing.png">
                 </div> -->
             </section>
-            <div id="trigger1" style="height:40px"></div>
-            <section class="transition_container" id="transition_container_1">
+            <div id="trigger1" style="height:22px"></div>
+            <section class="transition_container" id="transition_container_1" style="max-height: 800px">
                 <section id="define_2">
-                    <h1>Define 2</h1>
+                    <div></div>
+                    <div class="section-title">Define/Scope</div>
                     <div class="statement">
                         While there are a lot of apps and services out there for dog sitting or walkers such Rover or Bark n Borrow or apps tailored to dating while with a dog, there are very few options for users to casually introduce their dogs to other dogs in a controlled environment. Some shelters and community groups would organize larger meetups for dog owners but can often be overly stimulating for some dogs. 
                     </div>
                     <div class="sniffer2 wow fadeInUp">
                         <div class="phone">
-                            <img class="screenshot" src="assets/img/barkbuds/animation_1.gif">
+                            <video class="screenshot" src="assets/img/barkbuds/okcupid.mp4" controls>
                         </div>
                         <div id="define_2_statement_right">
                             As the goal was to create a friendly and intuitive social networking platform, using familiar iteractions like carding sorting and swiping in a profile based environment. I turned to traditional dating apps to model our problem space. I selected to model our platform on OkCupid, which had a comprehensive onboarding process to better define a suitable match.
@@ -718,7 +738,7 @@
                     </svg> -->
                 </section>
                 <section id="ideate">
-                    <h1>Ideate</h1>
+                    <div class="section-title">Ideate</div>
                     <div class="statement">
                         When interviewing users, temperament came up consistently as a concern for users when hoping to pair up their dogs. A challenge that arose in the research was that while most users agreed temperament was important to consider, there was no clear definition between users of what that meant.
                         <br><br>
@@ -731,7 +751,7 @@
             <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
             
             <section id="artifacts">
-                <h1>Artifacts</h1>
+                <div class="section-title">Artifacts</div>
                 <div class="style_guide_row">
                     <div class="pup_design"></div>
                     
@@ -831,7 +851,7 @@
             <div id="trigger2"></div>
             <!-- <section class="transition_container" id="transition_container_2"> -->
                 <section id="iterations">
-                    <h1>Iterations</h1>
+                    <div class="section-title">Iterations</div>
                     <div class="wireframes">
                         <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
                         <img class="lofi" src="assets/img/barkbuds/wireframe2.png">
@@ -850,7 +870,7 @@
              <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
 
             <section id="feedback">
-                <h1>Feedback</h1>
+                <div class="section-title">Feedback</div>
                     <div class="feedback-series">
                         <div class="feedbackgroup">
                             <div class="phone">
@@ -879,7 +899,7 @@
                 </div>
             </section>
             <section id="prototype">
-                <h1>Prototype</h1>
+                <div class="section-title">Prototype</div>
                 <div class="prototype_screen">
                     <div class="left_box">
                         <div class="phone">
@@ -887,21 +907,19 @@
                     </div>
                     <div class="right_box">
                         <div class="statement_button">
-                            Hi-fi mockups were put together as a prototype in inVision
+                            Hi-fi mockups were put together as a prototype in inVision. Watch the demo or click the button below to it out for yourself.
                         </div>
-                        <div class="button">
-                            <a class="button_link" href="https://projects.invisionapp.com/share/SFOUQQFYTH8">
-                            Explore prototype</a>
-                        </div>
+                        
+                        <a class="button button_link" href="https://projects.invisionapp.com/share/SFOUQQFYTH8">
+                        TRY ME</a>
+                        
                     </div>
                 </div>
             </section>
-            <section id="whats_next" style="min-height:400px">
-                <h1>What's Next</h1>
-                <div class="statement">
-                    What’s Next…
-                    <br><br>
-                    Iterations were not developed in enough detail with feedback. The hope is to  develop and refine the parameters in which users cand etermine the kinds of dogs they would like to be paired with.
+            <section id="whats_next" style="min-height:300px">
+                <div class="section-title">What's Next</div>
+                <div class="statement" style="padding-bottom: 20px">
+                    While this project is unlikely to continue, some of the take aways that I was able to learn from was thIterations were not developed in enough detail with feedback. The hope is to  develop and refine the parameters in which users can determine the kinds of dogs they would like to be paired with.
                 </div>
                 <div class="right">
                     <div class="button">

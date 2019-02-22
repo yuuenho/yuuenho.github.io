@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Bark Buds - Kevin Ho</title>
+        <title>Design Ho - Kevin Ho</title>
         <link rel="shortcut icon" href="flavicon.ico" type="image/ico">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="assets/animate.min.css">
@@ -77,6 +77,7 @@
             #breadcrumbs{
                 background-color: #faf8f8;
                 position: absolute;
+                visibility: hidden;
                 top: 55px;
                 left: 42px;
                 transform: skew(-20deg);
@@ -86,6 +87,7 @@
 
             #breadcrumbs_background{
                 position: relative;
+                visibility: hidden;
                 background-color: #4A4A4A;
                 width: 682px;
                 height: 29px;
@@ -113,10 +115,6 @@
             body{
                 margin: 0px;
             }
-            #case_study_description{
-                font-size: 10pt;
-                padding-left:42px;
-            }
 
             .logo {
                 display:flex;
@@ -143,6 +141,9 @@
 
             footer{
                 position:relative;
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
                 width: 100%;
                 color:#faf8f8;
                 background-color: #4A4A4A;
@@ -249,280 +250,10 @@
         </header>
         <main>
             <section id="define">
-                <div id="case_study_description">
-                    <br>
-                    2018 - Self Initiated Project
-                    <br>
-                    UX - Visual Design - Prototype
-                </div>           
                 <div class="logo">
                     <div class="pup_head"></div>
                     <div class="word_logo"></div>
                 </div>
-                <div class="horizontal wow fadeInUp">
-                    <div class="phone">
-                        <!-- <div class="screenshot" style="background-image: url(assets/img/barkbuds/screen_1.png)"></div> -->
-                        <img class="screenshot" src="assets/img/barkbuds/screen_1.png">
-                    </div>
-                    <div class="phone">
-                        <img class="screenshot" src="assets/img/barkbuds/screen_2.jpg">
-                    </div>
-                    <div class="phone">
-                        <img class="screenshot" src="assets/img/barkbuds/screen_3.jpg">
-                    </div>
-                    <div class="pup_sitting">
-                    <img id="pup_sitting" src="assets/img/barkbuds/pup_sitting.png" height="200"></div>
-                </div>
-                <div class="statement wow fadeInUp">
-                    Many dogs like playing with other dogs but sometimes their humans are a bit concerned with who they are playing with. Will the dogs get along? Will one of the dogs be aggressive? What if they have fleas? 
-                    <br><br>
-                    I wanted to to give dog owners greater control over meeting and socializing their furbabies with other dogs nearby. 
-                    <br><br>
-                    I created Barkbuds as a mobile app to allow users to narrow down others dogs they may see by building a profile and connecting with dogs that match the profile desired. 
-                </div>
-                <!-- <div id="sniffer">
-                    <div class="phone">
-                        <img class="screenshot" src="assets/img/barkbuds/animation_1.gif"></div>
-                    <img id="pup_sniffing" src="assets/img/barkbuds/pup_sniffing.png">
-                </div> -->
-            </section>
-            <div id="trigger1" style="height:40px"></div>
-            <section class="transition_container" id="transition_container_1">
-                <section id="define_2">
-                    <h1>Define 2</h1>
-                    <div class="statement">
-                        While there are a lot of apps and services out there for dog sitting or walkers such Rover or Bark n Borrow or apps tailored to dating while with a dog, there are very few options for users to casually introduce their dogs to other dogs in a controlled environment. Some shelters and community groups would organize larger meetups for dog owners but can often be overly stimulating for some dogs. 
-                    </div>
-                    <div class="sniffer2 wow fadeInUp">
-                        <div class="phone">
-                            <img class="screenshot" src="assets/img/barkbuds/animation_1.gif">
-                        </div>
-                        <div id="define_2_statement_right">
-                            As the goal was to create a friendly and intuitive social networking platform, using familiar iteractions like carding sorting and swiping in a profile based environment. I turned to traditional dating apps to model our problem space. I selected to model our platform on OkCupid, which had a comprehensive onboarding process to better define a suitable match.
-                        </div>
-                    </div>
-                    <!-- <svg width="343px" height="144px" viewBox="0 0 343 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <g id="fish" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="Intro" transform="translate(-663.000000, -2208.000000)" fill="#FFFFFF">
-                                <g id="noun_Fish_2196836" transform="translate(662.000000, 2159.000000)">
-                                    <g id="Group">
-                                        <g id="fish_1" transform="translate(74.917802, 134.767433) scale(-1, 1) rotate(8.000000) translate(-74.917802, -134.767433) translate(2.917802, 108.767433)">
-                                            <path d="M20.1066667,51.4333333 C19.8755556,51.4333333 19.4133333,51.2027778 19.1822222,50.9722222 C18.9511111,50.7416667 18.9511111,50.2805556 18.9511111,50.05 C20.3377778,43.3638889 23.1111111,37.1388889 26.5777778,31.8361111 C18.2577778,32.7583333 10.1688889,34.8333333 2.54222222,38.2916667 C2.08,38.5222222 1.61777778,38.2916667 1.38666667,38.0611111 C1.15555556,37.8305556 0.924444444,37.3694444 0.924444444,36.9083333 C2.08,29.9916667 6.93333333,24.2277778 13.1733333,21.9222222 C19.1822222,19.8472222 25.1911111,23.5361111 29.3511111,28.1472222 C38.5955556,16.85 51.7688889,9.24166667 63.7866667,5.55277778 C84.8177778,-1.13333333 108.16,-0.211111111 128.728889,0.711111111 L128.728889,0.711111111 C133.582222,0.941666667 140.053333,3.01666667 142.595556,6.93611111 C143.982222,9.24166667 143.982222,11.7777778 142.826667,14.5444444 C140.746667,19.1555556 134.044444,22.1527778 128.497778,24.4583333 C127.111111,24.9194444 125.955556,25.6111111 124.8,26.0722222 C108.391111,34.1416667 90.5955556,37.6 73.4933333,35.9861111 C68.4088889,35.525 63.3244444,34.6027778 58.4711111,33.9111111 C53.1555556,32.9888889 47.3777778,32.0666667 41.8311111,31.6055556 C38.5955556,31.375 35.1288889,31.375 31.8933333,31.6055556 C34.2044444,34.8333333 35.5911111,38.5222222 33.5111111,43.1333333 C30.9688889,47.975 25.6533333,51.2027778 20.1066667,51.4333333 C20.1066667,51.4333333 20.1066667,51.4333333 20.1066667,51.4333333 Z M29.5822222,32.0666667 C25.6533333,37.3694444 23.1111111,43.1333333 21.4933333,49.1277778 C25.6533333,48.4361111 29.5822222,45.9 31.4311111,41.9805556 C33.0488889,38.2916667 32.1244444,35.7555556 29.5822222,32.0666667 Z M16.8711111,23.7666667 C15.9466667,23.7666667 15.0222222,23.9972222 14.0977778,24.2277778 C9.24444444,25.8416667 5.54666667,30.2222222 3.92888889,35.2944444 C11.5555556,32.2972222 19.4133333,30.2222222 27.5022222,29.5305556 C24.4977778,26.3027778 20.8,23.7666667 16.8711111,23.7666667 Z M36.0533333,29.0694444 C38.1333333,29.0694444 39.9822222,29.0694444 42.0622222,29.3 C47.84,29.7611111 53.3866667,30.6833333 58.9333333,31.6055556 C63.7866667,32.5277778 68.8711111,33.2194444 73.9555556,33.6805556 C90.8266667,35.2944444 108.16,31.8361111 124.106667,23.9972222 C125.031111,23.5361111 126.417778,22.8444444 127.804444,22.3833333 C132.657778,20.3083333 139.128889,17.5416667 140.977778,13.6222222 C141.902222,11.5472222 141.902222,9.70277778 140.977778,8.08888889 C138.897778,4.86111111 133.351111,3.01666667 128.96,2.78611111 C107.697778,1.86388889 85.5111111,0.941666667 64.7111111,7.39722222 C51.3066667,11.7777778 39.9822222,19.3861111 32.1244444,28.8388889 C33.28,29.0694444 34.6666667,29.0694444 36.0533333,29.0694444 Z" id="Shape" fill-rule="nonzero"></path>
-                                            <path d="M114.168889,29.7611111 C114.168889,29.7611111 113.937778,29.7611111 113.937778,29.7611111 C110.702222,28.8388889 107.928889,26.3027778 106.311111,22.8444444 C104.693333,19.3861111 104.693333,15.6972222 106.311111,12.7 C106.542222,12.0083333 107.235556,11.7777778 107.928889,12.2388889 C108.622222,12.4694444 108.853333,13.1611111 108.391111,13.8527778 C107.235556,16.3888889 107.235556,19.3861111 108.622222,22.1527778 C109.777778,24.9194444 112.088889,26.9944444 114.631111,27.9166667 C115.324444,28.1472222 115.555556,28.8388889 115.324444,29.3 C115.093333,29.5305556 114.631111,29.7611111 114.168889,29.7611111 Z" id="Path"></path>
-                                            <path d="M120.871111,13.3916667 C120.64,13.3916667 120.408889,13.3916667 120.177778,13.1611111 L118.328889,12.0083333 C117.866667,11.5472222 117.635556,10.8555556 118.097778,10.3944444 C118.56,9.93333333 119.253333,9.70277778 119.715556,10.1638889 L121.564444,11.3166667 C122.026667,11.7777778 122.257778,12.4694444 121.795556,12.9305556 C121.564444,13.1611111 121.333333,13.3916667 120.871111,13.3916667 Z" id="Path"></path>
-                                        </g>
-                                        <g id="fish_2" transform="translate(185.000000, 149.000000)">
-                                            <path d="M150.448889,43.5388889 C143.515556,43.5388889 135.657778,41.0027778 131.728889,37.0833333 C128.955556,34.3166667 128.262222,31.0888889 129.417778,27.8611111 C130.111111,26.0166667 130.804444,23.9416667 131.266667,22.0972222 C93.8266667,36.6222222 51.0711111,39.6194444 9.47111111,30.6277778 C3.46222222,29.2444444 -0.00444444444,26.0166667 0.226666667,22.0972222 C0.457777778,17.2555556 5.31111111,13.3361111 12.0133333,12.4138889 L12.0133333,12.4138889 C32.5822222,9.41666667 53.6133333,7.80277778 74.4133333,8.03333333 C88.5111111,8.03333333 104.92,8.95555556 120.635556,14.0277778 C124.795556,15.4111111 128.724444,17.025 132.422222,18.8694444 C134.733333,10.8 137.275556,3.42222222 143.746667,1.11666667 C146.751111,-0.0361111111 149.755556,0.194444444 151.604444,1.80833333 C154.377778,4.11388889 154.146667,8.49444444 152.297778,11.2611111 C150.448889,13.7972222 147.675556,15.4111111 144.902222,16.7944444 C141.897778,18.1777778 138.893333,19.5611111 135.657778,20.9444444 C145.133333,26.2472222 152.991111,33.3944444 158.075556,41.4638889 C158.306667,41.6944444 158.306667,42.1555556 158.306667,42.3861111 C158.075556,42.6166667 157.844444,43.0777778 157.613333,43.0777778 C155.533333,43.3083333 152.991111,43.5388889 150.448889,43.5388889 Z M133.808889,21.8666667 C133.115556,24.1722222 132.422222,26.4777778 131.728889,28.7833333 C130.804444,31.3194444 131.497778,33.625 133.577778,35.7 C138.2,40.3111111 148.6,42.6166667 155.533333,41.0027778 C150.217778,33.1638889 142.822222,26.7083333 133.808889,21.8666667 Z M12.2444444,14.4888889 C6.00444444,15.4111111 2.53777778,19.1 2.30666667,22.0972222 C2.30666667,25.0944444 5.08,27.4 9.70222222,28.3222222 C50.84,37.3138889 92.9022222,34.3166667 130.111111,20.0222222 C126.875556,18.4083333 123.408889,17.025 119.711111,15.8722222 C104.226667,10.8 88.0488889,10.1083333 74.1822222,10.1083333 C53.6133333,9.87777778 32.8133333,11.4916667 12.2444444,14.4888889 L12.2444444,14.4888889 Z M147.213333,2.26944444 C146.288889,2.26944444 145.133333,2.5 144.44,2.73055556 C139.355556,4.575 137.044444,10.8 134.964444,17.9472222 C137.968889,16.5638889 140.973333,15.4111111 143.977778,13.7972222 C146.52,12.6444444 149.062222,11.2611111 150.448889,9.18611111 C151.835556,7.34166667 151.835556,4.34444444 150.217778,2.96111111 C149.293333,2.5 148.137778,2.26944444 147.213333,2.26944444 Z" id="Shape" fill-rule="nonzero"></path>
-                                            <path d="M35.5866667,34.5472222 C35.3555556,34.5472222 35.1244444,34.5472222 34.8933333,34.3166667 C34.4311111,33.8555556 34.2,33.1638889 34.6622222,32.7027778 C37.4355556,29.2444444 37.8977778,23.9416667 37.8977778,19.3305556 C37.8977778,18.6388889 38.36,18.1777778 39.0533333,18.1777778 L39.0533333,18.1777778 C39.7466667,18.1777778 40.2088889,18.6388889 40.2088889,19.3305556 C40.2088889,24.4027778 39.7466667,30.1666667 36.5111111,34.3166667 C36.28,34.5472222 35.8177778,34.5472222 35.5866667,34.5472222 Z" id="Path"></path>
-                                            <path d="M26.3422222,24.6333333 C26.1111111,24.6333333 25.6488889,24.6333333 25.4177778,24.4027778 L23.8,22.7888889 C23.3377778,22.3277778 23.3377778,21.6361111 23.8,21.175 C24.2622222,20.7138889 24.9555556,20.7138889 25.4177778,21.175 L27.0355556,22.7888889 C27.4977778,23.25 27.4977778,23.9416667 27.0355556,24.4027778 C26.8044444,24.6333333 26.5733333,24.6333333 26.3422222,24.6333333 Z" id="Path"></path>
-                                        </g>
-                                        <g id="fish_3" transform="translate(211.000000, 74.500000) rotate(24.000000) translate(-211.000000, -74.500000) translate(136.000000, 27.000000)">
-                                            <path d="M9.93777778,94.5277778 C6.93333333,94.5277778 3.69777778,93.8361111 1.84888889,91.0694444 C-0.462222222,87.6111111 0.231111111,83 4.39111111,77.2361111 C20.1066667,55.3333333 41.6,38.7333333 64.9422222,30.6638889 C79.5022222,25.5916667 94.5244444,24.6694444 114.168889,24.6694444 C110.471111,15.6777778 110.702222,10.8361111 110.933333,9.22222222 C111.626667,5.30277778 113.937778,2.075 117.404444,0.922222222 C120.408889,-0.230555556 123.644444,0.230555556 125.955556,2.075 C128.96,4.61111111 129.191111,8.99166667 128.266667,11.9888889 C127.342222,15.2166667 125.031111,17.7527778 122.72,20.2888889 C121.333333,21.6722222 120.177778,23.0555556 118.791111,24.6694444 C124.568889,24.6694444 130.577778,24.9 137.28,25.1305556 L141.208889,25.1305556 C144.675556,25.1305556 147.911111,27.2055556 149.066667,29.9722222 C149.76,31.5861111 149.76,33.2 148.835556,34.8138889 C147.448889,37.8111111 143.751111,39.8861111 140.977778,40.5777778 C131.733333,43.1138889 122.72,40.3472222 119.022222,34.1222222 C117.635556,31.8166667 116.711111,29.7416667 115.786667,27.8972222 C101.688889,42.4222222 86.2044444,55.7944444 69.3333333,67.3222222 C65.6355556,69.8583333 61.9377778,72.3944444 58.24,74.7 C53.1555556,78.3888889 48.0711111,81.6166667 43.2177778,85.3055556 C36.0533333,90.6083333 28.1955556,91.9916667 19.6444444,93.375 C18.2577778,93.6055556 16.64,93.8361111 15.2533333,94.0666667 C13.6355556,94.2972222 11.7866667,94.5277778 9.93777778,94.5277778 Z M111.164444,26.975 C93.3688889,26.975 79.2711111,28.1277778 65.6355556,32.7388889 C42.7555556,40.5777778 21.7244444,56.9472222 6.24,78.6194444 C3.92888889,81.8472222 1.61777778,86.4583333 3.69777778,89.6861111 C6.00888889,92.6833333 11.0933333,92.2222222 14.7911111,91.5305556 L14.7911111,91.5305556 C16.1777778,91.3 17.7955556,91.0694444 19.1822222,90.8388889 C27.2711111,89.4555556 35.1288889,88.0722222 41.8311111,83.2305556 C46.6844444,79.5416667 52,76.3138889 56.8533333,72.8555556 C60.5511111,70.55 64.2488889,68.0138889 67.7155556,65.4777778 C84.1244444,53.95 99.3777778,41.0388889 113.244444,26.7444444 C112.551111,26.975 111.857778,26.975 111.164444,26.975 Z M117.635556,26.975 C118.56,28.8194444 119.715556,30.8944444 120.871111,33.2 C123.875556,38.5027778 131.964444,40.8083333 140.284444,38.7333333 C143.057778,38.0416667 145.6,36.1972222 146.755556,34.1222222 C147.217778,33.2 147.217778,32.0472222 146.986667,31.125 C146.062222,28.8194444 143.288889,27.6666667 141.208889,27.6666667 L137.28,27.6666667 C130.115556,27.2055556 123.644444,27.2055556 117.635556,26.975 Z M120.64,2.76666667 C119.715556,2.76666667 119.022222,2.99722222 118.097778,3.22777778 C115.324444,4.15 113.706667,6.68611111 113.013333,9.68333333 C112.551111,12.45 113.244444,17.2916667 116.017778,23.9777778 C117.635556,22.3638889 119.253333,20.5194444 120.64,18.9055556 C122.951111,16.3694444 124.8,14.2944444 125.724444,11.5277778 C126.417778,9.22222222 126.417778,5.76388889 124.106667,4.15 C123.413333,3.22777778 122.026667,2.76666667 120.64,2.76666667 Z" id="Shape" fill-rule="nonzero"></path>
-                                            <path d="M36.5155556,88.7638889 C36.5155556,88.7638889 36.2844444,88.7638889 36.2844444,88.7638889 C35.5911111,88.5333333 35.36,88.0722222 35.36,87.3805556 C36.7466667,81.1555556 34.2044444,74.0083333 28.4266667,68.0138889 C27.9644444,67.5527778 27.9644444,66.8611111 28.4266667,66.4 C28.8888889,65.9388889 29.5822222,65.9388889 30.0444444,66.4 C36.2844444,73.0861111 39.0577778,80.925 37.44,87.8416667 C37.6711111,88.5333333 36.9777778,88.7638889 36.5155556,88.7638889 Z" id="Path"></path>
-                                            <path d="M21.2622222,83.2305556 C21.0311111,83.2305556 20.5688889,83.2305556 20.3377778,83 C20.1066667,82.7694444 19.8755556,82.5388889 19.6444444,82.5388889 C19.1822222,82.3083333 18.9511111,82.0777778 18.2577778,81.6166667 C17.7955556,81.1555556 17.7955556,80.4638889 18.2577778,80.0027778 C18.72,79.5416667 19.4133333,79.5416667 19.8755556,80.0027778 C20.1066667,80.2333333 20.3377778,80.4638889 20.5688889,80.4638889 C21.0311111,80.6944444 21.2622222,80.925 21.9555556,81.3861111 C22.4177778,81.8472222 22.4177778,82.5388889 21.9555556,83 C21.7244444,83.2305556 21.4933333,83.2305556 21.2622222,83.2305556 Z" id="Path"></path>
-                                            <path d="M21.2622222,83.2305556 C21.0311111,83.2305556 20.8,83.2305556 20.8,83 L18.72,81.8472222 C18.2577778,81.6166667 18.0266667,80.925 18.2577778,80.2333333 C18.4888889,79.5416667 19.1822222,79.5416667 19.8755556,79.7722222 L21.9555556,80.925 C22.4177778,81.1555556 22.6488889,81.8472222 22.4177778,82.5388889 C21.9555556,83 21.7244444,83.2305556 21.2622222,83.2305556 Z" id="Path"></path>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </svg> -->
-                </section>
-                <section id="ideate">
-                    <h1>Ideate</h1>
-                    <div class="statement">
-                        When interviewing users, temperament came up consistently as a concern for users when hoping to pair up their dogs. A challenge that arose in the research was that while most users agreed temperament was important to consider, there was no clear definition between users of what that meant.
-                        <br><br>
-                        Rather than having temperament described in one static attribute, I took the most common behaviours which users identified as important for them and allowed users to select on a spectrum the closest to what they believe described their dog.
-                    </div>
-                    <div class="pup_scale"></div>
-                </section>
-            </section>
-
-            <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
-            
-            <section id="artifacts">
-                <h1>Artifacts</h1>
-                <div class="style_guide_row">
-                    <div class="pup_design"></div>
-                    
-                    <div class="Typography">
-                        <div class="bold">
-                            <div class="upper">
-                            Raleway Semi Bold
-                            </div>
-                            <div class="lower">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                            </div>
-                        </div>
-                        <div class="light">
-                            <div class="upper">
-                            Raleway Light
-                            </div>
-                            <div class="lower">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="style_guide_row">
-                    <div class="icons">
-                        <div class="reject_icon"></div>
-                        <div class="like_icon"></div>
-                        <div class= "nav_icon"></div>
-                    </div>
-                </div>
-                <div class="style_guide_row" id="colour_palette">
-                    <div class="circle_group">
-                        <div class="circle1">
-                            <div class="palette"># 444991</div>
-                        </div>
-                        <div class="circle2">
-                            <div class="palette"># 6369D3</div>
-                        </div>
-                    </div>
-                    <div class="circle_group">
-                        <div class="circle3">
-                            <div class="palette"># F34D4D</div>
-                        </div>
-                        <div class="circle4">
-                            <div class="palette"># 9F9B9B</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="artifacts 2">
-                    <div class="vertical_carousel">
-                        <div class="sticky">
-                            A large focus of this project was designing an appropriate and user friendly onboarding process that didn’t feel like too much work to get setup and start looking at profiles. 
-                            <br><br>
-                            With conventional dating apps, users typically only need to two make a profile for themselves and highlight what their looking for in a match. 
-                            <br><br>
-                            Barkbuds builds three profiles: the user’s, their dog, and the prospective matching dog. The initial onboarding focuses on the user and their dog. Additional prompts are spaced out throughout use of the app to continue building the profile. 
-                            <br><br>
-                            Users are still able to skip and complete these parts later. 
-                        </div>
-                        <div id="vertical_screen_image">
-                            <div class="onboard_screen">
-                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen1.png">
-                            </div>
-                            <div class="onboard_screen">
-                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen2.png">
-                            </div>
-                            <div class="onboard_screen">
-                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen3.png">
-                            </div>
-                            <div class="onboard_screen">
-                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen4.png">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="horizontal_carousel">
-                        <div class="" style="width: 20rem;">
-                        Animations were designed through Principle to make every interaction dynamic and engaging.
-                        </div>
-                        
-                        <div class="slider">
-                            <div class="animated-screens1">
-                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_2.gif">
-                            </div>
-                            <div class="animated-screens2">
-                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_3.gif">
-                            </div>
-                            <div class="animated-screens3">
-                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_4.gif">
-                            </div> 
-                        </div>
-                        
-                        <!-- add carousel dots -->
-                    </div>  
-            </section>
-
-            <div id="trigger2"></div>
-            <!-- <section class="transition_container" id="transition_container_2"> -->
-                <section id="iterations">
-                    <h1>Iterations</h1>
-                    <div class="wireframes">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe2.png">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe3.png">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe4.png">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe5.png">
-                    </div>
-                    <div class="statement_right">
-                    My iteration process started with lo-fi wireframes, taking into consideration early user stories and flows. As the timeline for the project was short, once the lo-fi wireframes passed hallway testing, I moved into higher fidelity designs. 
-                    <br><br>
-                    This didn’t give me the opportunity to get richer feedback from users.
-                    </div>
-                </section>
-            <!-- </section> -->
-            
-             <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
-
-            <section id="feedback">
-                <h1>Feedback</h1>
-                    <div class="feedback-series">
-                        <div class="feedbackgroup">
-                            <div class="phone">
-                                <div class="feedback_screen" id="iteration1">
-                                    <img class="screenshot" src="assets/img/barkbuds/iteration1.png">
-                                </div>
-                            </div>
-                            <div class="phone">
-                                <div class="feedback_screen" id="iteration2"></div>
-                                <img class="screenshot" src="assets/img/barkbuds/iteration2.png">
-                            </div>
-                        </div>
-                        <div class="feedbackgroup">
-                            <div class="phone">
-                                <div class="feedback_screen" id="iteration3"></div>
-                                <img class="screenshot" src="assets/img/barkbuds/iteration3.png">
-                            </div>
-                            <div class="phone">
-                                <div class="feedback_screen" id="iteration4"></div>
-                                <img class="screenshot" src="assets/img/barkbuds/iteration4.png">
-                            </div>
-                        </div>
-                    </div>
-                <div class="statement">
-                  My higher fidelity iterations included varying designs and colours, which eventually were refined based off of AB testing, user feedback and accessibility tools such as contrast analyzer. 
-                </div>
-            </section>
-            <section id="prototype">
-                <h1>Prototype</h1>
-                <div class="prototype_screen">
-                    <div class="left_box">
-                        <div class="phone">
-                        <video class="screenshot" src="assets/img/barkbuds/demo.mp4" controls type="video/mp4"></div>
-                    </div>
-                    <div class="right_box">
-                        <div class="statement_button">
-                            Hi-fi mockups were put together as a prototype in inVision
-                        </div>
-                        <div class="button">
-                            <a class="button_link" href="https://projects.invisionapp.com/share/SFOUQQFYTH8">
-                            Explore prototype</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="whats_next" style="min-height:400px">
-                <h1>What's Next</h1>
-                <div class="statement">
-                    What’s Next…
-                    <br><br>
-                    Iterations were not developed in enough detail with feedback. The hope is to  develop and refine the parameters in which users cand etermine the kinds of dogs they would like to be paired with.
-                </div>
-                <div class="right">
-                    <div class="button">
-                        <a class="button_link" href="index.html">
-                        See other projects</div></a>
-                    <div class="button">
-                        <a class="button_link" href="contact.html">
-                        Let's Chat</div></a>
-                </div>
-               
             </section>
 
             </main>
