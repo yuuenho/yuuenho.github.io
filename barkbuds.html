@@ -1,512 +1,540 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Bark Buds - Kevin Ho</title>
-        <link rel="shortcut icon" href="flavicon.ico" type="image/ico">
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link rel="stylesheet" href="assets/animate.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <style>
-            header {
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                height: 100px;
-                width: 100%;
-                background: linear-gradient(to bottom, #faf8f8, #faf8f8 85%, rgba(251, 252, 249, 0));
-                z-index: 10;
-            }
+<head>
+    <meta charset="utf-8" />
+    <title>Bark Buds - Kevin Ho</title>
+    <link rel="shortcut icon" href="flavicon.ico" type="image/ico">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="assets/animate.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            header nav {
-                position: absolute;
-                top: 13px;
-                right: 25px;
-                text-decoration: none;
-            }
+    <style>
+        header {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(to bottom, #faf8f8, #faf8f8 85%, rgba(251, 252, 249, 0));
+            z-index: 10;
+        }
 
-            header nav a{
-                font-family: 'Avenir Next Condensed';
-                font-size: 12px;
-                padding: 8px;
-                text-decoration: none;
-                color:#4A4A4A;
-            }
+        header nav {
+            position: absolute;
+            top: 13px;
+            right: 50px;
+            text-decoration: none;
+        }
 
-            header nav div{
-                display:inline;
-            }
+        header nav a {
+            font-family: 'Avenir Next Condensed';
+            font-size: 12px;
+            padding: 8px;
+            text-decoration: none;
+            color: #4A4A4A;
+        }
 
-            .font-size{
-                font-family: 'Avenir Next Condensed';
-                padding: 8px;
-            }
+        header nav div {
+            display: inline;
+        }
 
-            #page_title {
-                position: absolute;
-                top: 9px;
-                left: 42px;
-                font-family: 'Source Sans Pro';
-                font-size: 30px;
-            }
+        .font-size {
+            font-family: 'Avenir Next Condensed';
+            padding: 8px;
+        }
 
-            body{
-                background-color:#faf8f8;
-                overflow-x: hidden;
-                font-size: 14pt;
-            }
+        #page_title {
+            position: absolute;
+            top: 9px;
+            left: 42px;
+            font-family: 'Source Sans Pro';
+            font-size: 30px;
+        }
 
-            main {
-                height: auto;
-                background-color:#faf8f8;
-                font-family: 'Source Sans Pro';
-                font-size: 1.0em;
-            }
+        body {
+            background-color: #faf8f8;
+            overflow-x: hidden;
+            font-size: 14pt;
+        }
 
-            section {
-                position: relative;
-                padding-top: 75px;
-                min-height: 590px;
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-            }
+        main {
+            height: auto;
+            background-color: #faf8f8;
+            font-family: 'Source Sans Pro';
+            font-size: 1.0em;
+        }
 
-            #breadcrumbs{
-                background-color: #faf8f8;
-                position: absolute;
-                top: 55px;
-                left: 42px;
-                transform: skew(-20deg);
-                font-family: 'Source Sans Pro';
-                font-size: 12pt;
-            }
+        section {
+            position: relative;
+            padding-top: 75px;
+            min-height: 590px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
 
-            #breadcrumbs_background{
-                position: relative;
-                background-color: #4A4A4A;
-                width: 682px;
-                height: 29px;
-                top: 50px;
-                left: 37px;
-                border-radius:8px;
-            }
+        #breadcrumbs {
+            background-color: #faf8f8;
+            position: absolute;
+            top: 55px;
+            left: 42px;
+            transform: skew(-20deg);
+            font-family: 'Source Sans Pro';
+            font-size: 12pt;
+        }
 
-            #breadcrumbs a {
-                color: #4A4A4A;
-                text-decoration: none;
-                padding: 2px 15px;
-                border-style: solid;
-                border-width: 2px;
-                border-radius: 5px;
-                border-color: #4A4A4A;
-            }
+        #breadcrumbs_background {
+            position: relative;
+            background-color: #4A4A4A;
+            width: 682px;
+            height: 29px;
+            top: 50px;
+            left: 37px;
+            border-radius: 8px;
+        }
 
-            #breadcrumbs a.active {
-                background-color: #4A4A4A;
-                border-radius:5px;
-                color:#faf8f8;
-            }
+        #breadcrumbs a {
+            color: #4A4A4A;
+            text-decoration: none;
+            padding: 2px 15px;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+            border-color: #4A4A4A;
+        }
 
-            body{
-                margin: 0px;
-            }
-            #case_study_description{
-                font-size: 10pt;
-                padding-left:42px;
-            }
+        #breadcrumbs a.active {
+            background-color: #4A4A4A;
+            border-radius: 5px;
+            color: #faf8f8;
+        }
 
-            .logo {
-                display:flex;
-                justify-content: center;
-                padding: 30px 0px;
-                align-items: center;
-            }
+        body {
+            margin: 0px;
+        }
 
-            .pup_head {
-                background-image: url(assets/img/barkbuds/barky.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                width: 115px;
-                height: 90px;
-            }
+        #case_study_description {
+            font-size: 10pt;
+            padding-left: 42px;
+        }
 
-            .word_logo {
-                background-image: url(assets/img/barkbuds/Barkbuds.png);
-                background-size: contain;
-                background-repeat:no-repeat;
-                height: 52px;
-                width: 310px;
-            }
+        .logo {
+            display: flex;
+            justify-content: center;
+            padding: 30px 0px;
+            align-items: center;
+        }
 
-            .horizontal {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                -webkit-animation-duration: 1.5s;
-            }
+        .nestLogo{
+            display:grid;
+            text-align: center;
+            color:#4A4A4A;
+        }
+
+        .pup_head {
+            background-image: url(assets/img/barkbuds/barky.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 115px;
+            height: 90px;
+        }
+
+        .word_logo {
+            background-image: url(assets/img/barkbuds/Barkbuds.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 52px;
+            width: 310px;
+        }
+
+        .horizontal {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            -webkit-animation-duration: 1.5s;
+        }
 
 
-            .phone {
-                background-image: url(assets/img/barkbuds/Device.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                max-height: 250px;
-                max-width: 150px;
-                padding: 75px 47px 118px 60px;
-                float:left;
-            }
+        .phone {
+            background-image: url(assets/img/barkbuds/Device.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            max-height: 250px;
+            max-width: 150px;
+            padding: 75px 47px 118px 60px;
+            float: left;
+        }
 
-            .phone .screenshot {
-                /* top: 83px;
+        .phone .screenshot {
+            /* top: 83px;
                 left: 69px;
                 position: relative; */
-                height: 274px;
-                width: 156px;
-                box-sizing: border-box;
-                /* width: 100%;
+            height: 274px;
+            width: 156px;
+            box-sizing: border-box;
+            /* width: 100%;
                 height: 100%; */
-            }
-            
-            .pup_sitting{
-                padding: 30px;
-                height:200;
+        }
+
+        .pup_sitting {
+            padding: 30px;
+            height: 200;
+        }
+
+        .section-title {
+            padding: 20px 42px;
+            font-size: 1.5em;
+        }
+
+        .statement {
+            width: 60%;
+            /* padding-left: 42px; */
+            padding-left: 10%;
+            /* -webkit-animation-duration: 1.5s */
+        }
+
+        #sniffer {
+            display: flex;
+            justify-content: center;
+            padding: 40px 0px;
+        }
+
+        .sniffer2 {
+            display: flex;
+            padding: 40px 0px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #define_2_statement_right {
+            width: 25em;
+        }
+
+        #pup_sniffing {
+            position: relative;
+            height: 171px;
+            width: 218px;
+            top: 207px;
+            left: -28px;
+        }
+
+        #define_2 {
+            position: relative;
+            background-color: #6369D3;
+            color: #faf8f8;
+            height: 100vh;
+            padding-top: 0;
+            z-index: 2;
+        }
+
+        .transition_container section {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .pup_scale {
+            position: absolute;
+            background-image: url(assets/img/barkbuds/slider.gif);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 500px;
+            width: 300px;
+            top: 200px;
+            margin-left: 65%;
+            /* left:750px; */
+        }
+
+        .style_guide_row,
+        .circle_group {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        #colour_palette {
+            justify-content: center;
+            font-size: 14pt;
+            padding-bottom: 50px;
+        }
+
+        .pup_design {
+            background-image: url(assets/img/barkbuds/logo_design.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 300px;
+            min-width: 300px;
+            float: left;
+            margin: 20px;
+        }
+
+        .icons {
+            margin: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .reject_icon {
+            background-image: url(assets/img/barkbuds/dislike.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100px;
+            min-width: 100px;
+        }
+
+        .like_icon {
+            background-image: url(assets/img/barkbuds/like.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100px;
+            min-width: 100px;
+        }
+
+        .nav_icon {
+            background-image: url(assets/img/barkbuds/nav_icon.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 45px;
+            min-width: 300px;
+        }
+
+        .Typography {
+            color: #6369D3;
+            float: right;
+        }
+
+        .bold {
+            font-family: 'Raleway-semibold';
+        }
+
+        .light {
+            font-family: 'Raleway-light';
+        }
+
+        .upper {
+            font-size: 36pt;
+        }
+
+        .lower {
+            font-size: 18pt;
+        }
+
+        .colour_palette {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 150px;
+        }
+
+        .palette {
+            position: relative;
+            height: 150px;
+            width: 150px;
+            color: #faf8f8;
+            text-align: center;
+            top: 42%;
+        }
+
+        .circle1 {
+            background-color: #444991;
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            margin: 0 20px;
+        }
+
+        .circle2 {
+            background-color: #6369D3;
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            margin: 0 20px;
+
+        }
+
+        .circle3 {
+            background-color: #F34D4D;
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            margin: 0 20px;
+
+        }
+
+        .circle4 {
+            background-color: #9F9B9B;
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            margin: 0 20px;
+        }
+
+        .sticky {
+            width: 50%;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 100px;
+            padding: 50px;
+            padding-left: 500px;
+        }
+
+        #vertical_screen_image {
+            margin-top: -400px;
+            padding-left: 50px;
+        }
+
+        .onboard_screenshot {
+            height: 500px;
+            width: auto;
+            object-fit: cover;
+            padding: 50px;
+        }
+
+        .horizontal_carousel {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* float:left; */
+            margin: 50px 0 100px;
+        }
+
+        .slider div {
+            float: left;
+            padding: 0px 10px;
+        }
+
+        .animated_screenshot {
+            height: 361px;
+            width: 194px;
+        }
+
+        .feedbackgroup {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .feedback-series {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #iterations {
+            display: flex;
+            flex-direction: row;
+            background-color: #6369D3;
+            color: #faf8f8;
+        }
+
+        .wireframes {
+            position: absolute;
+            left: -35px;
+            top: -10px;
+            width: 1000px;
+            overflow: hidden;
+            max-height: 675px;
+        }
+
+        .statement_right {
+            text-align: right;
+            padding-left: 50%;
+            width: 50%;
+            z-index: 5;
+            padding-right: 42px;
+        }
+
+        .lofi {
+            object-fit: contain;
+            height: 800px;
+            float: left;
+            transform: rotate(-20deg);
+            padding: 10px;
+        }
+
+        .left_box {
+            display: flex;
+            max-width: 50vw;
+            justify-content: center;
+        }
+
+        .right_box {
+            padding-left: 5%;
+        }
+
+        .statement_button {
+            text-align: center;
+            padding: 20px 0;
+            width: 40vw;
+            height: auto;
+            min-width: 300px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 40vw;
+            height: 50px;
+            min-width: 300px;
+            background-color: #4A4A4A;
+            border-radius: 18px;
+        }
+
+        .button_link {
+            color: #faf8f8;
+            text-decoration: none;
+        }
+
+        .prototype_screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        @keyframes swim {
+            0% {
+                margin-left: -235px
             }
 
-            .section-title{
-                padding: 20px 42px;
-                font-size: 1.5em;
-            }
-            .statement {
-                width: 60%;
-                padding-left:42px;
-                -webkit-animation-duration: 1.5s
+            70% {
+                margin-left: 100%
             }
 
-            #sniffer {
-                display:flex;
-                justify-content: center;
-                padding: 40px 0px;
+            100% {
+                margin-left: 100%
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            50%,
+            100% {
+                transform: translateY(0);
             }
 
-            .sniffer2 {
-                display: flex;
-                padding: 40px 0px;
-                justify-content: center;
-                align-items: center;
+            25% {
+                transform: translateY(-5px);
             }
 
-            #define_2_statement_right {
-                width: 25em;
+            75% {
+                transform: translateY(-3px);
             }
+        }
 
-            #pup_sniffing {
-                position: relative;
-                height: 171px;
-                width: 218px;
-                top:207px;
-                left: -28px;
-            }
-
-            #define_2 {
-                position: relative;
-                background-color: #6369D3;
-                color: #faf8f8;
-                height:100vh;
-                padding-top:0;
-                z-index: 2;
-            }
-            
-            .transition_container section {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-            }
-
-            .pup_scale{
-                position: absolute;
-                background-image: url(assets/img/barkbuds/slider.gif);
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: 500px;
-                width: 300px;
-                top: 200px;
-                margin-left:65%;
-                /* left:750px; */
-            }
-
-            .style_guide_row, .circle_group {
-                display: flex;
-                justify-content: space-evenly;
-                flex-wrap: wrap;
-                align-items: center;
-            }
-
-            #colour_palette {
-                justify-content: center;
-                font-size:14pt;
-                padding-bottom: 50px;
-            }
-
-            .pup_design{
-                background-image: url(assets/img/barkbuds/logo_design.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: 300px;
-                min-width: 300px;
-                float:left;
-                margin:20px;
-            }
-
-            .icons {
-                margin: 20px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-            }
-
-            .reject_icon{
-                background-image: url(assets/img/barkbuds/dislike.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: 100px;
-                min-width: 100px;
-            }
-
-            .like_icon{
-                background-image: url(assets/img/barkbuds/like.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: 100px;
-                min-width: 100px;
-            }
-
-            .nav_icon{
-                background-image: url(assets/img/barkbuds/nav_icon.png);
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: 45px;
-                min-width: 300px; 
-            }
-
-            .Typography{
-                color: #6369D3;
-                float: right;
-            }
-            
-            .bold{
-                font-family: 'Raleway-semibold';
-            }
-            .light{
-                font-family: 'Raleway-light';
-            }
-            .upper{
-                font-size: 36pt;
-            }
-
-            .lower{
-                font-size: 18pt;
-            }
-
-            .colour_palette {
-                display:flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                padding: 40px 150px;
-            }
-
-            .palette{
-                position: relative;
-                height:150px;
-                width:150px;
-                color:#faf8f8;
-                text-align: center;
-                top:42%;
-            }
-
-            .circle1{
-                background-color: #444991;
-                border-radius: 50%;
-                height: 150px;
-                width: 150px;
-                margin: 0 20px;
-            }
-
-            .circle2{
-                background-color: #6369D3;
-                border-radius: 50%;
-                height: 150px;
-                width: 150px;
-                margin: 0 20px;
-
-            }
-
-            .circle3{
-                background-color: #F34D4D;
-                border-radius: 50%;
-                height: 150px;
-                width: 150px;
-                margin: 0 20px;
-
-            }
-
-             .circle4{
-                background-color: #9F9B9B;
-                border-radius: 50%;
-                height: 150px;
-                width: 150px;
-                margin: 0 20px;
-            }
-
-            .sticky{
-                width: 50%;
-                position: -webkit-sticky;
-                position: sticky;
-                top: 100px;
-                padding: 50px;
-                padding-left: 500px;
-            }
-            
-            #vertical_screen_image{
-                margin-top:-470px;
-                padding-left: 50px;
-            }
-
-            .onboard_screenshot{
-                height:500px;
-                width: auto;
-                object-fit: cover;
-                padding: 50px;
-            }
-            .horizontal_carousel{
-                display:flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                /* float:left; */
-                margin-bottom: 100px;
-            }
-            
-            .slider div {
-                float:left;
-                padding: 0px 10px;
-            }
-
-            .animated_screenshot {  
-                height: 361px;
-                width: 194px;
-            } 
-
-            .feedbackgroup{
-                display:flex;
-                justify-content: center;
-                align-content: center;
-            }
-
-            .feedback-series {
-                display:flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            #iterations {
-                display: flex;
-                flex-direction: row;
-                background-color: #6369D3;
-                color:#faf8f8;
-            }
-
-            .wireframes{
-                position: absolute;
-                left:-35px;
-                top:-10px;
-                width: 1000px;
-                overflow: hidden;
-                max-height: 675px;
-            }
-
-            .statement_right{
-                text-align: right;
-                padding-left:50%;
-                width:50%;
-                z-index:5;
-                padding-right: 42px;
-            }
-
-            .lofi {
-                object-fit: contain;
-                height: 800px;
-                float: left;
-                transform: rotate(-20deg);
-                padding: 10px;
-            }
-
-            .left_box{
-                display:flex;
-                max-width: 50vw;
-                justify-content: center;
-            }
-
-            .right_box{
-                padding-left:5%;
-            }
-            .statement_button{
-                text-align: center;
-                padding: 20px 0;
-                width: 40vw;
-                height: auto;
-                min-width: 300px;
-            }
-            
-            .button {
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                align-items: center;
-                margin-bottom: 20px;
-                width: 40vw;
-                height: 50px;
-                min-width: 300px;
-                background-color:#4A4A4A;
-                border-radius: 18px;
-            }
-
-            .button_link{
-                color: #faf8f8;
-                text-decoration: none;
-            }
-
-            .prototype_screen{
-                display:flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-
-            @keyframes swim {
-                0% { margin-left: -235px }
-                70% { margin-left: 100% }
-                100% { margin-left: 100% }
-            }
-
-            @keyframes bounce {
-                0%, 50%, 100% {
-                    transform: translateY(0);
-                }
-                25% {
-                    transform: translateY(-5px);
-                }
-                75% {
-                    transform: translateY(-3px);
-                }
-            }
-
-            /* #fish {
+        /* #fish {
                 position: absolute;
                 animation: swim 20s infinite;
                 animation-timing-function: linear;
@@ -530,187 +558,199 @@
                 animation-delay: 0.1s;
             } */
 
-            .right{
-                margin: 0 42px;
-            }
+        .right {
+            margin: 0 42px;
+        }
 
-            #pup_footer{
-                background-image: url(assets/img/barkbuds/pup_sitting.png);
-                background-size:cover;
-                height:278px;
-                width: 400px;
-                position: relative;
-                overflow: hidden;
-                /* margin-bottom: -310px; */
-                transform: rotate(-6deg);
-            }
+        #pup_footer {
+            background-image: url(assets/img/barkbuds/pup_sitting.png);
+            background-size: cover;
+            height: 278px;
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+            /* margin-bottom: -310px; */
+            transform: rotate(-6deg);
+        }
 
 
-            footer{
-                position:relative;
-                display:flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                color:#faf8f8;
-                background-color: #4A4A4A;
-                padding: 10px;
-                z-index: 10;
-            }
+        footer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            color: #faf8f8;
+            background-color: #4A4A4A;
+            padding: 10px;
+            z-index: 10;
+        }
 
-            .contactlogo img{
-                height:30px;
-            }
+        .contactlogo img {
+            height: 30px;
+        }
+    </style>
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/ScrollMagic.min.js"></script>
+    <script src="assets/plugins/animation.gsap.min.js"></script>
+    <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
+    <script src="assets/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 
-        </style>
-        <script src="assets/plugins/jquery-3.3.1.min.js"></script>
-        <script src="assets/ScrollMagic.min.js"></script>
-        <script src="assets/plugins/animation.gsap.min.js"></script>
-        <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
-        <script src="assets/wow.min.js"></script>
-            <script>
-            new WOW().init();
-            </script>
+    <!-- <script src="assets/plugins/greensock-js/src/minified/TimelineMax.min.js"></script> -->
+    <script>
+        $(() => {
+            const breadcrumbController = new ScrollMagic.Controller({ globalSceneOptions: { duration: 0 } });
+            const scenes = [];
 
-        <!-- <script src="assets/plugins/greensock-js/src/minified/TimelineMax.min.js"></script> -->
-        <script>
-            $(() => {
-                const breadcrumbController = new ScrollMagic.Controller({globalSceneOptions: {duration: 0}});
-                const scenes = [];
+            $('section').each((index, elem) => {
+                const id = elem.id;
+                const scene = new ScrollMagic.Scene({ triggerElement: `#${id}` })
+                    .setClassToggle(`#breadcrumbs a[href="#${id}"]`, "active")
+                    .addTo(breadcrumbController);
+                scenes.push(scene);
+            });
 
-                $('section').each((index, elem) => {
-                    const id = elem.id;
-                    const scene = new ScrollMagic.Scene({ triggerElement: `#${id}` })
-                            .setClassToggle(`#breadcrumbs a[href="#${id}"]`, "active")
-                            .addTo(breadcrumbController);
-                    scenes.push(scene);
-                });
+            const wipeController = new ScrollMagic.Controller();
+            const wipeAnimation = new TimelineMax()
+                .fromTo('section#define_2', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone })
+            // .fromTo('section#iterations', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone });
 
-                const wipeController = new ScrollMagic.Controller();
-                const wipeAnimation = new TimelineMax()
-                    .fromTo('section#define_2', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone })
-                    // .fromTo('section#iterations', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone });
-                
-                const wipeScene = new ScrollMagic.Scene({
-                    triggerElement: "#trigger1",
-                    triggerHook: "onLeave",
-                    duration: "300%",
+            const wipeScene = new ScrollMagic.Scene({
+                triggerElement: "#trigger1",
+                triggerHook: "onLeave",
+                duration: "300%",
 
-                    // const wipeScene = new ScrollMagic.Scene({
-                    // triggerElement: "#trigger2",
-                    // triggerHook: "onLeave",
-                    // duration: "300%",
-                })
+                // const wipeScene = new ScrollMagic.Scene({
+                // triggerElement: "#trigger2",
+                // triggerHook: "onLeave",
+                // duration: "300%",
+            })
                 .setPin("#transition_container_1")
                 .setTween(wipeAnimation)
                 .addTo(wipeController);
 
-                //  .setPin("#transition_container_2")
-                // .setTween(wipeAnimation)
-                // .addTo(wipeController);
+            //  .setPin("#transition_container_2")
+            // .setTween(wipeAnimation)
+            // .addTo(wipeController);
 
-                const footercontroller = new ScrollMagic.Controller()
-                const footerscene = new ScrollMagic.Scene({triggerElement: "#pup_footer", triggerHook:"onEnter", duration:0})
-                        .setPin ("footer")
-                        .addTo (footercontroller);
-            });
+            const footercontroller = new ScrollMagic.Controller()
+            const footerscene = new ScrollMagic.Scene({ triggerElement: "#pup_footer", triggerHook: "onEnter", duration: 0 })
+                .setPin("footer")
+                .addTo(footercontroller);
+        });
 
-            function resizeText(multiplier) {
-                //needs to have less than 50 but more than 14
+        function resizeText(multiplier) {
+            //needs to have less than 50 but more than 14
             const main = $("main")
             if (main.css("font-size") == "") {
-                main.css("font-size","1.0em");
+                main.css("font-size", "1.0em");
             }
             const fontNow = parseFloat(main.css("font-size"))
-            const newSize =  fontNow + (multiplier * 3)
-            if (newSize >= 18 && newSize <= 34){
+            const newSize = fontNow + (multiplier * 3)
+            if (newSize >= 18 && newSize <= 34) {
                 console.log(newSize)
                 main.css("font-size", newSize + "px");
-            } 
             }
-        </script>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="process.html">Process</a>
-                <a href="contact.html">Contact</a>
-                <div class="font-size">
-                    Aa
-                    <button id="up" onclick="resizeText(1)">+</button>
-                    <button id="down" onclick="resizeText(-1)">-</button>
-                </div>
-            </nav>
-            <div id="page_title">Design Ho</div>
-             <div id="breadcrumbs_background"></div>
-                <div id="breadcrumbs">
-                    <a href="#define">Define</a>
-                    <a href="#ideate">Ideate</a>
-                    <a href="#artifacts">Artifacts</a>
-                    <a href="#iterations">Iterations</a>
-                    <a href="#feedback">Feedback</a>
-                    <a href="#prototype">Prototype</a>
-                    <a href="#whats_next">What's Next</a>
-                </div>
-        </header>
-        <main>
-            <section id="define"> 
-                <div id="case_study_description">
-                    <br>
-                    2018 - Self Initiated Project
-                    <br>
-                    UX - Visual Design - Prototype
-                </div>          
-                <div class="logo">
-                    <div class="pup_head"></div>
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+            <div class="font-size">
+                Aa
+                <button id="up" onclick="resizeText(1)">+</button>
+                <button id="down" onclick="resizeText(-1)">-</button>
+            </div>
+        </nav>
+        <div id="page_title">Design Ho</div>
+        <div id="breadcrumbs_background"></div>
+        <div id="breadcrumbs">
+            <a href="#define">Define</a>
+            <a href="#ideate">Ideate</a>
+            <a href="#artifacts">Artifacts</a>
+            <a href="#iterations">Iterations</a>
+            <a href="#feedback">Feedback</a>
+            <a href="#prototype">Prototype</a>
+            <a href="#whats_next">What's Next</a>
+        </div>
+    </header>
+    <main>
+        <section id="define">
+            <div id="case_study_description">
+                <br>
+                2018 - Self Initiated Project
+                <br>
+                UX - Visual Design - Prototype
+            </div>
+            <div class="logo">
+                <div class="pup_head"></div>
+                <div class="nestLogo">
                     <div class="word_logo"></div>
+                    <div class="tagline">Meet dogs near you.</div>
                 </div>
-                <div class="horizontal wow fadeInUp">
-                    <div class="phone">
-                        <!-- <div class="screenshot" style="background-image: url(assets/img/barkbuds/screen_1.png)"></div> -->
-                        <img class="screenshot" src="assets/img/barkbuds/screen_1.png">
-                    </div>
-                    <div class="phone">
-                        <img class="screenshot" src="assets/img/barkbuds/screen_2.jpg">
-                    </div>
-                    <div class="phone">
-                        <img class="screenshot" src="assets/img/barkbuds/screen_3.jpg">
-                    </div>
-                    <div class="pup_sitting">
+            </div>
+            <div class="horizontal wow fadeInUp">
+                <div class="phone">
+                    <!-- <div class="screenshot" style="background-image: url(assets/img/barkbuds/screen_1.png)"></div> -->
+                    <img class="screenshot" src="assets/img/barkbuds/screen_1.png">
+                </div>
+                <div class="phone">
+                    <img class="screenshot" src="assets/img/barkbuds/screen_2.jpg">
+                </div>
+                <div class="phone">
+                    <img class="screenshot" src="assets/img/barkbuds/screen_3.jpg">
+                </div>
+                <div class="pup_sitting">
                     <img id="pup_sitting" src="assets/img/barkbuds/pup_sitting.png" height="200"></div>
-                </div>
-                <div class="statement wow fadeInUp">
-                    Many dogs like playing with other dogs but sometimes their humans are a bit concerned with who they are playing with. Will the dogs get along? Will one of the dogs be aggressive? What if they have fleas? 
-                    <br><br>
-                    I wanted to to give dog owners greater control over meeting and socializing their furbabies with other dogs nearby. 
-                    <br><br>
-                    I created Barkbuds as a mobile app to allow users to narrow down others dogs they may see by building a profile and connecting with dogs that match the profile desired. 
-                </div>
-                <!-- <div id="sniffer">
+            </div>
+            <div class="statement wow fadeInUp">
+                Many dogs like playing with other dogs but sometimes their humans are a bit concerned with who they are
+                playing with. Will the dogs get along? Will one of the dogs be aggressive? What if they have fleas?
+                <br><br>
+                I wanted to to give dog owners greater control over meeting and socializing their furbabies with other
+                dogs nearby.
+                <br><br>
+                I created Barkbuds as a mobile app to allow users to narrow down others dogs they may see by building a
+                profile and connecting with dogs that match the profile desired.
+            </div>
+            <!-- <div id="sniffer">
                     <div class="phone">
                         <img class="screenshot" src="assets/img/barkbuds/animation_1.gif"></div>
                     <img id="pup_sniffing" src="assets/img/barkbuds/pup_sniffing.png">
                 </div> -->
-            </section>
-            <div id="trigger1" style="height:22px"></div>
-            <section class="transition_container" id="transition_container_1" style="max-height: 800px">
-                <section id="define_2">
-                    <div></div>
-                    <div class="section-title">Define/Scope</div>
-                    <div class="statement">
-                        While there are a lot of apps and services out there for dog sitting or walkers such Rover or Bark n Borrow or apps tailored to dating while with a dog, there are very few options for users to casually introduce their dogs to other dogs in a controlled environment. Some shelters and community groups would organize larger meetups for dog owners but can often be overly stimulating for some dogs. 
+        </section>
+        <div id="trigger1" style="height:22px"></div>
+        <section class="transition_container" id="transition_container_1" style="max-height: 800px">
+            <section id="define_2">
+                <div></div>
+                <div class="section-title">Define/Scope</div>
+                <div class="statement wow fadeInUp">
+                    While there are a lot of apps and services out there for dog sitting or walkers such Rover or Bark n
+                    Borrow or apps tailored to dating while with a dog, there are very few options for users to casually
+                    introduce their dogs to other dogs in a controlled environment. Some shelters and community groups
+                    would organize larger meetups for dog owners but can often be overly stimulating for some dogs.
+                </div>
+                <div class="sniffer2 wow fadeInUp">
+                    <div class="phone">
+                        <video class="screenshot" src="assets/img/barkbuds/okcupid.mp4" controls>
                     </div>
-                    <div class="sniffer2 wow fadeInUp">
-                        <div class="phone">
-                            <video class="screenshot" src="assets/img/barkbuds/okcupid.mp4" controls>
-                        </div>
-                        <div id="define_2_statement_right">
-                            As the goal was to create a friendly and intuitive social networking platform, using familiar iteractions like carding sorting and swiping in a profile based environment. I turned to traditional dating apps to model our problem space. I selected to model our platform on OkCupid, which had a comprehensive onboarding process to better define a suitable match.
-                        </div>
+                    <div id="define_2_statement_right">
+                        As the goal was to create a friendly and intuitive social networking platform for dogs, I turned to
+                        traditional dating apps to model my problem space using familiar
+                        iteractions like carding sorting and swiping in a profile based environment. I selected to model our platform on OkCupid,
+                        which had a comprehensive onboarding process to better define a suitable match.
                     </div>
-                    <!-- <svg width="343px" height="144px" viewBox="0 0 343 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                </div>
+                <!-- <svg width="343px" height="144px" viewBox="0 0 343 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g id="fish" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                             <g id="Intro" transform="translate(-663.000000, -2208.000000)" fill="#FFFFFF">
                                 <g id="noun_Fish_2196836" transform="translate(662.000000, 2159.000000)">
@@ -736,211 +776,231 @@
                             </g>
                         </g>
                     </svg> -->
-                </section>
-                <section id="ideate">
-                    <div class="section-title">Ideate</div>
-                    <div class="statement">
-                        When interviewing users, temperament came up consistently as a concern for users when hoping to pair up their dogs. A challenge that arose in the research was that while most users agreed temperament was important to consider, there was no clear definition between users of what that meant.
-                        <br><br>
-                        Rather than having temperament described in one static attribute, I took the most common behaviours which users identified as important for them and allowed users to select on a spectrum the closest to what they believe described their dog.
-                    </div>
-                    <div class="pup_scale"></div>
-                </section>
             </section>
-
-            <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
-            
-            <section id="artifacts">
-                <div class="section-title">Artifacts</div>
-                <div class="style_guide_row">
-                    <div class="pup_design"></div>
-                    
-                    <div class="Typography">
-                        <div class="bold">
-                            <div class="upper">
-                            Raleway Semi Bold
-                            </div>
-                            <div class="lower">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                            </div>
-                        </div>
-                        <div class="light">
-                            <div class="upper">
-                            Raleway Light
-                            </div>
-                            <div class="lower">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="style_guide_row">
-                    <div class="icons">
-                        <div class="reject_icon"></div>
-                        <div class="like_icon"></div>
-                        <div class= "nav_icon"></div>
-                    </div>
-                </div>
-                <div class="style_guide_row" id="colour_palette">
-                    <div class="circle_group">
-                        <div class="circle1">
-                            <div class="palette"># 444991</div>
-                        </div>
-                        <div class="circle2">
-                            <div class="palette"># 6369D3</div>
-                        </div>
-                    </div>
-                    <div class="circle_group">
-                        <div class="circle3">
-                            <div class="palette"># F34D4D</div>
-                        </div>
-                        <div class="circle4">
-                            <div class="palette"># 9F9B9B</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="artifacts 2">
-                    <div class="vertical_carousel">
-                        <div class="sticky">
-                            A large focus of this project was designing an appropriate and user friendly onboarding process that didn’t feel like too much work to get setup and start looking at profiles. 
-                            <br><br>
-                            With conventional dating apps, users typically only need to two make a profile for themselves and highlight what their looking for in a match. 
-                            <br><br>
-                            Barkbuds builds three profiles: the user’s, their dog, and the prospective matching dog. The initial onboarding focuses on the user and their dog. Additional prompts are spaced out throughout use of the app to continue building the profile. 
-                            <br><br>
-                            Users are still able to skip and complete these parts later. 
-                        </div>
-                        <div id="vertical_screen_image">
-                            <div class="onboard_screen">
-                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen1.png">
-                            </div>
-                            <div class="onboard_screen">
-                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen2.png">
-                            </div>
-                            <div class="onboard_screen">
-                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen3.png">
-                            </div>
-                            <div class="onboard_screen">
-                                <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen4.png">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="horizontal_carousel">
-                        <div class="" style="width: 20rem;">
-                        Animations were designed through Principle to make every interaction dynamic and engaging.
-                        </div>
-                        
-                        <div class="slider">
-                            <div class="animated-screens1">
-                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_2.gif">
-                            </div>
-                            <div class="animated-screens2">
-                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_3.gif">
-                            </div>
-                            <div class="animated-screens3">
-                                <img class="animated_screenshot" src="assets/img/barkbuds/animation_4.gif">
-                            </div> 
-                        </div>
-                        
-                        <!-- add carousel dots -->
-                    </div>  
-            </section>
-
-            <div id="trigger2"></div>
-            <!-- <section class="transition_container" id="transition_container_2"> -->
-                <section id="iterations">
-                    <div class="section-title">Iterations</div>
-                    <div class="wireframes">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe2.png">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe3.png">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe4.png">
-                        <img class="lofi" src="assets/img/barkbuds/wireframe5.png">
-                    </div>
-                    <div class="statement_right">
-                    My iteration process started with lo-fi wireframes, taking into consideration early user stories and flows. As the timeline for the project was short, once the lo-fi wireframes passed hallway testing, I moved into higher fidelity designs. 
+            <section id="ideate">
+                <div class="section-title">Ideate</div>
+                <div class="statement wow fadeInUp">
+                    When interviewing users, dog temperament came up consistently as a concern for users when hoping to pair
+                    up their dogs. A challenge that arose in the research was that while most users agreed temperament
+                    was important to consider, there was no clear definition between users of what that meant when they referred to temperament.
                     <br><br>
-                    This didn’t give me the opportunity to get richer feedback from users.
-                    </div>
-                </section>
-            <!-- </section> -->
-            
-             <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
-
-            <section id="feedback">
-                <div class="section-title">Feedback</div>
-                    <div class="feedback-series">
-                        <div class="feedbackgroup">
-                            <div class="phone">
-                                <div class="feedback_screen" id="iteration1">
-                                    <img class="screenshot" src="assets/img/barkbuds/iteration1.png">
-                                </div>
-                            </div>
-                            <div class="phone">
-                                <div class="feedback_screen" id="iteration2"></div>
-                                <img class="screenshot" src="assets/img/barkbuds/iteration2.png">
-                            </div>
-                        </div>
-                        <div class="feedbackgroup">
-                            <div class="phone">
-                                <div class="feedback_screen" id="iteration3"></div>
-                                <img class="screenshot" src="assets/img/barkbuds/iteration3.png">
-                            </div>
-                            <div class="phone">
-                                <div class="feedback_screen" id="iteration4"></div>
-                                <img class="screenshot" src="assets/img/barkbuds/iteration4.png">
-                            </div>
-                        </div>
-                    </div>
-                <div class="statement">
-                  My higher fidelity iterations included varying designs and colours, which eventually were refined based off of AB testing, user feedback and accessibility tools such as contrast analyzer. 
+                    Rather than having temperament described in one static attribute, I took the most common behaviours
+                    which users identified as important for them and allowed users to select on a spectrum the closest
+                    to what they believe described their dog.
                 </div>
+                <div class="pup_scale wow fadeInUp"></div>
             </section>
-            <section id="prototype">
-                <div class="section-title">Prototype</div>
-                <div class="prototype_screen">
-                    <div class="left_box">
-                        <div class="phone">
+        </section>
+
+        <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
+
+        <section id="artifacts">
+            <div class="section-title">Artifacts</div>
+            <div class="style_guide_row wow fadeInUp">
+                <div class="pup_design"></div>
+
+                <div class="Typography">
+                    <div class="bold">
+                        <div class="upper">
+                            Raleway Semi Bold
+                        </div>
+                        <div class="lower">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                        </div>
+                    </div>
+                    <div class="light">
+                        <div class="upper">
+                            Raleway Light
+                        </div>
+                        <div class="lower">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="style_guide_row wow fadeInUp">
+                <div class="icons">
+                    <div class="reject_icon"></div>
+                    <div class="like_icon"></div>
+                    <div class="nav_icon"></div>
+                </div>
+            </div>
+            <div class="style_guide_row wow fadeInUp" id="colour_palette">
+                <div class="circle_group">
+                    <div class="circle1">
+                        <div class="palette"># 444991</div>
+                    </div>
+                    <div class="circle2">
+                        <div class="palette"># 6369D3</div>
+                    </div>
+                </div>
+                <div class="circle_group">
+                    <div class="circle3">
+                        <div class="palette"># F34D4D</div>
+                    </div>
+                    <div class="circle4">
+                        <div class="palette"># 9F9B9B</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="artifacts 2">
+            <div class="vertical_carousel">
+                <div class="sticky">
+                    A large focus of this project was designing an appropriate and user friendly onboarding process that
+                    didn’t feel like too much work to get setup and start looking at profiles.
+                    <br><br>
+                    With conventional dating apps, users typically only need to two make a profile for themselves and
+                    highlight what their looking for in a match.
+                    <br><br>
+                    Barkbuds builds three profiles: the user’s, their dog, and the prospective matching dog. The initial
+                    onboarding focuses on the user and their dog. Additional prompts are spaced out throughout use of
+                    the app to continue building the profile.
+                    <br><br>
+                    Users are still able to skip and complete these parts later.
+                </div>
+                <div id="vertical_screen_image">
+                    <div class="onboard_screen">
+                        <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen1.png">
+                    </div>
+                    <div class="onboard_screen">
+                        <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen2.png">
+                    </div>
+                    <div class="onboard_screen">
+                        <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen3.png">
+                    </div>
+                    <div class="onboard_screen">
+                        <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen4.png">
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal_carousel wow fadeInUp">
+                <div class="" style="width: 20rem;">
+                    Animations were designed through Principle to make every interaction dynamic and engaging.
+                </div>
+
+                <div class="slider">
+                    <div class="animated-screens1">
+                        <img class="animated_screenshot" src="assets/img/barkbuds/animation_2.gif">
+                    </div>
+                    <div class="animated-screens2">
+                        <img class="animated_screenshot" src="assets/img/barkbuds/animation_3.gif">
+                    </div>
+                    <div class="animated-screens3">
+                        <img class="animated_screenshot" src="assets/img/barkbuds/animation_4.gif">
+                    </div>
+                </div>
+
+                <!-- add carousel dots -->
+            </div>
+        </section>
+
+        <div id="trigger2"></div>
+        <!-- <section class="transition_container" id="transition_container_2"> -->
+        <section id="iterations">
+            <div class="section-title">Iterations</div>
+            <div class="wireframes">
+                <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
+                <img class="lofi" src="assets/img/barkbuds/wireframe2.png">
+                <img class="lofi" src="assets/img/barkbuds/wireframe3.png">
+                <img class="lofi" src="assets/img/barkbuds/wireframe4.png">
+                <img class="lofi" src="assets/img/barkbuds/wireframe5.png">
+            </div>
+            <div class="statement_right wow fadeInUp">
+                My iteration process started with lo-fi wireframes, taking into consideration early user stories and
+                flows. As the timeline for the project was short, once the lo-fi wireframes passed hallway testing, I
+                moved into higher fidelity designs.
+                <br><br>
+                This didn’t give me the opportunity to get richer feedback from users.
+            </div>
+        </section>
+        <!-- </section> -->
+
+        <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
+
+        <section id="feedback">
+            <div class="section-title">Feedback</div>
+            <div class="feedback-series">
+                <div class="feedbackgroup">
+                    <div class="phone">
+                        <div class="feedback_screen" id="iteration1">
+                            <img class="screenshot" src="assets/img/barkbuds/iteration1.png">
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <div class="feedback_screen" id="iteration2"></div>
+                        <img class="screenshot" src="assets/img/barkbuds/iteration2.png">
+                    </div>
+                </div>
+                <div class="feedbackgroup">
+                    <div class="phone">
+                        <div class="feedback_screen" id="iteration3"></div>
+                        <img class="screenshot" src="assets/img/barkbuds/iteration3.png">
+                    </div>
+                    <div class="phone">
+                        <div class="feedback_screen" id="iteration4"></div>
+                        <img class="screenshot" src="assets/img/barkbuds/iteration4.png">
+                    </div>
+                </div>
+            </div>
+            <div class="statement">
+                My higher fidelity iterations included varying designs and colours, which eventually were refined based
+                off of AB testing, user feedback and accessibility tools such as contrast analyzer.
+            </div>
+        </section>
+        <section id="prototype" style="min-height:300px">
+            <div class="section-title">Prototype</div>
+            <div class="prototype_screen wow fadeInUp">
+                <div class="left_box">
+                    <div class="phone">
                         <video class="screenshot" src="assets/img/barkbuds/demo.mp4" controls type="video/mp4"></div>
+                </div>
+                <div class="right_box">
+                    <div class="statement_button">
+                        Hi-fi mockups were put together as a prototype in inVision. Watch the demo or click the button
+                        below to it out for yourself.
                     </div>
-                    <div class="right_box">
-                        <div class="statement_button">
-                            Hi-fi mockups were put together as a prototype in inVision. Watch the demo or click the button below to it out for yourself.
-                        </div>
-                        
-                        <a class="button button_link" href="https://projects.invisionapp.com/share/SFOUQQFYTH8">
-                        TRY ME</a>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="whats_next" style="min-height:300px">
-                <div class="section-title">What's Next</div>
-                <div class="statement" style="padding-bottom: 20px">
-                    While this project is unlikely to continue, some of the take aways that I was able to learn from was thIterations were not developed in enough detail with feedback. The hope is to  develop and refine the parameters in which users can determine the kinds of dogs they would like to be paired with.
-                </div>
-                <div class="right">
-                    <div class="button">
-                        <a class="button_link" href="index.html">
-                        See other projects</div></a>
-                    <div class="button">
-                        <a class="button_link" href="contact.html">
-                        Let's Chat</div></a>
-                </div>
-               
-            </section>
 
-            </main>
-                    <footer>
-                        <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
-                        <div class="contact">
-                            <a class="contactlogo behance_logo" target="_blank" href=""><img src="assets/img/landing/behance.png"></a>
-                            <a class="contactlogo linkedin_logo" target="_blank" href=""><img src="assets/img/landing/linkedin.png"></a>
-                        </div>
-                    </footer>
-                    <div id="pup_footer"></div>
-        
-    </body>
+                    <a class="button button_link" href="https://projects.invisionapp.com/share/SFOUQQFYTH8">
+                        TRY ME</a>
+
+                </div>
+            </div>
+        </section>
+        <section id="whats_next" style="min-height:300px">
+            <div class="section-title">What's Next</div>
+            <div class="statement wow fadeInUp" style="padding-bottom: 20px">
+                While this project is unlikely to continue through product development, it was a really fun introduction
+                to
+                several new tools that I now work with quite frequently for hi-fi prototyping including inVision and
+                Principle.<br><br>
+                What I think is possibly the biggest take-away for me is the idea that while the needs and concerns of
+                users can often be the same, users percieve and approach that problem-space in radically different ways.
+                In recognizing something like temperament as a complex idea, it allows me to think of my users in a
+                richer context and design more appropriately.
+            </div>
+            <div class="right wow fadeInUp">
+                <div class="button">
+                    <a class="button_link" href="index.html">
+                        See other projects</div></a>
+                <div class="button">
+                    <a class="button_link" href="contact.html">
+                        Let's Chat</div></a>
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
+        <div class="contact">
+            <a class="contactlogo behance_logo" target="_blank" href=""><img src="assets/img/landing/behance.png"></a>
+            <a class="contactlogo linkedin_logo" target="_blank" href=""><img src="assets/img/landing/linkedin.png"></a>
+        </div>
+    </footer>
+    <div id="pup_footer"></div>
+
+</body>
+
 </html>
