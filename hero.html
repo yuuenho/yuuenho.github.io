@@ -64,14 +64,17 @@
                 font-size: 1.0em;
             }
 
-            section {
+            span {
                 position: relative;
-                padding-top: 75px;
-                min-height: 590px;
+                min-height: 200px;
                 width: 100%;
                 height: auto;
                 display: flex;
                 flex-direction: column;
+            }
+
+            #intro{
+                margin: 100px 75px 0;
             }
 
             #breadcrumbs{
@@ -116,14 +119,54 @@
                 margin: 0px;
             }
 
-            .logo {
+            .CSLink{
+                text-decoration: none;
+            }
+
+            .CSNum{
+                position: absolute;
+                width:30%;
                 display:flex;
                 justify-content: center;
+                margin-top: 50px;
+            }
+            .logo {
+                display:flex;
+                justify-content: flex-end;
                 padding: 30px 0px;
                 align-items: center;
+                margin-right: 30%;
+            }
+
+            .RKword_logo{
+                position:relative;
+                background-image: url(assets/img/romkids/ROMKIDS.png);
+                background-size: contain;
+                background-repeat:no-repeat;
+                height: 52px;
+                width: 310px;
+            }
+            
+            #casestudy2 .word_logo {
+                background-image: url(assets/img/barkbuds/Barkbuds.png);
+                background-size: contain;
+                background-repeat:no-repeat;
+                filter: brightness(0%) invert(1);  
+                height: 52px;
+                width: 310px;
+            }
+
+            .Ralph{
+                position: relative;
+                background-image: url(assets/img/romkids/bli1.gif);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 115px;
+                height: 90px;
             }
 
             .pup_head {
+                position: relative;
                 background-image: url(assets/img/barkbuds/barky.png);
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -131,12 +174,25 @@
                 height: 90px;
             }
 
-            .word_logo {
-                background-image: url(assets/img/barkbuds/Barkbuds.png);
-                background-size: contain;
-                background-repeat:no-repeat;
-                height: 52px;
-                width: 310px;
+
+            .box{
+                position: absolute;
+                height:150px;
+                width: 1150px;
+                left:30%;
+            }
+
+            .case_det{
+                position:relative;
+                color:white;
+            }
+
+            #casestudy1 .box{
+                background-color:#4A90E2;
+            }
+
+            #casestudy2 .box{
+                background-color:#6369D3;
             }
 
             footer{
@@ -146,6 +202,7 @@
                 justify-content: space-between;
                 width: 100%;
                 color:#faf8f8;
+                font-family: "Source Sans Pro";
                 background-color: #4A4A4A;
                 padding: 10px;
                 z-index: 10;
@@ -226,7 +283,7 @@
     <body>
         <header>
             <nav>
-                <a href="index.html">Home</a>
+                <a href="hero.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="process.html">Process</a>
                 <a href="contact.html">Contact</a>
@@ -249,12 +306,35 @@
                 </div>
         </header>
         <main>
-            <section id="define">
-                <div class="logo">
-                    <div class="pup_head"></div>
-                    <div class="word_logo"></div>
+            <span id="intro">
+                <div style="font-size:42pt; font-family:'Source Sans Pro';font-weight: 300"> Hi my name is Kevin Ho</div>
+                <div style="font-size: 1em"> I'm a UX Designer that works to combine inclusive design with fun and quirky experiences.</div>
                 </div>
-            </section>
+            </span>
+            <a class="CSLink" href="case1.html">
+            <span id="casestudy1">
+                <div class="CSNum">-01-</div>
+                <div class="logo">
+                    <div class="box"></div>
+                    <div class="Ralph"></div>
+                    <div class="case_info">
+                        <div class="RKword_logo"></div>
+                        <div class="case_det">Product Design</div>
+                    </div>
+                </div>
+            </span></a>
+            <a class="CSLink" href="barkbuds.html">
+            <span id="casestudy2">
+                <div class="CSNum">-02-</div>
+                <div class="logo">
+                    <div class="box"></div>
+                    <div class="pup_head"></div>
+                    <div class="case_info">
+                        <div class="word_logo"></div>
+                        <div class="case_det">Product Design</div>
+                    </div>
+                </div>
+            </span></a>
 
             </main>
                     <footer>
