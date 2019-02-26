@@ -67,12 +67,17 @@
 
         section {
             position: relative;
-            padding-top: 75px;
             min-height: 590px;
             width: 100%;
             height: auto;
             display: flex;
             flex-direction: column;
+        }
+
+        section > a:first-child {
+            position: absolute;
+            top: -100px;
+            left: 0px;
         }
 
         #breadcrumbs {
@@ -222,7 +227,7 @@
             left: -28px;
         }
 
-        #define_2 {
+        #define_2Content {
             position: relative;
             background-color: #6369D3;
             color: #faf8f8;
@@ -438,10 +443,10 @@
         .wireframes {
             position: absolute;
             left: -35px;
-            top: -10px;
+            top: 50px;
             width: 1000px;
             overflow: hidden;
-            max-height: 675px;
+            max-height: 550px;
         }
 
         .statement_right {
@@ -606,7 +611,7 @@
             const breadcrumbController = new ScrollMagic.Controller({ globalSceneOptions: { duration: 0 } });
             const scenes = [];
 
-            $('section').each((index, elem) => {
+            $('section > a:first-child').each((index, elem) => {
                 const id = elem.id;
                 const scene = new ScrollMagic.Scene({ triggerElement: `#${id}` })
                     .setClassToggle(`#breadcrumbs a[href="#${id}"]`, "active")
@@ -616,22 +621,26 @@
 
             const wipeController = new ScrollMagic.Controller();
             const wipeAnimation = new TimelineMax()
-                .fromTo('section#define_2', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone })
+                .fromTo('section#define_2Content', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone })
             // .fromTo('section#iterations', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone });
 
             const wipeScene = new ScrollMagic.Scene({
                 triggerElement: "#trigger1",
                 triggerHook: "onLeave",
                 duration: "300%",
+            })
+                .setPin("#transition_container_1")
+                .setTween(wipeAnimation)
+                .addTo(wipeController);
+
+            $('#breadcrumbs a[href="#ideate"]').click(() => {
+                wipeScene.progress(1)
+            })
 
                 // const wipeScene = new ScrollMagic.Scene({
                 // triggerElement: "#trigger2",
                 // triggerHook: "onLeave",
                 // duration: "300%",
-            })
-                .setPin("#transition_container_1")
-                .setTween(wipeAnimation)
-                .addTo(wipeController);
 
             //  .setPin("#transition_container_2")
             // .setTween(wipeAnimation)
@@ -664,7 +673,6 @@
         <nav>
             <a href="hero.html">Home</a>
             <a href="about.html">About</a>
-            <a href="process.html">Process</a>
             <a href="contact.html">Contact</a>
             <div class="font-size">
                 Aa
@@ -685,7 +693,9 @@
         </div>
     </header>
     <main>
-        <section id="define">
+        <div style="height:75px"></div>
+        <section>
+        <a id="define"></a>
             <div id="case_study_description">
                 <br>
                 2018 - Self Initiated Project
@@ -729,9 +739,10 @@
                     <img id="pup_sniffing" src="assets/img/barkbuds/pup_sniffing.png">
                 </div> -->
         </section>
-        <div id="trigger1" style="height:22px"></div>
+        <div id="trigger1" style="height:100px"></div>
         <section class="transition_container" id="transition_container_1" style="max-height: 800px">
-            <section id="define_2">
+            <a id="define_2"></a>
+            <section id="define_2Content">    
                 <div></div>
                 <div class="section-title">Define/Scope</div>
                 <div class="statement wow fadeInUp">
@@ -778,7 +789,8 @@
                         </g>
                     </svg> -->
             </section>
-            <section id="ideate">
+            <section>
+            <a id="ideate"></a>
                 <div class="section-title">Ideate</div>
                 <div class="statement wow fadeInUp">
                     When interviewing users, dog temperament came up consistently as a concern for users when hoping to pair
@@ -795,7 +807,8 @@
 
         <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
 
-        <section id="artifacts">
+        <section>
+            <a id="artifacts"></a>
             <div class="section-title">Artifacts</div>
             <div class="style_guide_row wow fadeInUp">
                 <div class="pup_design"></div>
@@ -846,7 +859,8 @@
             </div>
         </section>
 
-        <section id="artifacts 2">
+        <section> 
+        <a id="artifacts_2"></a>
             <div class="vertical_carousel">
                 <div class="sticky">
                     A large focus of this project was designing an appropriate and user friendly onboarding process that
@@ -899,7 +913,8 @@
 
         <div id="trigger2"></div>
         <!-- <section class="transition_container" id="transition_container_2"> -->
-        <section id="iterations">
+        <section> 
+            <a id="iterations"></a>
             <div class="section-title">Iterations</div>
             <div class="wireframes">
                 <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
@@ -920,7 +935,8 @@
 
         <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
 
-        <section id="feedback">
+        <section>
+            <a id="feedback"></a>
             <div class="section-title">Feedback</div>
             <div class="feedback-series">
                 <div class="feedbackgroup">
@@ -950,7 +966,8 @@
                 off of AB testing, user feedback and accessibility tools such as contrast analyzer.
             </div>
         </section>
-        <section id="prototype" style="min-height:300px">
+        <section>
+            <a id="prototype" style="min-height:300px"></a>
             <div class="section-title">Prototype</div>
             <div class="prototype_screen wow fadeInUp">
                 <div class="left_box">
@@ -969,7 +986,8 @@
                 </div>
             </div>
         </section>
-        <section id="whats_next" style="min-height:300px">
+        <section> 
+            <a id="whats_next" style="min-height:300px"></a>
             <div class="section-title">What's Next</div>
             <div class="statement wow fadeInUp" style="padding-bottom: 20px">
                 While this project is unlikely to continue through product development, it was a really fun introduction
