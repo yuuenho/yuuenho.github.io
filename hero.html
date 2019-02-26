@@ -132,8 +132,8 @@
             }
             .logo {
                 display:flex;
-                justify-content: flex-end;
-                padding: 30px 0px;
+                justify-content: flex-start;
+                padding: 30px;
                 align-items: center;
                 margin-right: 30%;
             }
@@ -201,15 +201,16 @@
                 align-items: center;
                 justify-content: space-between;
                 width: 100%;
-                color:#faf8f8;
+                /* color:#faf8f8; */
                 font-family: "Source Sans Pro";
-                background-color: #4A4A4A;
+                /* background-color: #4A4A4A; */
                 padding: 10px;
                 z-index: 10;
             }
 
             .contactlogo img{
                 height:30px;
+                filter: brightness(60%) invert(1); 
             }
 
         </style>
@@ -285,7 +286,6 @@
             <nav>
                 <a href="hero.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="process.html">Process</a>
                 <a href="contact.html">Contact</a>
                 <div class="font-size">
                     Aa
@@ -307,31 +307,33 @@
         </header>
         <main>
             <span id="intro">
-                <div style="font-size:42pt; font-family:'Source Sans Pro';font-weight: 300"> Hi my name is Kevin Ho</div>
+                <div style="font-size:42pt; font-family:'Source Sans Pro'"> Hi my name is Kevin Ho</div>
                 <div style="font-size: 1em"> I'm a UX Designer that works to combine inclusive design with fun and quirky experiences.</div>
                 </div>
             </span>
             <a class="CSLink" href="case1.html">
             <span id="casestudy1">
                 <div class="CSNum">-01-</div>
-                <div class="logo">
-                    <div class="box"></div>
-                    <div class="Ralph"></div>
-                    <div class="case_info">
-                        <div class="RKword_logo"></div>
-                        <div class="case_det">Product Design</div>
+                <div class="box">
+                    <div class="logo">
+                        <div class="Ralph"></div>
+                        <div class="case_info">
+                            <div class="RKword_logo"></div>
+                            <div class="case_det">Product Design</div>
+                        </div>
                     </div>
                 </div>
             </span></a>
             <a class="CSLink" href="barkbuds.html">
             <span id="casestudy2">
                 <div class="CSNum">-02-</div>
-                <div class="logo">
-                    <div class="box"></div>
-                    <div class="pup_head"></div>
-                    <div class="case_info">
-                        <div class="word_logo"></div>
-                        <div class="case_det">Product Design</div>
+                <div class="box">
+                    <div class="logo">
+                        <div class="pup_head"></div>
+                        <div class="case_info">
+                            <div class="word_logo"></div>
+                            <div class="case_det">Product Design</div>
+                        </div>
                     </div>
                 </div>
             </span></a>
