@@ -433,11 +433,13 @@
             justify-content: center;
         }
 
-        #iterations {
+        #iterations_content {
             display: flex;
             flex-direction: row;
             background-color: #6369D3;
             color: #faf8f8;
+            z-index: 2;
+            min-height: 100vh;
         }
 
         .wireframes {
@@ -637,14 +639,30 @@
                 wipeScene.progress(1)
             })
 
-                // const wipeScene = new ScrollMagic.Scene({
-                // triggerElement: "#trigger2",
-                // triggerHook: "onLeave",
-                // duration: "300%",
+            const wipeAnimation2 = new TimelineMax()
+                .fromTo('section#iterations_content', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone });
 
-            //  .setPin("#transition_container_2")
-            // .setTween(wipeAnimation)
-            // .addTo(wipeController);
+            const wipeScene2 = new ScrollMagic.Scene({
+                triggerElement: "#trigger2",
+                triggerHook: "onLeave",
+                duration: "300%",
+            })
+                .setPin("#transition_container_2")
+                .setTween(wipeAnimation2)
+                .addTo(wipeController);
+
+            $('#breadcrumbs a[href="#feedback"]').click(() => {
+                wipeScene2.progress(1)
+            })
+
+            // const wipeScene2 = new ScrollMagic.Scene({
+            //     triggerElement: "#trigger2",
+            //     triggerHook: "onLeave",
+            //     duration: "300%"
+            // })
+            //     .setPin("#transition_container_2")
+            //     .setTween(wipeAnimation)
+            //     .addTo(wipeController);
 
             const footercontroller = new ScrollMagic.Controller()
             const footerscene = new ScrollMagic.Scene({ triggerElement: "#pup_footer", triggerHook: "onEnter", duration: 0 })
@@ -790,7 +808,7 @@
                     </svg> -->
             </section>
             <section>
-            <a id="ideate"></a>
+                <a id="ideate"></a>
                 <div class="section-title">Ideate</div>
                 <div class="statement wow fadeInUp">
                     When interviewing users, dog temperament came up consistently as a concern for users when hoping to pair
@@ -911,61 +929,61 @@
             </div>
         </section>
 
-        <div id="trigger2"></div>
-        <!-- <section class="transition_container" id="transition_container_2"> -->
-        <section> 
+        <div id="trigger2" style="height: 100px;"></div>
+        <section class="transition_container" id="transition_container_2">
             <a id="iterations"></a>
-            <div class="section-title">Iterations</div>
-            <div class="wireframes">
-                <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
-                <img class="lofi" src="assets/img/barkbuds/wireframe2.png">
-                <img class="lofi" src="assets/img/barkbuds/wireframe3.png">
-                <img class="lofi" src="assets/img/barkbuds/wireframe4.png">
-                <img class="lofi" src="assets/img/barkbuds/wireframe5.png">
-            </div>
-            <div class="statement_right wow fadeInUp">
-                My iteration process started with lo-fi wireframes, taking into consideration early user stories and
-                flows. As the timeline for the project was short, once the lo-fi wireframes passed hallway testing, I
-                moved into higher fidelity designs.
-                <br><br>
-                This didn’t give me the opportunity to get richer feedback from users.
-            </div>
+            <section id="iterations_content">
+                <div class="section-title">Iterations</div>
+                <div class="wireframes">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe2.png">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe3.png">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe4.png">
+                    <img class="lofi" src="assets/img/barkbuds/wireframe5.png">
+                </div>
+                <div class="statement_right wow fadeInUp">
+                    My iteration process started with lo-fi wireframes, taking into consideration early user stories and
+                    flows. As the timeline for the project was short, once the lo-fi wireframes passed hallway testing, I
+                    moved into higher fidelity designs.
+                    <br><br>
+                    This didn’t give me the opportunity to get richer feedback from users.
+                </div>
+            </section>
+            <section>
+                <a id="feedback"></a>
+                <div class="section-title">Feedback</div>
+                <div class="feedback-series">
+                    <div class="feedbackgroup">
+                        <div class="phone">
+                            <div class="feedback_screen" id="iteration1">
+                                <img class="screenshot" src="assets/img/barkbuds/iteration1.png">
+                            </div>
+                        </div>
+                        <div class="phone">
+                            <div class="feedback_screen" id="iteration2"></div>
+                            <img class="screenshot" src="assets/img/barkbuds/iteration2.png">
+                        </div>
+                    </div>
+                    <div class="feedbackgroup">
+                        <div class="phone">
+                            <div class="feedback_screen" id="iteration3"></div>
+                            <img class="screenshot" src="assets/img/barkbuds/iteration3.png">
+                        </div>
+                        <div class="phone">
+                            <div class="feedback_screen" id="iteration4"></div>
+                            <img class="screenshot" src="assets/img/barkbuds/iteration4.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="statement">
+                    My higher fidelity iterations included varying designs and colours, which eventually were refined based
+                    off of AB testing, user feedback and accessibility tools such as contrast analyzer.
+                </div>
+            </section>
         </section>
-        <!-- </section> -->
 
         <!-- insert scroll magic here http://scrollmagic.io/examples/advanced/section_wipes_manual.html -->
 
-        <section>
-            <a id="feedback"></a>
-            <div class="section-title">Feedback</div>
-            <div class="feedback-series">
-                <div class="feedbackgroup">
-                    <div class="phone">
-                        <div class="feedback_screen" id="iteration1">
-                            <img class="screenshot" src="assets/img/barkbuds/iteration1.png">
-                        </div>
-                    </div>
-                    <div class="phone">
-                        <div class="feedback_screen" id="iteration2"></div>
-                        <img class="screenshot" src="assets/img/barkbuds/iteration2.png">
-                    </div>
-                </div>
-                <div class="feedbackgroup">
-                    <div class="phone">
-                        <div class="feedback_screen" id="iteration3"></div>
-                        <img class="screenshot" src="assets/img/barkbuds/iteration3.png">
-                    </div>
-                    <div class="phone">
-                        <div class="feedback_screen" id="iteration4"></div>
-                        <img class="screenshot" src="assets/img/barkbuds/iteration4.png">
-                    </div>
-                </div>
-            </div>
-            <div class="statement">
-                My higher fidelity iterations included varying designs and colours, which eventually were refined based
-                off of AB testing, user feedback and accessibility tools such as contrast analyzer.
-            </div>
-        </section>
         <section>
             <a id="prototype" style="min-height:300px"></a>
             <div class="section-title">Prototype</div>
