@@ -496,6 +496,7 @@
             min-width: 300px;
             background-color: #4A4A4A;
             border-radius: 18px;
+            text-decoration: none;
         }
 
         .button_link {
@@ -580,7 +581,6 @@
             transform: rotate(-6deg);
         }
 
-
         footer {
             position: relative;
             display: flex;
@@ -624,7 +624,6 @@
             const wipeController = new ScrollMagic.Controller();
             const wipeAnimation = new TimelineMax()
                 .fromTo('section#define_2Content', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone })
-            // .fromTo('section#iterations', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone });
 
             const wipeScene = new ScrollMagic.Scene({
                 triggerElement: "#trigger1",
@@ -655,17 +654,8 @@
                 wipeScene2.progress(1)
             })
 
-            // const wipeScene2 = new ScrollMagic.Scene({
-            //     triggerElement: "#trigger2",
-            //     triggerHook: "onLeave",
-            //     duration: "300%"
-            // })
-            //     .setPin("#transition_container_2")
-            //     .setTween(wipeAnimation)
-            //     .addTo(wipeController);
-
             const footercontroller = new ScrollMagic.Controller()
-            const footerscene = new ScrollMagic.Scene({ triggerElement: "#pup_footer", triggerHook: "onEnter", duration: 0 })
+            const footerscene = new ScrollMagic.Scene({ triggerElement: "#pup_footer", triggerHook: "onEnter", duration: 0, offset: 20 })
                 .setPin("footer")
                 .addTo(footercontroller);
         });
@@ -1004,8 +994,8 @@
                 </div>
             </div>
         </section>
-        <section> 
-            <a id="whats_next" style="min-height:300px"></a>
+        <section style="min-height: 0px;"> 
+            <a id="whats_next"></a>
             <div class="section-title">What's Next</div>
             <div class="statement wow fadeInUp" style="padding-bottom: 20px">
                 While this project is unlikely to continue through product development, it was a really fun introduction
@@ -1017,26 +1007,30 @@
                 In recognizing something like temperament as a complex idea, it allows me to think of my users in a
                 richer context and design more appropriately.
             </div>
-            <div class="right wow fadeInUp">
-                <div class="button">
-                    <a class="button_link" href="index.html">
-                        See other projects</div></a>
-                <div class="button">
-                    <a class="button_link" href="contact.html">
-                        Let's Chat</div></a>
+            <div class="right wow fadeInUp" style="display: flex; flex-direction: column; align-items: flex-end;">
+                <a class="button" href="index.html">
+                    <div class="button_link">
+                        See other projects
+                    </div>
+                </a>
+                <a class="button" href="contact.html">
+                    <div class="button_link">
+                        Let's Chat
+                    </div>
+                </a>
             </div>
 
+            <footer>
+                <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
+                <div class="contact">
+                    <a class="contactlogo behance_logo" target="_blank" href=""><img src="assets/img/landing/behance.png"></a>
+                    <a class="contactlogo linkedin_logo" target="_blank" href=""><img src="assets/img/landing/linkedin.png"></a>
+                </div>
+            </footer>
+            <div id="pup_footer"></div>
         </section>
 
     </main>
-    <footer>
-        <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
-        <div class="contact">
-            <a class="contactlogo behance_logo" target="_blank" href=""><img src="assets/img/landing/behance.png"></a>
-            <a class="contactlogo linkedin_logo" target="_blank" href=""><img src="assets/img/landing/linkedin.png"></a>
-        </div>
-    </footer>
-    <div id="pup_footer"></div>
 
 </body>
 
