@@ -64,7 +64,7 @@
                 font-size: 1.0em;
             }
 
-            span {
+            .CS {
                 position: relative;
                 min-height: 200px;
                 width: 100%;
@@ -213,6 +213,80 @@
                 filter: brightness(60%) invert(1); 
             }
 
+            .role_container{
+                display:flex;
+                flex-wrap: wrap
+            }
+
+            .role_box{
+                width:10px;;
+                display:flex;
+                justify-content: center;
+            }
+            .role{
+                display:inline-block
+            }
+
+            .role span{
+                position:absolute;
+                top:70px;
+                overflow:hidden;
+                animation: animate 10s linear infinite;
+                opacity: 0;
+            }
+            .role_2{
+                position:relative;
+                padding-left:127px;
+            }
+            @keyframes animate
+            {
+                0%
+                {
+                    opacity: 0;
+                    transform: translateY(-50px);
+                }
+                2%
+                {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                18%
+                {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+                20%
+                {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+                100%
+                {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+            }
+
+            .role span:nth-child(1)
+            {
+                animation-delay: 0s;
+            }
+            .role span:nth-child(2)
+            {
+                animation-delay: 2s;
+            }
+            .role span:nth-child(3)
+            {
+                animation-delay: 4s;
+            }
+            .role span:nth-child(4)
+            {
+                animation-delay: 6s;
+            }
+            .role span:nth-child(5)
+            {
+                animation-delay: 8s;
+            }
         </style>
         <script src="assets/plugins/jquery-3.3.1.min.js"></script>
         <script src="assets/ScrollMagic.min.js"></script>
@@ -306,13 +380,24 @@
                 </div>
         </header>
         <main>
-            <span id="intro">
+            <div class="CS" id="intro">
                 <div style="font-size:42pt; font-family:'Source Sans Pro'"> Hi my name is Kevin Ho</div>
-                <div style="font-size: 1em"> I'm a UX Designer that works to combine inclusive design with fun and quirky experiences.</div>
-                </div>
-            </span>
-            <a class="CSLink" href="case1.html">
-            <span id="casestudy1">
+                    <div class="role_container" style="font-size: 1em"> I'm a
+                        <div class="role_box">
+                            <div class="role">
+                                <span>----Design Ho----</span>
+                                <span>---UX Designer---</span>
+                                <span>---Baby Coder---</span>
+                                <span>Costume Maker</span>
+                                <span>Diet Coke Addict</span>
+                            </div>
+                        </div>
+
+                    <div class="role_2">that works to combine inclusive design with fun and quirky experiences.</div>
+                    </div>  
+            </div>
+            <a class="CSLink" href="romkids.html">
+            <div class="CS" id="casestudy1">
                 <div class="CSNum">-01-</div>
                 <div class="box">
                     <div class="logo">
@@ -323,9 +408,9 @@
                         </div>
                     </div>
                 </div>
-            </span></a>
+            </div></a>
             <a class="CSLink" href="barkbuds.html">
-            <span id="casestudy2">
+            <div class="CS" id="casestudy2">
                 <div class="CSNum">-02-</div>
                 <div class="box">
                     <div class="logo">
@@ -336,14 +421,14 @@
                         </div>
                     </div>
                 </div>
-            </span></a>
+            </div></a>
 
             </main>
                     <footer>
                         <div>&copy; 2019 Kevin Ho. All Rights Reserved.</div>
                         <div class="contact">
-                            <a class="contactlogo behance_logo" target="_blank" href=""><img src="assets/img/landing/behance.png"></a>
-                            <a class="contactlogo linkedin_logo" target="_blank" href=""><img src="assets/img/landing/linkedin.png"></a>
+                            <!-- <a class="contactlogo behance_logo" target="_blank" href=""><img src="assets/img/landing/behance.png"></a> -->
+                            <a class="contactlogo linkedin_logo" target="LinkedIn" href="https://www.linkedin.com/in/ho-kevin/"><img src="assets/img/landing/linkedin.png"></a>
                         </div>
                     </footer>
                     <div id="pup_footer"></div>
