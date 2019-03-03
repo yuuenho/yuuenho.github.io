@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" /> 
+    </head>
+    <body>
+        <form id="email_contact">
+            <label for="email_contact_name">Name</label>
+            <input type="text" name="name" id="email_contact_name" />
+            
+            <label for="email_contact_replyTo">Email</label>
+            <input type="email" name="replyTo" id="email_contact_replyTo" />
+          
+            <label for="email_contact_body">Message</label>
+            <textarea name="body" id="email_contact_body"></textarea>
+            <input type="submit" value="Send" />
+
+            <pre class="result"></pre>
+        </form>
+
+        <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+        <script>
+            function initContactForm({formSelector, formUrl, statusSelector}) {
+                (function ($) {
+                    function submitContactForm(formData) {
+                        $(statusSelector).text('Sending...')
+
+                        $.ajax({
+                            url: formUrl,
+                            method: "POST",
+                            dataType: "json",
+                            data: formData,
+                        })
+                        .then((data, status, jqXHR) => {
+                            if (data.ok) {
+                                $(statusSelector).text('Thank you');
+                            } else {
+                                $(statusSelector).text(data.error);
+                            }
+                        })
+                        .catch((jqXHR, textStatus, errorThrown) => {
+                            $(statusSelector).text(textStatus);
+                        })
+                    }
+
+                    $(() => {
+                        $(formSelector).submit(function (event) {
+                            event.preventDefault();
+                            submitContactForm($(this).serialize());
+                        });
+                    });
+                })(jQuery);
+            }
+
+            initContactForm({
+                formSelector: '#email_contact', 
+                statusSelector: '#email_contact .result',
+                formUrl: 'https://script.google.com/macros/s/AKfycbw2J2VO9QXi3S8iuNLZWNS7I5JsDMgkW8tUSrKW3BN5vcc4xB5Z/exec', 
+            })
+        </script>
+    </body>
+</html>
