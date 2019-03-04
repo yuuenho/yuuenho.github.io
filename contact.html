@@ -38,6 +38,10 @@
                 display:inline;
             }
 
+            header nav .active{
+                text-decoration: underline;
+            }
+
             .font-size{
                 font-family: 'Avenir Next Condensed';
                 padding: 8px;
@@ -292,14 +296,14 @@
             <nav>
                 <a href="hero.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+                <a class="active" href="contact.html">Contact</a>
                 <div class="font-size">
                     Aa
                     <button id="up" onclick="resizeText(1)">+</button>
                     <button id="down" onclick="resizeText(-1)">-</button>
                 </div>
             </nav>
-            <div id="page_title">Design Ho</div>
+            <img id="page_title" src=assets/img/landing/Logo.svg height=50>
              <div id="breadcrumbs_background"></div>
                 <div id="breadcrumbs">
                     <a href="#define">Define</a>
