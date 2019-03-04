@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+
+
+  <head>
+    <title>Kevin Ho - UX Designer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/ScrollMagic.min.js"></script>
+    <script src="assets/plugins/debug.addIndicators.min.js"></script>
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/jquery.ScrollMagic.min.js"></script>
+    <script src="assets/plugins/animation.gsap.min.js"></script>
+    <script src="assets/plugins/animation.velocity.min.js"></script>
+    <script src="assets/plugins/greensock-js/src/minified/TweenMax.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  
+  
+    <style>
+      @font-face {
+        font-family: sketch;
+        src: url(assets/Sketch-3D.otf);
+      }
+  
+      .introslide {
+        display: flex;
+        background-color: #ffffff;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      }
+    
+      .slidebottom {
+        display: none;
+        width: 908px;
+        height: 700px;
+        position: relative;
+      }
+  
+      #title {
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      .loader {
+        align-content: center;
+        z-index: 1;
+        border: 12px solid #f3f3f38a;
+        border-top: 12px solid #3498db;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 1.5s linear infinite;
+      }
+  
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+  
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+  
+      .animate-bottom {
+        position: relative;
+        animation-name: animatebottom;
+        animation-duration: 1s
+      }
+  
+      @keyframes animatebottom {
+        from {
+          bottom: -100px;
+          opacity: 0
+        }
+  
+        to {
+          bottom: 0;
+          opacity: 1
+        }
+      }
+    
+      #avatar {
+        position: static;
+        flex-grow: 1;
+        order: 2;
+        z-index: 2;
+  
+      }
+  
+      .artifact {
+        display: block;
+        position: relative;
+        top: 30%;
+        text-align: center;
+      }
+  
+  
+      #avatar-frame {
+        background-image: url(img/splashavatar.png);
+        background-size: 984px 482px;
+        width: 246px;
+        height: 482px;
+        animation: animateAvatar 1s steps(4);
+        animation-iteration-count: infinite;
+      }
+  
+      body {
+        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #ffffff;
+        margin: 0;
+      }
+  
+      .chapter {
+        top: 50%;
+        font-size: 100px;
+        display: block;
+        position: relative;
+        text-align: center;
+      }
+  
+      .topnav {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgb(63, 20, 80);
+      }
+  
+      .topnav a {
+        float: right;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+  
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+  
+      .topnav a.active {
+        background-color: rgb(189, 39, 131);
+        color: white;
+      }
+  
+      .pagelogo {
+        display: none;
+        position: fixed;
+        z-index: 15;
+        padding: 10px;
+        overflow: hidden;
+        left: 10px;
+        margin-left: auto;
+      }
+  
+  
+      .reslinks {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        left: 140px;
+      }
+  
+  
+      .reslink-grid {
+        display: grid;
+        grid-template-columns: 4fr 4r 4fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "reslink reslink1 reslink2";
+        align-items: center;
+      }
+  
+      .reslink {
+        grid-area: reslink;
+        padding: 30px;
+      }
+  
+      .reslink1 {
+        grid-area: reslink1;
+        padding: 30px;
+      }
+  
+      .reslink2 {
+        grid-area: reslink2;
+        padding: 30px;
+      }
+  
+      .select{
+        padding:20px 20px 0 20px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 2;
+        order: 1;
+        align-items: center;
+        position: relative;
+        top: 30%;
+        align-content:center;
+      }
+  
+      .copy {
+        width:60vw;
+        position: relative;
+        text-align: center;
+        max-width: 700px;
+      }
+  
+      .heading {
+        font-size: 10vw;
+        font-family: "sketch";
+      }
+  
+      .case {
+        color: #f2f2f2;
+        z-index: 2;
+        text-decoration: none;
+      }
+      
+      .slide{
+        flex-grow: 2;
+        order: 1;
+      }
+  
+      .button {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 60vw;
+        height: 50px;
+        max-width: 500px;
+        background-color: rgb(63, 20, 80);
+        border-radius: 10px;
+      }
+  
+      #myDiv {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        top:20vh;
+      }
+    
+      @media only screen and (min-width:850px) {
+        .heading {
+          font-size: 102px;
+        }
+  
+      }
+  
+  
+        @media only screen and (max-width: 650px) {
+          
+  
+          #avatar{
+            top: 30%;
+          }
+  
+          #avatar-frame{
+            background-size: 482px 241px;
+            height: 241px;
+            width: 123px;
+          }
+  
+  
+          #myDiv {
+            flex-direction: column-reverse;
+            top:75px;
+          }
+            
+          .topnav a {
+            font-size: 14px;
+            padding: 14px 3vw;
+          }
+          
+          .heading{
+            font-size: 65px;
+          }
+          .copy{
+            min-width: 350px;
+          }
+          .button{
+            min-width: 375px;
+          }
+         
+        }
+  
+  
+    </style>
+    <script>
+    
+      function showPage() {
+        document.querySelector(".introslide").style.display = "none";
+        document.getElementById("myDiv").style.display = "flex";
+        document.querySelector(".pagelogo").style.display = "block";
+      }
+  
+      var myVar;
+      myVar = setTimeout(showPage, 1000);
+  
+    </script>
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a href="comingsoon.html">Contact</a>
+    <a href="process.html">Process</a>
+    <a class="active" href="about.html">About</a>
+    <a href="index.html">Home</a>
+    
+    <div class="pagelogo">
+    </div>
+  </div>
+
+  <section class="introslide">
+    <div id="title">
+      <!-- <img src="img/ROMKIDS.png"> -->
+      <p></p>
+      <p></p>
+      <div class="loader"></div>
+    </div>
+  </section>
+
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+
+    <div id="avatar">
+      <div id="avatar-frame">
+      </div>
+    </div>
+
+
+    <div class="slide">
+      <div class="container">
+        <div class="select">
+          <div class="heading">About Me</div>
+        </div>
+
+        <div class="select copy">
+          I’m a Toronto-based UX designer. My journey has been a bit of a scribble of a path. Originally starting as an accessibility service provider, I saw how innovation isn’t driven from passion but rather pain. 
+          <br><br>
+          I think it's really easy to spot bad design, those are often the ones you have the most frustrating experiences with. Working in accessibility there were no shortage of bad designs, but I also saw a lot of well thought and meaningful designs and the way that they were often invisible, seamless and unnoticable. Creating for me has always been an opportunity to learn and I want to design because I see how it can impact individuals in such deep ways even when they don’t realize it.
+          <br><br>
+          I think the parts about design that inspire me the most are the ways in which they spark stories. My love for storytelling came from playing video games as a kid. While I was reading lots of world mythology and was entrenched with fairytales. I found a passion for video games with deep and compelling storylines. I loved stories drove me to want to play more. It made me curious about why the characters were the way that they were and how the story will unfold.
+          <br><br>
+          For me, stories shape why we do what we do and how to approach any problem.
+          <br><br>
+          In addition to my UX skills, one of the things I've been working and developing is my coding abilities. I'm very proud to say that this website is my first coded project.
+          <br><br>
+          Over the years, I started making costumes. I love where that's taken me, from sewing costumes traditionally now moving into prop making. It’s allowed me to explore different methods and approach all my costumes quite uniquely. I recently made a pulp sci-fi space helmet outfitted with lights and a personal fan to keep things illuminated and cool. My next project will be working with motors and creating an animatronic monster.
+          <br><br>
+             Other skills I've picked up along the way.
+             <li>Sketch
+             Balsamiq
+             Principle
+             Flinto
+             inVision
+             Photoshop
+             Html 5
+             CSS3
+             GitHub
+             VSC
+             </li>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+</body>
+
+</html>
