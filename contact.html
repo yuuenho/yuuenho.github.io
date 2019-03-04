@@ -124,6 +124,23 @@
                 margin: 0px;
             }
 
+            textarea{
+              height:100px;
+              width: 500px;
+              font-size:1.0em;
+              resize: none;
+            }
+
+            input[type="text"]
+            {
+                font-size:1.0em;
+            }
+
+            input[type="email"]
+            {
+                font-size:1.0em;
+            }
+
             .CSLink{
                 text-decoration: none;
             }
@@ -358,13 +375,13 @@
                 <div style="font-size:42pt; font-family:'Source Sans Pro'">Say hi!</div>
                 <form id="email_contact">
                     <label for="email_contact_name">Name</label>
-                    <input type="text" name="name" id="email_contact_name" />
+                    <input type="text" name="name" id="email_contact_name" placeholder="What should I call you?"/>
                     <br>
                     <label for="email_contact_replyTo">Email</label>
-                    <input type="email" name="replyTo" id="email_contact_replyTo" />
+                    <input type="email" name="replyTo" id="email_contact_replyTo" placeholder="How can I reach you?"/>
                   <br>
-                    <label for="email_contact_body">Message</label>
-                    <textarea name="body" id="email_contact_body"></textarea>
+                    <label for="email_contact_body">Message</label><br>
+                    <textarea name="body" id="email_contact_body"placeholder="What's on your mind?"></textarea><br>
                     <input type="submit" value="Send" />
                   <br><br>
                     <pre class="result"></pre>
