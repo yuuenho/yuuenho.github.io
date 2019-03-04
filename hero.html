@@ -308,6 +308,19 @@
         .role li:nth-child(5) {
             animation-delay: 8s;
         }
+
+        @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 10%, 0);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+        }
+
     </style>
     <script src="assets/plugins/jquery-3.3.1.min.js"></script>
     <script src="assets/ScrollMagic.min.js"></script>
@@ -420,13 +433,13 @@
             </div>
         </div>
 
-        <div class="CS" id="casestudy1">
+        <div class="CS wow slideInRight" id="casestudy1">
             <a class="CSLink" href="romkids.html">
                 <div class="CSNum">-Case Study 01-</div>
             </a>
             <a class="CSLink" href="romkids.html">
                 <div class="box">
-                    <div class="logo">
+                    <div class="logo wow fadeInUp" style="animation-delay: .5s">
                         <div class="Ralph"></div>
                         <div class="case_info">
                             <div class="RKword_logo"></div>
@@ -436,12 +449,12 @@
                 </div>
             </a>
         </div>
-        <div class="CS" id="casestudy2">
+        <div class="CS wow slideInRight" id="casestudy2">
             <a class="CSLink" href="barkbuds.html"><div class="CSNum">-Case Study 02-</div>
             </a>
             <a class="CSLink" href="barkbuds.html">
                 <div class="box">
-                    <div class="logo">
+                    <div class="logo wow fadeInUp" style="animation-delay: .5s">
                         <div class="pup_head"></div>
                         <div class="case_info">
                             <div class="word_logo"></div>
