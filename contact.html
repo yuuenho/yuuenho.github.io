@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>Design Ho - Kevin Ho</title>
-        <link rel="shortcut icon" href="flavicon.ico" type="image/ico">
+        <link rel="shortcut icon" href="assets/flavicon.ico" type="image/ico">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="assets/animate.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -289,6 +289,44 @@
                 main.css("font-size", newSize + "px");
             } 
             }
+                        function initContactForm({formSelector, formUrl, statusSelector}) {
+                (function ($) {
+                    function submitContactForm(formData) {
+                        $(statusSelector).text('Sending...')
+
+                        $.ajax({
+                            url: formUrl,
+                            method: "POST",
+                            dataType: "json",
+                            data: formData,
+                        })
+                        .then((data, status, jqXHR) => {
+                            if (data.ok) {
+                                $(statusSelector).text('Thank you');
+                            } else {
+                                $(statusSelector).text(data.error);
+                            }
+                        })
+                        .catch((jqXHR, textStatus, errorThrown) => {
+                            $(statusSelector).text(textStatus);
+                        })
+                    }
+
+                    $(() => {
+                        $(formSelector).submit(function (event) {
+                            event.preventDefault();
+                            submitContactForm($(this).serialize());
+                        });
+                    });
+                })(jQuery);
+            }
+
+            initContactForm({
+                formSelector: '#email_contact', 
+                statusSelector: '#email_contact .result',
+                formUrl: 'https://script.google.com/macros/s/AKfycbw2J2VO9QXi3S8iuNLZWNS7I5JsDMgkW8tUSrKW3BN5vcc4xB5Z/exec', 
+            })
+
         </script>
     </head>
     <body>
@@ -318,23 +356,19 @@
         <main>
             <span id="intro">
                 <div style="font-size:42pt; font-family:'Source Sans Pro'">Say hi!</div>
-                <form action="send.php" method="POST">
-                
-                Name <input type="text" name="Name">
-                <br>
-                Email Address <input type="email" name="email">
-                <br>
-                Message<br>
-                <textarea name="message" row="10"cols="50" placeholder="Tell me what you're thinking..."></textarea>
-                <br>
-                <input type="submit" value="Send Message">
+                <form id="email_contact">
+                    <label for="email_contact_name">Name</label>
+                    <input type="text" name="name" id="email_contact_name" />
+                    
+                    <label for="email_contact_replyTo">Email</label>
+                    <input type="email" name="replyTo" id="email_contact_replyTo" />
+                  
+                    <label for="email_contact_body">Message</label>
+                    <textarea name="body" id="email_contact_body"></textarea>
+                    <input type="submit" value="Send" />
 
+                    <pre class="result"></pre>
                 </form>
-                <br>
-                <div style="font-size: 1em">hello@designho.com
-                </div>
-                </div>
-            </span>
             
 
             </main>
