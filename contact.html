@@ -270,7 +270,8 @@
                 height:30px;
                 filter: brightness(60%) invert(1); 
             }
-            form{
+
+            .fieldBox{
               color:white;
               background-color: rgb(150, 46, 150);
               padding:10px;
@@ -422,7 +423,8 @@
         <main>
             <span id="intro">
                 <div style="font-size:42pt; font-family:'Source Sans Pro'">Say hi!</div>
-                <form id="email_contact" class="wow slideInRight">
+                <form id="email_contact">
+                    <div class="fieldBox wow slideInRight">
                     <div class="wow fadeInUp"  style="animation-delay: .5s">
                         <div class="contact_field">
                             <label for="email_contact_name">Name</label>
@@ -440,8 +442,8 @@
                         </div>
                     </div>
                     <pre class="result"></pre>
-                    
-                <input type="submit" class="button-link wow fadeInUp" style="animation-delay:.5s" value="Send"/>
+                    </div>
+                <input type="submit" class="button-link wow fadeInUp" style="animation-delay:1s; margin:10px" value="Send"/>
                 </form>
             
 
