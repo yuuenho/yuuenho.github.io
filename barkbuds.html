@@ -660,6 +660,20 @@
         });
 
         function resizeText(multiplier) {
+            //needs to have less than 20 but more than 12
+            const nav = $("header nav a")
+            if (nav.css("font-size") == "") {
+                nav.css("font-size", "0.6em");
+            }
+            const fontNow = parseFloat(nav.css("font-size"))
+            const newSize = fontNow + (multiplier * 3)
+            if (newSize >= 18 && newSize <= 34) {
+                console.log(newSize)
+                nav.css("font-size", newSize + "px");
+            }
+        }
+
+        function resizeText(multiplier) {
             //needs to have less than 50 but more than 14
             const main = $("main")
             if (main.css("font-size") == "") {
