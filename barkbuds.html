@@ -385,18 +385,18 @@
             margin: 0 20px;
         }
 
-        .sticky {
+        #vertical_carousel {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        #vertical_carousel .sticky {
             width: 50%;
             position: -webkit-sticky;
             position: sticky;
-            top: 100px;
+            bottom: 50px;
             padding: 50px;
-            padding-left: 500px;
-        }
-
-        #vertical_screen_image {
-            margin-top: -400px;
-            padding-left: 50px;
         }
 
         .onboard_screenshot {
@@ -835,21 +835,8 @@
         </section>
 
         <section> 
-        <a id="artifacts_2"></a>
-            <div class="vertical_carousel">
-                <div class="sticky">
-                    A large focus of this project was designing an appropriate and user friendly onboarding process that
-                    didn’t feel like too much work to get setup and start looking at profiles.
-                    <br><br>
-                    With conventional dating apps, users typically only need to make two profiles, information about themselves and
-                    highlight what their looking for in a match.
-                    <br><br>
-                    Barkbuds builds three profiles: the user’s, their dog, and the prospective matching dog. The initial
-                    onboarding focuses on the user and their dog. Additional prompts are spaced out throughout use of
-                    the app to continue building the profile.
-                    <br><br>
-                    Users are still able to skip and complete these parts later.
-                </div>
+            <a id="artifacts_2"></a>
+            <div id="vertical_carousel">
                 <div id="vertical_screen_image">
                     <div class="onboard_screen">
                         <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen1.png">
@@ -863,6 +850,19 @@
                     <div class="onboard_screen">
                         <img class="onboard_screenshot" src="assets/img/barkbuds/onboard-screen4.png">
                     </div>
+                </div>
+                <div class="sticky">
+                    A large focus of this project was designing an appropriate and user friendly onboarding process that
+                    didn’t feel like too much work to get setup and start looking at profiles.
+                    <br><br>
+                    With conventional dating apps, users typically only need to make two profiles, information about themselves and
+                    highlight what their looking for in a match.
+                    <br><br>
+                    Barkbuds builds three profiles: the user’s, their dog, and the prospective matching dog. The initial
+                    onboarding focuses on the user and their dog. Additional prompts are spaced out throughout use of
+                    the app to continue building the profile.
+                    <br><br>
+                    Users are still able to skip and complete these parts later.
                 </div>
             </div>
             <div class="horizontal_carousel wow fadeInUp">
