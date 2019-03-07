@@ -433,20 +433,20 @@
 
         .feedback-series {
             display: flex;
-            /* flex-wrap: wrap; */
             justify-content: center;
         }
 
         #iterations_content {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             background-color: #6369D3;
             color: #faf8f8;
             z-index: 2;
-            min-height: 100vh;
+            height: calc(100vh - var(--header-height));
         }
 
-        .wireframes {
+        #iterations_content .wireframes {
             position: absolute;
             left: -35px;
             top: 50px;
@@ -455,11 +455,9 @@
             max-height: 800px;
         }
 
-        .statement_right {
+        #iterations_content .statement_right {
             text-align: right;
-            padding-left: 50%;
-            width: 50%;
-            z-index: 5;
+            width: 20em;
             padding-right: 42px;
             padding-top: 75px;
         }
@@ -890,7 +888,6 @@
         <section class="transition_container" id="transition_container_2">
             <a id="iterations"></a>
             <section id="iterations_content">
-                <div class="section-title">Iterations</div>
                 <div class="wireframes">
                     <img class="lofi" src="assets/img/barkbuds/wireframe1.png">
                     <img class="lofi" src="assets/img/barkbuds/wireframe2.png">
@@ -898,6 +895,7 @@
                     <img class="lofi" src="assets/img/barkbuds/wireframe4.png">
                     <img class="lofi" src="assets/img/barkbuds/wireframe5.png">
                 </div>
+                <div class="section-title">Iterations</div>
                 <div class="statement_right wow fadeInUp">
                     My iteration process started with lo-fi wireframes, taking into consideration early user stories and
                     flows. As the timeline for the project was short, once the lo-fi wireframes passed hallway testing, I
