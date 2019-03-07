@@ -29,11 +29,14 @@
             top: 13px;
             right: 25px;
             text-decoration: none;
+            display: flex;
+            align-items: center;
         }
 
         header nav a {
             font-family: 'Avenir Next Condensed';
-            font-size: 12px;
+            /* font-size: 12px; */
+            font-size:.8em;
             padding: 8px;
             text-decoration: none;
             color: #4A4A4A;
@@ -669,6 +672,7 @@
 
         function resizeText(multiplier) {
             //needs to have less than 50 but more than 14
+
             const main = $("main")
             if (main.css("font-size") == "") {
                 main.css("font-size", "1.0em");
@@ -678,6 +682,19 @@
             if (newSize >= 18 && newSize <= 34) {
                 console.log(newSize)
                 main.css("font-size", newSize + "px");
+            }
+        }
+
+        function resizeText2(multiplier) {
+            const nav = $("nav")
+            if (nav.css("font-size") == "") {
+                nav.css("font-size", "1.0em");
+            }
+            const fontNow2 = parseFloat(nav.css("font-size"))
+            const newSize2 = fontNow2 + (multiplier * 3)
+            if (newSize2 >= 18 && newSize2 <= 34) {
+                console.log(newSize2)
+                nav.css("font-size", newSize2 + "px");
             }
         }
     </script>
@@ -691,8 +708,8 @@
             <a href="contact">Contact</a>
             <div class="font-size">
                 Aa
-                <button id="up" onclick="resizeText(1)">+</button>
-                <button id="down"  onclick="resizeText(-1)">-</button>
+                <button id="up" onclick="resizeText(1); resizeText2(1)">+</button>
+                <button id="down"  onclick="resizeText(-1); resizeText2(-1)">-</button>
             </div>
         </nav>
         <a href="/"><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>
