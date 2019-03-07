@@ -10,11 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
+        :root {
+            --header-height: 100px;
+        }
+
         header {
             position: fixed;
             top: 0px;
             left: 0px;
-            height: 100px;
+            height: var(--header-height);
             width: 100%;
             background: linear-gradient(to bottom, #faf8f8, #faf8f8 85%, rgba(251, 252, 249, 0));
             z-index: 10;
@@ -231,7 +235,7 @@
             position: relative;
             background-color: #6369D3;
             color: #faf8f8;
-            height: 100vh;
+            height: calc(100vh - var(--header-height));
             padding-top: 0;
             z-index: 2;
         }
@@ -614,9 +618,10 @@
                 .fromTo('section#define_2Content', 1, { x: "0%" }, { x: "-100%", ease: Linear.easeNone })
 
             const wipeScene = new ScrollMagic.Scene({
-                triggerElement: "#trigger1",
+                triggerElement: "#transition_container_1",
                 triggerHook: "onLeave",
                 duration: "300%",
+                offset: -100,
             })
                 .setPin("#transition_container_1")
                 .setTween(wipeAnimation)
@@ -658,20 +663,6 @@
                 .setPin("footer")
                 .addTo(footercontroller);
         });
-
-        function resizeText(multiplier) {
-            //needs to have less than 20 but more than 12
-            const nav = $("header nav a")
-            if (nav.css("font-size") == "") {
-                nav.css("font-size", "0.6em");
-            }
-            const fontNow = parseFloat(nav.css("font-size"))
-            const newSize = fontNow + (multiplier * 3)
-            if (newSize >= 18 && newSize <= 34) {
-                console.log(newSize)
-                nav.css("font-size", newSize + "px");
-            }
-        }
 
         function resizeText(multiplier) {
             //needs to have less than 50 but more than 14
@@ -716,7 +707,7 @@
     <main>
         <div style="height:75px"></div>
         <section>
-        <a id="define"></a>
+            <a id="define"></a>
             <div id="case_study_description">
                 <br>
                 2018 - Self Initiated Project
@@ -754,15 +745,12 @@
                 profile and connecting with dogs that match the profile desired.
             </div>
         </section>
-        <div id="trigger1" style="height:100px"></div>
-        <section class="transition_container" id="transition_container_1" style="max-height: 800px">
+        <section class="transition_container" id="transition_container_1" style="max-height: 800px; margin-top: 100px;">
             <a id="define_2"></a>
             <section id="define_2Content">    
-                <div></div>
                 <div class="section-title">Define/Scope</div>
                 <div class="statement wow fadeInUp">
-                    While there are a lot of apps and services out there for dog sitting or walkers such Rover or Bark n
-                    Borrow or apps tailored to dating while with a dog, there are very few options for users to casually
+                    While there are a lot of apps and services out there for dog sitting or walkers such Rover or Bark-n-Borrow or apps tailored to dating while with a dog, there are very few options for users to casually
                     introduce their dogs to other dogs in a controlled environment. Some shelters and community groups
                     would organize larger meetups for dog owners but can often be overly stimulating for some dogs.
                 </div>
@@ -777,7 +765,6 @@
                         which had a comprehensive onboarding process to better define a suitable match.
                     </div>
                 </div>
-
             </section>
             <section>
                 <a id="ideate"></a>
