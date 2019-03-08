@@ -75,6 +75,21 @@
         font-size: 75px;
         }
 
+        #HMFResize{
+            font-family: "Source Sans Pro";
+            display:flex;
+            position:fixed;
+            bottom:10px;
+            width:100%;
+            justify-content:center;
+            align-items: center;
+            color:white;
+        }
+
+        .HMFResize button{
+            margin:6px;
+        }
+
         header nav {
             position: absolute;
             top: 13px;
@@ -538,7 +553,11 @@
 
             function hideFooter(){
             document.querySelector("footer").style.cssText = "display:none";
+            }
 
+            function HMFResiz() {
+            document.getElementById("HMFResize").style.cssText="visibility:visible";
+            // document.getElementById("HMFResize").setAttribute("class","hmfresize");
             }
 
             function closeNav() {
@@ -549,8 +568,17 @@
             document.getElementById("page_title").style.filter="brightness(1) invert(0)";
             }
 
-            function reFooter(){
+            function reFooter() {
             document.querySelector("footer").style.cssText = "display:inherit";
+            }
+
+            function disHMFResiz() {
+            document.getElementById("HMFResize").style.cssText = "display:none";
+            }
+
+            function disHMFResiz() {
+            document.getElementById("HMFResize").style.cssText="visibility:hidden";
+            // document.getElementById("HMFResize").setAttribute("class","");
             }
 
     </script>
@@ -558,7 +586,7 @@
 
 <body>
     <header>
-        <div id="hamMenu" onclick="openNav();invertLogo();hideFooter()">
+        <div id="hamMenu" onclick="openNav();invertLogo();hideFooter();HMFResiz()">
             <div></div>
             <div></div>
             <div></div>
@@ -566,20 +594,19 @@
 
         
         <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();closeinvLogo();reFooter()">&times;</a>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();closeinvLogo();reFooter();disHMFResiz()">&times;</a>
                 <div class="overlay-content">
                     <a href="#">Home</a>
                     <a href="about">About</a>
                     <a href="contact">Contact</a>
                     <a href="barkbuds">Barkbuds</a>
                     <a href="romkids">ROM Kids</a>
-                    <div id="HMFResize" class="font-size" style="font-size:2.0em; color:white">
-                    Aa
-                    <button class="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
-                    <button class="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
-                    </div>
-
                 </div>
+                <div id="HMFResize" class="font-size">
+                    Aa
+                    <button class="up" aria-label="Increase font size">+</button>
+                    <button class="down" aria-label="Decrease font size">-</button>
+                    </div>
         </div>
         
             <nav>
@@ -588,8 +615,8 @@
                 <a href="contact">Contact</a>
                 <div class="font-size">
                     Aa
-                    <button class="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
-                    <button class="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
+                    <button class="up" aria-label="Increase font size" onclick="resizeText(1)">+</button>
+                    <button class="down" aria-label="Decrease font size" onclick="resizeText(-1)">-</button>
                 </div>
             </nav>
             <a class="active" href="#"><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>
