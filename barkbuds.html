@@ -668,33 +668,29 @@
             const footerscene = new ScrollMagic.Scene({ triggerElement: "#pup_footer", triggerHook: "onEnter", duration: 0, offset: 20 })
                 .setPin("footer")
                 .addTo(footercontroller);
+            
+            initResizeText();
         });
 
-        function resizeText(multiplier) {
-            //needs to have less than 50 but more than 14
-
+        function initResizeText() {
+            const storageKey = 'com.designho.fontSize';
+            const startSize = localStorage.getItem(storageKey) || "1.0em";
             const main = $("main")
-            if (main.css("font-size") == "") {
-                main.css("font-size", "1.0em");
-            }
-            const fontNow = parseFloat(main.css("font-size"))
-            const newSize = fontNow + (multiplier * 3)
-            if (newSize >= 18 && newSize <= 34) {
-                console.log(newSize)
-                main.css("font-size", newSize + "px");
-            }
-        }
-
-        function resizeText2(multiplier) {
             const nav = $("nav")
-            if (nav.css("font-size") == "") {
-                nav.css("font-size", "1.0em");
-            }
-            const fontNow2 = parseFloat(nav.css("font-size"))
-            const newSize2 = fontNow2 + (multiplier * 3)
-            if (newSize2 >= 18 && newSize2 <= 34) {
-                console.log(newSize2)
-                nav.css("font-size", newSize2 + "px");
+
+            main.css("font-size",startSize);
+            nav.css("font-size",startSize);
+
+            $('#up').click(() => resizeText(1))
+            $('#down').click(() => resizeText(-1))
+
+            function resizeText(multiplier) {
+                const fontNow = parseFloat(main.css("font-size"))
+                const newSize = Math.min(34, Math.max(18, fontNow + (multiplier * 3)))
+
+                main.css("font-size", newSize + "px")
+                nav.css("font-size", newSize + "px")
+                localStorage.setItem(storageKey, newSize + "px")
             }
         }
     </script>
@@ -708,8 +704,8 @@
             <a href="contact">Contact</a>
             <div class="font-size">
                 Aa
-                <button id="up" onclick="resizeText(1); resizeText2(1)">+</button>
-                <button id="down"  onclick="resizeText(-1); resizeText2(-1)">-</button>
+                <button id="up">+</button>
+                <button id="down">-</button>
             </div>
         </nav>
         <a href="/"><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>
