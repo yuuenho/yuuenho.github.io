@@ -21,6 +21,27 @@
             z-index: 10;
         }
 
+        #hamMenu{
+            display:none;
+            position: absolute;
+            right: 10px;
+            top:10px;
+        }
+
+        #hamMenu div{
+            position: relative;
+            width: 42px;
+            height: 1px;
+            margin:15px;
+            background-color: #4A4A4A;
+        }
+
+        #menuBox{
+            height:100vh;
+            width:100vw;
+            /* background-color:#4A4A4A; */
+        }
+
         header nav {
             position: absolute;
             top: 13px;
@@ -327,6 +348,66 @@
         }
         }
 
+        @media only screen and (max-width: 850px) {
+        header nav{
+            display:none;
+        }
+        #hamMenu{
+            display:block;
+        }
+
+        #page_title{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            padding:20px;
+            font-family: 'Source Sans Pro';
+            font-size: 30px;
+        }
+
+        #intro {
+            margin: 100px 10px 30px;
+        }
+        #role_line{
+            visibility: hidden;
+        }
+
+        .role_2{
+            padding-left:0;
+        }
+
+        .role li{
+            top:140px;
+            text-align: start;
+        }
+
+        .CS{
+            width:auto;
+        }
+
+        .CSNum{
+            display: none;
+        }
+
+        .box{
+            position:static;
+            display:flex;
+        }
+        .logo{
+            padding:15px;
+            margin-right:0
+        }
+
+        #casestudy1 .word_logo {
+            height: 43px;
+            width: 245px;
+            } 
+        
+        footer{
+            padding:5px;
+        }
+
+        }
     </style>
     <script src="assets/plugins/jquery-3.3.1.min.js"></script>
     <script src="assets/ScrollMagic.min.js"></script>
@@ -411,26 +492,35 @@
 
 <body>
     <header>
-        <nav>
-            <a class="active" href="">Home</a>
-            <a href="about">About</a>
-            <a href="contact">Contact</a>
-            <div class="font-size">
-                Aa
-                <button id="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
-                <button id="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
+        <div id="hamMenu" onclick="HMenu(1)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="menuBox">
+
+        
+            <nav>
+                <a class="active" href="">Home</a>
+                <a href="about">About</a>
+                <a href="contact">Contact</a>
+                <div class="font-size">
+                    Aa
+                    <button id="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
+                    <button id="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
+                </div>
+            </nav>
+            <a class="active" href=""><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>
+            <div id="breadcrumbs_background"></div>
+            <div id="breadcrumbs">
+                <a href="#define">Define</a>
+                <a href="#ideate">Ideate</a>
+                <a href="#artifacts">Artifacts</a>
+                <a href="#iterations">Iterations</a>
+                <a href="#feedback">Feedback</a>
+                <a href="#prototype">Prototype</a>
+                <a href="#whats_next">What's Next</a>
             </div>
-        </nav>
-        <a class="active" href=""><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>
-        <div id="breadcrumbs_background"></div>
-        <div id="breadcrumbs">
-            <a href="#define">Define</a>
-            <a href="#ideate">Ideate</a>
-            <a href="#artifacts">Artifacts</a>
-            <a href="#iterations">Iterations</a>
-            <a href="#feedback">Feedback</a>
-            <a href="#prototype">Prototype</a>
-            <a href="#whats_next">What's Next</a>
         </div>
     </header>
     <main>
