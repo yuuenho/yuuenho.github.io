@@ -506,12 +506,14 @@
                 const startSize = localStorage.getItem(storageKey) || "1.0em";
                 const main = $("main")
                 const nav = $("nav")
+                const HNav = $("#HMFResize")
 
                 main.css("font-size",startSize);
                 nav.css("font-size",startSize);
+                HNav.css("font-size",startSize);
 
-                $('#up').click(() => resizeText(1))
-                $('#down').click(() => resizeText(-1))
+                $('.up').click(() => resizeText(1))
+                $('.down').click(() => resizeText(-1))
 
                 function resizeText(multiplier) {
                     const fontNow = parseFloat(main.css("font-size"))
@@ -519,6 +521,7 @@
 
                     main.css("font-size", newSize + "px")
                     nav.css("font-size", newSize + "px")
+                    HNav.css("font-size",newSize +"px")
                     localStorage.setItem(storageKey, newSize + "px")
                 }
             }
@@ -551,10 +554,10 @@
                     <a href="contact">Contact</a>
                     <a href="barkbuds">Barkbuds</a>
                     <a href="romkids">ROM Kids</a>
-                    <div class="font-size" style="font-size:2.0em; color:white">
+                    <div id="HMFResize" class="font-size" style="font-size:2.0em; color:white">
                     Aa
-                    <button id="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
-                    <button id="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
+                    <button class="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
+                    <button class="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
                     </div>
 
                 </div>
@@ -566,8 +569,8 @@
                 <a href="contact">Contact</a>
                 <div class="font-size">
                     Aa
-                    <button id="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
-                    <button id="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
+                    <button class="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
+                    <button class="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
                 </div>
             </nav>
             <a class="active" href=""><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>

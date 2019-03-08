@@ -681,8 +681,8 @@
             main.css("font-size",startSize);
             nav.css("font-size",startSize);
 
-            $('#up').click(() => resizeText(1))
-            $('#down').click(() => resizeText(-1))
+            $('.up').click(() => resizeText(1))
+            $('.down').click(() => resizeText(-1))
 
             function resizeText(multiplier) {
                 const fontNow = parseFloat(main.css("font-size"))
@@ -704,8 +704,8 @@
             <a href="contact">Contact</a>
             <div class="font-size">
                 Aa
-                <button id="up">+</button>
-                <button id="down">-</button>
+                <button class="up">+</button>
+                <button class="down">-</button>
             </div>
         </nav>
         <a href="/"><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>
