@@ -24,27 +24,28 @@
         #hamMenu{
             display:none;
             position: absolute;
-            right: 10px;
-            top:10px;
+            right: 25px;
+            top:22px;
         }
 
         #hamMenu div{
             position: relative;
-            width: 42px;
-            height: 1px;
-            margin:15px;
+            width: 30px;
+            height: 3px;
+            border-radius: 25%;
+            margin:9px;
             background-color: #4A4A4A;
         }
 
         .overlay {
-        height: 100%;
-        width: 0;
+        height: 0;
+        width: 100%;
         position: fixed;
         z-index: 1;
         top: 0;
         left: 0;
         background-color: #4a4a4a;
-        overflow-x: hidden;
+        overflow-y: hidden;
         transition: 0.5s;
         }
 
@@ -60,7 +61,7 @@
         padding: 8px;
         text-decoration: none;
         font-family: 'Avenir Next Condensed';
-        font-size: 36px;
+        font-size: 2.0em;
         color: white;
         display: block;
         transition: 0.3s;
@@ -69,8 +70,8 @@
 
         .overlay .closebtn {
         position: absolute;
-        top: -20px;
-        right: 13px;
+        top: -17px;
+        right: 16px;
         font-size: 75px;
         }
 
@@ -381,6 +382,9 @@
         }
 
         @media only screen and (max-width: 850px) {
+        body{
+            overflow-x: hidden;
+        }
         header nav{
             display:none;
         }
@@ -520,11 +524,12 @@
             }
         }
         function openNav() {
-        document.getElementById("myNav").style.width = "100%";
+        document.getElementById("myNav").style.height = "100%";
+        document.getElementById("footer").style.display="none";
         }
 
         function closeNav() {
-        document.getElementById("myNav").style.width = "0%";
+        document.getElementById("myNav").style.height = "0%";
         }
     </script>
 </head>
@@ -540,13 +545,13 @@
         
         <div id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="overlay-content wow slideInDown">
+                <div class="overlay-content">
                     <a href="#">Home</a>
                     <a href="about">About</a>
                     <a href="contact">Contact</a>
                     <a href="barkbuds">Barkbuds</a>
                     <a href="romkids">ROM Kids</a>
-                    <div class="font-size" style="font-size:1.0em; color:white">
+                    <div class="font-size" style="font-size:2.0em; color:white">
                     Aa
                     <button id="up" aria-label="Increase font size" onclick="resizeText(1); resizeText2(1)">+</button>
                     <button id="down" aria-label="Decrease font size" onclick="resizeText(-1); resizeText2(-1)">-</button>
