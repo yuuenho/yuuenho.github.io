@@ -345,6 +345,18 @@
             padding-left: 6.8em;
         }
 
+        @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 10%, 0);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+        }
+
         @keyframes animate {
             0% {
                 opacity: 0;
@@ -392,17 +404,6 @@
             animation-delay: 8s;
         }
 
-        @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translate3d(0, 10%, 0);
-        }
-
-        to {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-        }
 
         @media only screen and (max-width: 850px) {
         header{
