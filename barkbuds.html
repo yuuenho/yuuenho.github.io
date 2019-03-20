@@ -588,9 +588,52 @@
         }
 
         @media only screen and (max-width: 1200px) {
-        .horizontal{
+        header{
+            overflow-x: hidden;
+        }
+
+        #breadcrumbs{
+            display: none;
+        }
+
+        #breadcrumbs_background{
+            display:none;
+        }
+
+        .headerMargin{
+            display: none;
+        }
+        body{
+            width:100vw;
+            overflow-x: hidden;
+        }
+
+        main{
+            overflow-x: hidden;
+        }
+        header nav{
+            display:none;
+        }
+        #hamMenu{
+            display:block;
+        }
+
+        #page_title{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            padding:20px;
+            font-family: 'Source Sans Pro';
+            font-size: 30px;
+            z-index: 10
+        }
+
+        footer{
+            padding:5px;
+            overflow-x: hidden;
         }
         }
+        
     
     </style>
     <script src="assets/plugins/jquery-3.3.1.min.js"></script>
@@ -693,11 +736,45 @@
                 localStorage.setItem(storageKey, newSize + "px")
             }
         }
+
+                    function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+            }
+
+            function invertLogo() {
+            document.getElementById("page_title").style.filter="brightness(0) invert(1)";
+            }
+
+            function hideFooter(){
+            document.querySelector("footer").style.cssText = "display:none";
+            }
+
+            // function showHMFResize(){
+            // document.getElementById("HMFResize").style.cssText = "visibility:visible";
+            // }
+
+
+            function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+            }
+
+            function closeinvLogo(){
+            document.getElementById("page_title").style.filter="brightness(1) invert(0)";
+            }
+
+            function reFooter() {
+            document.querySelector("footer").style.cssText = "display:inherit";
+            }
     </script>
 </head>
 
 <body>
     <header>
+        <div id="hamMenu" onclick="openNav();invertLogo();hideFooter();">
+            <div></div>
+            <div></div>
+            <div></div>
+            </div>
         <nav>
             <a href="/">Home</a>
             <a href="about">About</a>
@@ -721,7 +798,22 @@
         </div>
     </header>
     <main>
-        <div style="height:75px"></div>
+         <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();closeinvLogo();reFooter()">&times;</a>
+                <div class="overlay-content">
+                    <a href="#">Home</a>
+                    <a href="about">About</a>
+                    <a href="contact">Contact</a>
+                    <a href="barkbuds">Barkbuds</a>
+                    <a href="romkids">ROM Kids</a>
+                </div>
+                <div id="HMFResize" class="font-size">
+                    Aa
+                    <button class="up" aria-label="Increase font size">+</button>
+                    <button class="down" aria-label="Decrease font size">-</button>
+                    </div>
+        </div>
+        <div class="headerMargin" style="height:75px"></div>
         <section>
             <a id="define"></a>
             <div id="case_study_description">
