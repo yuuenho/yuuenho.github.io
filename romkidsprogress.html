@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html>
 
@@ -722,29 +724,7 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about">About</a>
-            <a href="contact">Contact</a>
-            <div class="font-size">
-                Aa
-                <button id="up" onclick="resizeText(1)">+</button>
-                <button id="down"  onclick="resizeText(-1)">-</button>
-            </div>
-        </nav>
-        <a href="index"><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>
-        <div id="breadcrumbs_background"></div>
-        <div id="breadcrumbs">
-            <a href="#define">Define</a>
-            <a href="#ideate">Ideate</a>
-            <a href="#artifacts">Artifacts</a>
-            <a href="#iterations">Iterations</a>
-            <a href="#feedback">Feedback</a>
-            <a href="#prototype">Prototype</a>
-            <a href="#whats_next">What's Next</a>
-        </div>
-    </header>
+    {% include header.html %}
     <main>
         <div style="height:75px"></div>
         <section>

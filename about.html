@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html>
 
@@ -616,51 +618,22 @@
 </head>
 
 <body>
-    <header>
-        <div id="hamMenu" onclick="openNav();invertLogo();hideFooter();">
-            <div></div>
-            <div></div>
-            <div></div>
-            </div>
-        <nav>
-            
-
-            <a href="/">Home</a>
-            <a class="active" href="">About</a>
-            <a href="contact">Contact</a>
-            <div class="font-size">
-                Aa
-                <button id="up" aria-label="Increase font size">+</button>
-                <button id="down" aria-label="Decrease font size">-</button>
-            </div>
-        </nav>
-        <a href="/"><img id="page_title" src=assets/img/landing/Logo.svg height=50></a>
-        <div id="breadcrumbs_background"></div>
-        <div id="breadcrumbs">
-            <a href="#define">Define</a>
-            <a href="#ideate">Ideate</a>
-            <a href="#artifacts">Artifacts</a>
-            <a href="#iterations">Iterations</a>
-            <a href="#feedback">Feedback</a>
-            <a href="#prototype">Prototype</a>
-            <a href="#whats_next">What's Next</a>
-        </div>
-    </header>
+    {% include header.html %}
     <main>
         <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav();closeinvLogo();reFooter()">&times;</a>
-                <div class="overlay-content">
-                    <a href="#">Home</a>
-                    <a href="about">About</a>
-                    <a href="contact">Contact</a>
-                    <a href="barkbuds">Barkbuds</a>
-                    <a href="romkids">ROM Kids</a>
-                </div>
-                <div id="HMFResize" class="font-size">
-                    Aa
-                    <button class="up" aria-label="Increase font size">+</button>
-                    <button class="down" aria-label="Decrease font size">-</button>
-                    </div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav();closeinvLogo();reFooter()">&times;</a>
+            <div class="overlay-content">
+                <a href="#">Home</a>
+                <a href="about">About</a>
+                <a href="contact">Contact</a>
+                <a href="barkbuds">Barkbuds</a>
+                <a href="romkids">ROM Kids</a>
+            </div>
+            <div id="HMFResize" class="font-size">
+                Aa
+                <button class="up" aria-label="Increase font size">+</button>
+                <button class="down" aria-label="Decrease font size">-</button>
+            </div>
         </div>
         <div class="about_writeup wow fadeInUp">
             <div style="font-size:42pt; font-family:'Source Sans Pro'">About Me</div>
