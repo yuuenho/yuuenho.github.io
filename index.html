@@ -324,37 +324,43 @@
                 display:flex;
                 justify-content: center;
             } */
-        ul.role {
+        #role_carousel {
+            position: relative;
+            border-bottom: solid 1.5px #4a4a4a;
+            /* overflow: hidden; */
+        }
+        
+        #role_carousel ul {
             padding-inline-start: 5px;
             padding-inline-end: 12px;
             list-style-type: none;
-        }
-
-        .role li {
-            position: absolute;
-            top: 70px;
-            overflow: hidden;
-            animation: animate 10s linear infinite;
-            opacity: 0;
             width: 7.22em;
             text-align: center;
         }
 
-        .role_2 {
+        #role_carousel li {
+            position: absolute;
+            top: 0px;
+            animation: animate 10s linear infinite;
+            opacity: 0;
+            text-align: center;
+        }
+
+        /* .role_2 {
             position: relative;
             padding-left: 6.8em;
-        }
+        } */
 
         @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translate3d(0, 10%, 0);
-        }
+            from {
+                opacity: 0;
+                transform: translate3d(0, 10%, 0);
+            }
 
-        to {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
         }
 
         @keyframes animate {
@@ -384,23 +390,23 @@
             }
         }
 
-        .role li:nth-child(1) {
+        #role_carousel li:nth-child(1) {
             animation-delay: 0s;
         }
 
-        .role li:nth-child(2) {
+        #role_carousel li:nth-child(2) {
             animation-delay: 2s;
         }
 
-        .role li:nth-child(3) {
+        #role_carousel li:nth-child(3) {
             animation-delay: 4s;
         }
 
-        .role li:nth-child(4) {
+        #role_carousel li:nth-child(4) {
             animation-delay: 6s;
         }
 
-        .role li:nth-child(5) {
+        #role_carousel li:nth-child(5) {
             animation-delay: 8s;
         }
 
@@ -437,16 +443,16 @@
         #intro {
             margin: 100px 10px 30px;
         }
-        #role_line{
+        /* #role_line{
             visibility: hidden;
-        }
+        } */
 
-        .role_2{
+        /* .role_2{
             padding-left:0;
-        }
+        } */
 
-        .role li{
-            top:140px;
+        #role_carousel li{
+            /* top:140px; */
             text-align: start;
         }
 
@@ -644,19 +650,19 @@
         </div>
         <div class="CS" id="intro" aria-activedescendant="">
             <div style="font-size:42pt; font-family:'Source Sans Pro'"> Hi my name is Kevin Ho</div>
-            <div class="role_container" style="font-size: 1em"> I'm a
-                <!-- <div class="role_box"> -->
-                <div id="role_line"></div>
-                <ul class="role">
-                    <li>Design Ho</li>
-                    <li>UX Designer</li>
-                    <li>Baby Coder</li>
-                    <li>Costume Maker</li>
-                    <li>Diet Coke Addict</li>
-                </ul>
-                <!-- </div> -->
-
-                <div class="role_2">that combines inclusive design with fun and quirky experiences.</div>
+            <div class="role_container" style="font-size: 1em">
+                <span>I'm a</span>
+                <span id="role_carousel">
+                    <ul>
+                        <!-- <div>Diet Coke Addict</div> -->
+                        <li>Design Ho</li>
+                        <li>UX Designer</li>
+                        <li>Baby Coder</li>
+                        <li>Costume Maker</li>
+                        <li>Diet Coke Addict</li>
+                    </ul>
+                </span>
+                <span class="role_2">that combines inclusive design with fun and quirky experiences.</span>
             </div>
         </div>
 
