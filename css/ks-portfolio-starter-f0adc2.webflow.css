@@ -3086,6 +3086,10 @@ figcaption {
   font-size: 30px;
 }
 
+.result {
+  display: block;
+}
+
 @media (max-width: 991px) {
   .styleguide-block {
     text-align: center;

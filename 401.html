@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Fri Sep 13 2019 04:15:49 GMT+0000 (UTC)  -->
+<!--  Last Published: Fri Sep 13 2019 04:43:21 GMT+0000 (UTC)  -->
 <html data-wf-page="5d30fac4134e8fcacbc17736" data-wf-site="5d30fac4134e8f4d06c17727">
 <head>
   <meta charset="utf-8">
@@ -54,6 +54,40 @@ Webflow.push(function() {
     e.preventDefault();
 	$('body').css('overflow', 'auto');
   });
+     function initContactForm({formSelector, formUrl, statusSelector}) {
+                (function ($) {
+                    function submitContactForm(formData) {
+                        $(statusSelector).text('Sending...')
+                        $.ajax({
+                            url: formUrl,
+                            method: "POST",
+                            dataType: "json",
+                            data: formData,
+                        })
+                        .then((data, status, jqXHR) => {
+                            if (data.ok) {
+                                $(statusSelector).text('Thank you');
+                            } else {
+                                $(statusSelector).text(data.error);
+                            }
+                        })
+                        .catch((jqXHR, textStatus, errorThrown) => {
+                            $(statusSelector).text(textStatus);
+                        })
+                    }
+                    $(() => {
+                        $(formSelector).submit(function (event) {
+                            event.preventDefault();
+                            submitContactForm($(this).serialize());
+                        });
+                    });
+                })(jQuery);
+            }
+            initContactForm({
+                formSelector: '.formcontact', 
+                statusSelector: '.formcontact .result',
+                formUrl: 'https://script.google.com/macros/s/AKfycbw2J2VO9QXi3S8iuNLZWNS7I5JsDMgkW8tUSrKW3BN5vcc4xB5Z/exec', 
+            })
 });
 </script>
 </body>
