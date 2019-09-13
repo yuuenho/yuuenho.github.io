@@ -292,6 +292,7 @@ figcaption {
   opacity: 0.6;
   font-family: Inconsolata, monospace;
   color: #000;
+  text-decoration: none;
 }
 
 .paragraph-light.cc-position-name {
@@ -691,6 +692,10 @@ figcaption {
 .contact-form-grid {
   grid-column-gap: 30px;
   grid-row-gap: 10px;
+}
+
+.contact-form {
+  display: none;
 }
 
 .contact-form-wrap {
@@ -3088,6 +3093,10 @@ figcaption {
 
 .result {
   display: block;
+}
+
+.link-3 {
+  display: inline-block;
 }
 
 @media (max-width: 991px) {
