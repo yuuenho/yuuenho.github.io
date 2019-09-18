@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="376px" height="204px" viewBox="0 0 376 204" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>ROMBuilding</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+        <polygon id="path-3" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+        <polygon id="path-5" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+        <polygon id="path-7" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+        <polygon id="path-9" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+        <polygon id="path-11" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+        <polygon id="path-13" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+        <polygon id="path-15" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+        <polygon id="path-17" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+    </defs>
+    <g id="Page-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-295.000000, -456.000000)">
+            <g id="ROMBuilding" transform="translate(295.000000, 456.000000)">
+                <g id="Path-22" transform="translate(174.000000, 0.000000)">
+                    <g id="Mask" opacity="0.662527902" fill="#C9C9D5" fill-rule="nonzero">
+                        <polygon id="path-1" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+                    </g>
+                    <g id="Clipped">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <polygon id="Path" fill="#B0B0B7" fill-rule="nonzero" mask="url(#mask-2)" points="0 49.8681053 153.605904 0 45.3613311 138.963939 12.641343 126.039448"></polygon>
+                    </g>
+                    <g id="Path-31-Clipped">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <polygon id="Path-31" stroke="#96A2B0" fill="#96A2B0" fill-rule="nonzero" mask="url(#mask-4)" points="47.2130222 136.547351 35.1835206 103.928771 57.058541 81.2263374 72.677641 103.928771"></polygon>
+                    </g>
+                    <g id="Path-32-Clipped">
+                        <mask id="mask-6" fill="white">
+                            <use xlink:href="#path-5"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <polygon id="Path-32" stroke="#96A2B0" fill="#96A2B0" fill-rule="nonzero" mask="url(#mask-6)" points="73.2509363 65.0569897 89.3192536 83.7806461 109.841869 59.1225226 91.115088 46.3333333"></polygon>
+                    </g>
+                    <g id="Line-Clipped">
+                        <mask id="mask-8" fill="white">
+                            <use xlink:href="#path-7"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <path d="M14.6902404,124.45483 L136.410088,3.43209877" id="Line" stroke="#96A2B0" stroke-width="12" fill="#96A2B0" fill-rule="nonzero" stroke-linecap="square" mask="url(#mask-8)"></path>
+                    </g>
+                    <g id="Line-Clipped">
+                        <mask id="mask-10" fill="white">
+                            <use xlink:href="#path-9"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <path d="M14.6902404,124.45483 L136.410088,3.43209877" id="Line" stroke="#96A2B0" stroke-width="12" fill="#96A2B0" fill-rule="nonzero" stroke-linecap="square" mask="url(#mask-10)"></path>
+                    </g>
+                    <g id="Line-Clipped">
+                        <mask id="mask-12" fill="white">
+                            <use xlink:href="#path-11"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <path d="M-34.6067416,114.101799 L108.034557,10.6371589 L-34.6067416,114.101799 Z" id="Line" stroke="#96A2B0" stroke-width="12" fill="#96A2B0" fill-rule="nonzero" stroke-linecap="square" mask="url(#mask-12)"></path>
+                    </g>
+                    <g id="Line-Clipped">
+                        <mask id="mask-14" fill="white">
+                            <use xlink:href="#path-13"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <path d="M84.133592,140.326577 L8.65168539,-13.1563786 L84.133592,140.326577 Z" id="Line" stroke="#96A2B0" stroke-width="12" fill="#96A2B0" fill-rule="nonzero" stroke-linecap="square" mask="url(#mask-14)"></path>
+                    </g>
+                    <g id="Line-Clipped">
+                        <mask id="mask-16" fill="white">
+                            <use xlink:href="#path-15"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <path d="M128.390199,121.457834 L10.9588015,-3.43209877 L128.390199,121.457834 Z" id="Line" stroke="#96A2B0" stroke-width="12" fill="#96A2B0" fill-rule="nonzero" stroke-linecap="square" mask="url(#mask-16)"></path>
+                    </g>
+                    <g id="Line-Clipped">
+                        <mask id="mask-18" fill="white">
+                            <use xlink:href="#path-17"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <path d="M54.5897659,142.317983 L-12.6891386,-14.872428 L54.5897659,142.317983 Z" id="Line" stroke="#96A2B0" stroke-width="12" fill="#96A2B0" fill-rule="nonzero" stroke-linecap="square" mask="url(#mask-18)"></path>
+                    </g>
+                </g>
+                <polygon id="Path-25" fill="#909090" fill-rule="nonzero" points="312.073636 71.8410197 336 67 312.270765 190.194648 256 196"></polygon>
+                <path d="M326,2 L312.283992,71.7994846 L256.562711,196.144514 C247.580881,196.850791 240.593761,197.35885 235.601349,197.668691 C230.608937,197.978532 222.408488,198.422302 211,199 L219.28641,137.079206 L326,2 Z" id="Path-24" stroke="#979797" fill="#979797" fill-rule="nonzero"></path>
+                <polygon id="Path-23" fill="#AFAFBB" fill-rule="nonzero" points="219 134.83952 212.20261 197 182 122"></polygon>
+                <polygon id="Path-20" fill="#7C715F" fill-rule="nonzero" points="0 197.491571 87 204 87 37 59.296831 62.2129722 59.296831 71.9364071 11.9855296 105.835125 11.9855296 96.0123648 0 103.257892"></polygon>
+                <polygon id="Path-21" fill="#968974" fill-rule="nonzero" points="87 38.7292188 115.65842 43.9340464 115.65842 35 158.623993 35 194.973093 61.8825324 194.973093 70.0852578 214 75.1318921 214 87.1105162 187.422527 124.721684 214 198.849633 87 204"></polygon>
+                <polygon id="Path-26" fill="#BAB8BB" fill-rule="nonzero" points="327.798381 105 376 149.777018 372.290358 184.966103 309 192"></polygon>
+                <polygon id="Path-28" fill="#96A2B0" fill-rule="nonzero" points="214.880067 173.863553 244 137 235.664373 197.794681 212 199"></polygon>
+                <polygon id="Path-29" fill="#96A2B0" fill-rule="nonzero" points="246 153.389446 251.737728 184 321 10 282.835263 57.3060023"></polygon>
+                <polygon id="Path-30" fill="#60594E" fill-rule="nonzero" points="62 105.397666 62 137 72 137 72 100"></polygon>
+                <path d="M132,108.144249 L132,154 L169,154 L168.025933,109.857868 C169.349386,95.5832272 163.675927,87.9901227 151.005556,87.0785553 C138.335185,86.1669885 132,93.1888859 132,108.144249 Z" id="Path-30" fill="#60594E" fill-rule="nonzero"></path>
+                <polygon id="Path-30" fill="#60594E" fill-rule="nonzero" points="47 116.376486 47 142 57 142 57 112"></polygon>
+                <polygon id="Path-30" fill="#5E523F" fill-rule="nonzero" points="62 106.668251 62 134 69 134 69 102"></polygon>
+                <polygon id="Path-30" fill="#5E523F" fill-rule="nonzero" points="48 118.938837 48 142 55 142 55 115"></polygon>
+                <polygon id="Path-58" fill="#60594E" fill-rule="nonzero" points="65 107.963179 69.651119 105 70 117 68.9445552 108.626043"></polygon>
+                <polygon id="Path-58" fill="#60594E" fill-rule="nonzero" points="50 119.963179 54.6511188 117 55 129 53.944555 120.626043"></polygon>
+                <path d="M137.574361,154 L172,154 L172,115.001929 C172,96.3339764 166.166667,87 154.5,87 C142.833333,87 137,94.5425982 137,109.627795 L137.574361,154 Z" id="Path-27" fill="#5E523F" fill-rule="nonzero"></path>
+                <polygon id="Path-58" fill="#60594E" fill-rule="nonzero" points="157 112 166.609039 112 167 124 162.799857 114.963179"></polygon>
+                <polygon id="Path-58" fill="#60594E" fill-rule="nonzero" points="144 130 153.609039 130 154 142 149.799857 132.963179"></polygon>
+                <polygon id="Path-58" fill="#60594E" fill-rule="nonzero" points="157 130 166.609039 130 167 142 162.799857 132.963179"></polygon>
+                <polygon id="Path-58" fill="#60594E" fill-rule="nonzero" points="144 112 153.609039 112 154 124 149.799857 114.963179"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
