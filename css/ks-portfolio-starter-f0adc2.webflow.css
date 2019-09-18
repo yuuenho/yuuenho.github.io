@@ -681,7 +681,7 @@ figcaption {
 
 .contact {
   padding-top: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
 
 .contact-headline {
@@ -1467,10 +1467,7 @@ figcaption {
   top: 0%;
   right: auto;
   bottom: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   opacity: 1;
 }
 
@@ -1501,8 +1498,8 @@ figcaption {
   width: 80vw;
   height: 100vh;
   margin-left: 0px;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 0px;
+  padding-left: 0px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -3136,10 +3133,18 @@ figcaption {
 
 .rk-text {
   margin-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.rksectionheading {
+  padding-left: 0px;
 }
 
 .rk-section {
   margin-top: 10px;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
 .finding {
@@ -3149,7 +3154,9 @@ figcaption {
 .div-block-51 {
   display: -ms-grid;
   display: grid;
+  margin-right: 40px;
   margin-bottom: 15px;
+  margin-left: 40px;
   justify-items: center;
   -webkit-box-align: start;
   -webkit-align-items: start;
@@ -3195,6 +3202,8 @@ figcaption {
   display: grid;
   margin-top: 10px;
   margin-bottom: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
@@ -3250,6 +3259,61 @@ figcaption {
 
 .section-16 {
   margin-bottom: 10px;
+}
+
+.rk-close-modal-button {
+  position: fixed;
+  left: auto;
+  top: 0%;
+  right: auto;
+  bottom: auto;
+  z-index: 6;
+  width: 80vw;
+  height: 50px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -webkit-box-ordinal-group: 7;
+  -webkit-order: 6;
+  -ms-flex-order: 6;
+  order: 6;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 64, 255, 0)), color-stop(52%, #fff));
+  background-image: linear-gradient(0deg, rgba(0, 64, 255, 0), #fff 52%);
+  opacity: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.rk-close-modal-button.closediv {
+  width: 80vw;
+}
+
+.bb-close-modal-button.closediv {
+  position: fixed;
+  z-index: 9999;
+  width: 80vw;
+  height: 50px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(52%, #fff), to(transparent));
+  background-image: linear-gradient(180deg, #fff 52%, transparent);
+  text-align: center;
+}
+
+.closediv.bb-close-modal-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 @media (max-width: 991px) {
@@ -5195,6 +5259,18 @@ figcaption {
   }
   .image-23 {
     width: auto;
+  }
+  .rk-close-modal-button {
+    left: auto;
+    right: auto;
+    width: 80vw;
+    height: 60px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(14%, transparent), color-stop(35%, transparent), color-stop(76%, #fff));
+    background-image: linear-gradient(0deg, transparent 14%, transparent 35%, #fff 76%);
   }
 }
 
