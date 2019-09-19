@@ -3143,7 +3143,7 @@ figcaption {
 }
 
 .rk-section {
-  margin-top: 10px;
+  margin-top: 20px;
   padding-right: 40px;
   padding-left: 40px;
 }
@@ -3192,6 +3192,7 @@ figcaption {
 .rk-caption {
   font-size: 12px;
   text-align: left;
+  margin-bottom: 10px;
 }
 
 .rk-caption.prototypecap {
