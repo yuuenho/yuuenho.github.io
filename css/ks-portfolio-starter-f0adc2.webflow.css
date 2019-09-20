@@ -2867,7 +2867,7 @@ figcaption {
   position: absolute;
   left: auto;
   top: auto;
-  right: 43px;
+  right: 8vw;
   bottom: auto;
   z-index: 3;
   overflow: hidden;
@@ -3144,8 +3144,8 @@ figcaption {
 
 .rk-section {
   margin-top: 20px;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 5vw;
+  padding-left: 5vw;
 }
 
 .finding {
@@ -3237,6 +3237,7 @@ figcaption {
 
 .image-22 {
   width: 30vw;
+  padding:10px;
 }
 
 .image-23 {
@@ -5643,7 +5644,7 @@ figcaption {
   -ms-grid-row-align: end;
   align-self: end;
   -ms-grid-column-align: stretch;
-  justify-self: stretch;
+  justify-self: center;
 }
 
 #w-node-bd43939955d1-adc1772a {
