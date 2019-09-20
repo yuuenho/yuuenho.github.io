@@ -524,6 +524,8 @@ figcaption {
 }
 
 .position-name-text {
+  position: static;
+  z-index: 9999;
   margin-bottom: 10px;
   font-family: Inconsolata, monospace;
   font-size: 20px;
@@ -561,7 +563,7 @@ figcaption {
 
 .work-experience-grid {
   position: relative;
-  margin-bottom: 140px;
+  margin-bottom: 25px;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   grid-template-areas: ". . . .";
@@ -2766,7 +2768,7 @@ figcaption {
 }
 
 .image-17 {
-  width: 5vh;
+  width: 50px;
   margin-right: 10vw;
   -webkit-filter: invert(77%);
   filter: invert(77%);
@@ -2873,7 +2875,7 @@ figcaption {
   overflow: hidden;
   width: 50px;
   margin-top: -95px;
-  margin-right: 21px;
+  margin-right: 0px;
   margin-left: auto;
 }
 
@@ -3116,6 +3118,10 @@ figcaption {
 
 .link-3 {
   display: inline-block;
+  font-family: Inconsolata, monospace;
+  color: #7832da;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .section-15 {
@@ -3133,9 +3139,7 @@ figcaption {
 }
 
 .rk-text {
-  margin-top: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
+  display: inline;
 }
 
 .rksectionheading {
@@ -3190,9 +3194,9 @@ figcaption {
 }
 
 .rk-caption {
+  padding-bottom: 10px;
   font-size: 12px;
   text-align: left;
-  margin-bottom: 10px;
 }
 
 .rk-caption.prototypecap {
@@ -3237,7 +3241,7 @@ figcaption {
 
 .image-22 {
   width: 30vw;
-  padding:10px;
+  padding: 10px;
 }
 
 .image-23 {
@@ -3319,6 +3323,10 @@ figcaption {
   justify-content: center;
 }
 
+.link-4 {
+  display: inline;
+}
+
 @media (max-width: 991px) {
   .styleguide-block {
     text-align: center;
@@ -3374,6 +3382,20 @@ figcaption {
     margin-right: 0px;
   }
   .work-experience-grid {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 19px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     grid-template-areas: ". ." ". .";
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -3395,6 +3417,13 @@ figcaption {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+  .work-position-wrap {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    text-align: center;
   }
   .carrer-headline-wrap {
     width: auto;
@@ -3530,16 +3559,17 @@ figcaption {
     flex-direction: column;
   }
   .cs-modal-wrapper.rkcasestudy {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    z-index: 2501;
+    display: none;
   }
   .cs-modal-wrapper.bbcasestudy {
     display: none;
   }
   .modal-window {
-    display: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
   .breadcrumb {
     display: none;
@@ -3740,6 +3770,12 @@ figcaption {
     margin-right: 50px;
     margin-left: 50px;
   }
+  .image-17 {
+    display: block;
+  }
+  .div-block-41 {
+    display: none;
+  }
   .cs-text-alt-2 {
     position: relative;
   }
@@ -3747,6 +3783,14 @@ figcaption {
     width: auto;
     height: 100%;
     background-color: transparent;
+  }
+  .rk-layoutdiv {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .image-22 {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .section-16 {
     padding-right: 40px;
@@ -3986,6 +4030,9 @@ figcaption {
     width: 80vw;
     margin-left: 16px;
   }
+  .button {
+    display: none;
+  }
   .navigation {
     position: fixed;
     left: auto;
@@ -4066,6 +4113,7 @@ figcaption {
     grid-template-rows: auto;
   }
   .work-experience-grid {
+    display: block;
     width: 85vw;
     margin-bottom: 50px;
   }
@@ -4084,6 +4132,7 @@ figcaption {
   }
   .contact {
     padding-right: 15px;
+    padding-bottom: 0px;
     padding-left: 15px;
   }
   .contact-form-grid {
@@ -4366,6 +4415,10 @@ figcaption {
   .modal-window {
     position: relative;
     z-index: 2502;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     overflow: auto;
     width: 100vw;
     height: 100vh;
@@ -6446,6 +6499,10 @@ figcaption {
     grid-column-end: 4;
     -ms-grid-row-align: center;
     align-self: center;
+  }
+  #w-node-566013f6fa0f-adc1772a {
+    -ms-grid-column-align: center;
+    justify-self: center;
   }
   #w-node-2c8377dcdbba-adc1772a {
     -ms-grid-column-align: center;
