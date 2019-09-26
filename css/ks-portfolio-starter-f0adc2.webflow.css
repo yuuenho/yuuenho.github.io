@@ -3565,7 +3565,10 @@ figcaption {
     display: none;
   }
   .cs-modal-wrapper.bbcasestudy {
-    display: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
   .modal-window {
     display: -webkit-box;
@@ -3578,6 +3581,7 @@ figcaption {
   }
   .cs-text {
     position: relative;
+    top: auto;
   }
   .artifact-images {
     display: -ms-grid;
@@ -4387,6 +4391,7 @@ figcaption {
     flex-direction: column;
   }
   .heroimage {
+    display: none;
     height: 100vh;
   }
   .scroll-icon {
@@ -4414,10 +4419,7 @@ figcaption {
     height: 100vh;
   }
   .cs-modal-wrapper.bbcasestudy {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     width: 100vw;
     height: 100vh;
   }
@@ -5684,7 +5686,7 @@ figcaption {
   grid-row-start: 1;
   -ms-grid-row-align: end;
   align-self: end;
-  -ms-grid-column-align: stretch;
+  -ms-grid-column-align: center;
   justify-self: center;
 }
 
